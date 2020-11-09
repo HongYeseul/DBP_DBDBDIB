@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace DBDBDIB
 {
-    public partial class Form1 : Form
+    public partial class Personnel : Form
     {
-        public Form1()
+        public Personnel()
         {
             InitializeComponent();
+        }
+
+        private void Personnel_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
