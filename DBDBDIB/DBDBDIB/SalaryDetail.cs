@@ -8,11 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace test_1
+namespace DBDBDIB
 {
     public partial class SalaryDetail : Form
     {
-        public string ExtraHour_ {get; set;}
+
+        public string ExtraHour_ { get; set; }
 
         public SalaryDetail()
         {
@@ -21,10 +22,12 @@ namespace test_1
 
         private void tabControlSalary_Selected(object sender, EventArgs e)
         {
-            if(tabControlSalary.SelectedTab == tabPageShowSalary)
+            if (tabControlSalary.SelectedTab == tabPageShowSalary)
             {
 
-            }else if(tabControlSalary.SelectedTab == tabPageShowTax){
+            }
+            else if (tabControlSalary.SelectedTab == tabPageShowTax)
+            {
 
             }
         }
