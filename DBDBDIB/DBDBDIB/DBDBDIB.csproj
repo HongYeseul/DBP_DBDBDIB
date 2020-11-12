@@ -98,6 +98,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MessageMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageMainForm.Designer.cs">
+      <DependentUpon>MessageMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageWriteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageWriteForm.Designer.cs">
+      <DependentUpon>MessageWriteForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInfo.cs" />
     <Compile Include="DBManager.cs" />
     <Compile Include="LoginForm.cs">
@@ -135,6 +147,12 @@
     <EmbeddedResource Include="Mainform.resx">
       <DependentUpon>Mainform.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MessageMainForm.resx">
+      <DependentUpon>MessageMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageWriteForm.resx">
+      <DependentUpon>MessageWriteForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Personnel.resx">
       <DependentUpon>Personnel.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,6 +185,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rounded-rectangle.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
