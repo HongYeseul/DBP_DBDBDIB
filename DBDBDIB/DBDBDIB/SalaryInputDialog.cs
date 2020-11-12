@@ -17,12 +17,23 @@ namespace DBDBDIB
         {
             InitializeComponent();
             detail_ = detail;
-            textBoxInputHour.Text = detail.ExtraHour_;
+            textBoxInputHour.Text = detail.ExtraHour_.ToString();
         }
 
         private void buttonOK_Click(object sender, EventArgs e)
         {//입력되지 않았을 경우 예외처리하기
-            detail_.ExtraHour_ = textBoxInputHour.Text;
+            if(textBoxInputHour.Text == "") //입력되지 않은 경우
+            {
+                DBManager.GetInstance().msg("시간을 입력해주세요");
+                return;
+            }
+            int i = 0;
+            if (int.TryParse(textBoxInputHour.Text, out i) == false) //가격이 정수가 아닐경우
+            {
+                DBManager.GetInstance().msg("정수 가격을 입력해주세요");
+                return;
+            }
+            detail_.ExtraHour_ = Int32.Parse(textBoxInputHour.Text);
             this.Close();
         }
     }
