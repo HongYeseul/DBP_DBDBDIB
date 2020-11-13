@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.buttonTodayWork = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
@@ -39,6 +40,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,17 +56,28 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(175, 467);
+            this.panel1.Size = new System.Drawing.Size(175, 553);
             this.panel1.TabIndex = 0;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel4.Controls.Add(this.buttonTodayWork);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 246);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(175, 100);
             this.panel4.TabIndex = 6;
+            // 
+            // buttonTodayWork
+            // 
+            this.buttonTodayWork.Location = new System.Drawing.Point(0, 0);
+            this.buttonTodayWork.Name = "buttonTodayWork";
+            this.buttonTodayWork.Size = new System.Drawing.Size(175, 23);
+            this.buttonTodayWork.TabIndex = 0;
+            this.buttonTodayWork.Text = "일일 업무 관리";
+            this.buttonTodayWork.UseVisualStyleBackColor = true;
+            this.buttonTodayWork.Click += new System.EventHandler(this.buttonTodayWork_Click);
             // 
             // button5
             // 
@@ -148,12 +161,12 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(175, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(638, 467);
+            this.panel5.Size = new System.Drawing.Size(907, 553);
             this.panel5.TabIndex = 1;
             // 
             // Mainform
             // 
-            this.ClientSize = new System.Drawing.Size(813, 467);
+            this.ClientSize = new System.Drawing.Size(1082, 553);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
@@ -161,6 +174,7 @@
             this.Text = "예시";
             this.Load += new System.EventHandler(this.Mainform_Load);
             this.panel1.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -180,6 +194,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button buttonTodayWork;
     }
 }
 
