@@ -125,6 +125,12 @@
     <Compile Include="Payment_Registration2.Designer.cs">
       <DependentUpon>Payment_Registration2.cs</DependentUpon>
     </Compile>
+    <Compile Include="ApprovalListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApprovalListForm.Designer.cs">
+      <DependentUpon>ApprovalListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInfo.cs" />
     <Compile Include="DBManager.cs" />
     <Compile Include="LoginForm.cs">
@@ -167,6 +173,9 @@
     </Compile>
     <EmbeddedResource Include="Approval.resx">
       <DependentUpon>Approval.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApprovalListForm.resx">
+      <DependentUpon>ApprovalListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
