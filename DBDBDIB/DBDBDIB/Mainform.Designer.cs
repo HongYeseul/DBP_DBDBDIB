@@ -54,7 +54,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(175, 467);
+            this.panel1.Size = new System.Drawing.Size(175, 544);
             this.panel1.TabIndex = 0;
             // 
             // panel4
@@ -148,12 +148,12 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(175, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(638, 467);
+            this.panel5.Size = new System.Drawing.Size(903, 544);
             this.panel5.TabIndex = 1;
             // 
             // Mainform
             // 
-            this.ClientSize = new System.Drawing.Size(813, 467);
+            this.ClientSize = new System.Drawing.Size(1078, 544);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
