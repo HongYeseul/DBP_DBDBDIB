@@ -98,6 +98,7 @@
             this.button8.TabIndex = 0;
             this.button8.Text = "나의 결재 리스트";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button7
             // 

@@ -106,5 +106,10 @@ namespace DBDBDIB
         {
             showChildForm(new Payment_Registration1());
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            showChildForm(new ApprovalListForm());
+        }
     }
 }

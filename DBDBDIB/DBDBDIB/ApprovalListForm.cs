@@ -11,18 +11,10 @@ using System.Windows.Forms;
 
 namespace DBDBDIB
 {
-    /*B.(10) 나의 결재 리스트 확인 기능 
-        i.	내가 등록한 결재들의 진행 사항
-        ii.	결재 중 내역
-        iii.	결재 완료 내역
-        iv.	내가 결재해야 할 업무 리스트 
-    */
-
     public partial class ApprovalListForm : Form
     {
         private string what_Appr = ""; //불러올 테이블 조건
-        //int id = Convert.ToInt32(UserInfo.Getinstance().Id); //로그인 계정
-        int id = 5500001;
+        int id = Convert.ToInt32(UserInfo.Getinstance().Id); //로그인 계정
         public ApprovalListForm()
         {
             InitializeComponent();
@@ -33,7 +25,6 @@ namespace DBDBDIB
 
         private void combo_Appr_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dgv_MyApprList.Rows.Clear();
             switch (combo_Appr.Text) //콤보박스 선택 변경마다 조건 변경
             {
                 case "모든 결재 내역":
