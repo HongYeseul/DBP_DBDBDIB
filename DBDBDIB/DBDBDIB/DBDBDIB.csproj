@@ -99,19 +99,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-
-    <Compile Include="MessageMainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MessageMainForm.Designer.cs">
-      <DependentUpon>MessageMainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MessageWriteForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MessageWriteForm.Designer.cs">
-      <DependentUpon>MessageWriteForm.cs</DependentUpon>
-
     <Compile Include="GridViewManager.cs" />
     <Compile Include="TodayWork.cs">
       <SubType>Form</SubType>
@@ -143,7 +130,6 @@
     </Compile>
     <Compile Include="ApprovalListForm.Designer.cs">
       <DependentUpon>ApprovalListForm.cs</DependentUpon>
-
     </Compile>
     <Compile Include="UserInfo.cs" />
     <Compile Include="DBManager.cs" />
@@ -197,19 +183,11 @@
     <EmbeddedResource Include="Mainform.resx">
       <DependentUpon>Mainform.cs</DependentUpon>
     </EmbeddedResource>
-
-    <EmbeddedResource Include="MessageMainForm.resx">
-      <DependentUpon>MessageMainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MessageWriteForm.resx">
-      <DependentUpon>MessageWriteForm.cs</DependentUpon>
-
     <EmbeddedResource Include="Payment_Registration1.resx">
       <DependentUpon>Payment_Registration1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Payment_Registration2.resx">
       <DependentUpon>Payment_Registration2.cs</DependentUpon>
-
     </EmbeddedResource>
     <EmbeddedResource Include="Personnel.resx">
       <DependentUpon>Personnel.cs</DependentUpon>
