@@ -61,7 +61,7 @@ namespace DBDBDIB
 
         private void button4_Click(object sender, EventArgs e)//인사>급여내역서 버튼
         {
-
+            showChildForm(new SalaryDetail());
         }
 
         private void button5_Click(object sender, EventArgs e)//업무 버튼
