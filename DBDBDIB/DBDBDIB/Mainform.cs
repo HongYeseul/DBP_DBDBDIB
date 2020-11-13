@@ -89,6 +89,9 @@ namespace DBDBDIB
             //열려는 폼은 패널의 크기에 맞춰서 만들기
         }
 
-
+        private void buttonTodayWork_Click(object sender, EventArgs e)
+        {
+            showChildForm(new TodayWork());
+        }
     }
 }

@@ -16,10 +16,11 @@ namespace DBDBDIB
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
-
-            Mainform Main = new Mainform();
-            Application.Run(Main);
+            //Application.Run(new LoginForm());
+            // Mainform Main = new Mainform();
+            // Application.Run(Main);
+            //아래 민영
+            //Application.Run(new Payment_Registration1());
         }
     }
 }
