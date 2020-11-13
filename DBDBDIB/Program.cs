@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DBDBDIB
-{
+{//program
     static class Program
     {
         /// <summary>
