@@ -26,7 +26,6 @@ namespace DBDBDIB
             }
             panel3.Visible = false;
             panel4.Visible = false;
-            panel6.Visible = false;
         }
 
         private void hideSubMenu() //상위 버튼(인사/업무/결재) 클릭 시 숨기는 용도
@@ -35,8 +34,6 @@ namespace DBDBDIB
                 panel3.Visible = false;
             if (panel4.Visible == true)
                 panel4.Visible = false;
-            if (panel6.Visible == true)
-                panel6.Visible = false;
 
         }
 
@@ -69,7 +66,7 @@ namespace DBDBDIB
 
         private void button4_Click(object sender, EventArgs e)//인사>급여내역서 버튼
         {
-            showChildForm(new SalaryDetail());
+
         }
 
         private void button5_Click(object sender, EventArgs e)//업무 버튼
@@ -97,19 +94,6 @@ namespace DBDBDIB
             //열려는 폼은 패널의 크기에 맞춰서 만들기
         }
 
-        private void buttonTodayWork_Click(object sender, EventArgs e)
-        {
-            showChildForm(new TodayWork());
-        }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            showSubMenu(panel6);
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            showChildForm(new Payment_Registration1());
-        }
     }
 }
