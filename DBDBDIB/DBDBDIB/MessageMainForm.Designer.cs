@@ -28,54 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtSearchMsg = new System.Windows.Forms.TextBox();
+            this.btnDeleteMsg = new System.Windows.Forms.Button();
+            this.btnNewMsg = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.btnSearch = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtSearchMsg
             // 
-            this.textBox1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox1.Location = new System.Drawing.Point(25, 15);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(138, 26);
-            this.textBox1.TabIndex = 0;
+            this.txtSearchMsg.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtSearchMsg.Location = new System.Drawing.Point(25, 23);
+            this.txtSearchMsg.Name = "txtSearchMsg";
+            this.txtSearchMsg.Size = new System.Drawing.Size(138, 26);
+            this.txtSearchMsg.TabIndex = 0;
             // 
-            // button2
+            // btnDeleteMsg
             // 
-            this.button2.Location = new System.Drawing.Point(210, 17);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(51, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "삭제";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnDeleteMsg.Location = new System.Drawing.Point(210, 25);
+            this.btnDeleteMsg.Name = "btnDeleteMsg";
+            this.btnDeleteMsg.Size = new System.Drawing.Size(51, 23);
+            this.btnDeleteMsg.TabIndex = 2;
+            this.btnDeleteMsg.Text = "삭제";
+            this.btnDeleteMsg.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnNewMsg
             // 
-            this.button1.Location = new System.Drawing.Point(666, 17);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 38);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "쪽지 쓰기";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnNewMsg.Location = new System.Drawing.Point(666, 17);
+            this.btnNewMsg.Name = "btnNewMsg";
+            this.btnNewMsg.Size = new System.Drawing.Size(98, 38);
+            this.btnNewMsg.TabIndex = 4;
+            this.btnNewMsg.Text = "쪽지 쓰기";
+            this.btnNewMsg.UseVisualStyleBackColor = true;
+            this.btnNewMsg.Click += new System.EventHandler(this.btnNewMsg_Click);
             // 
             // listBox1
             // 
             this.listBox1.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(25, 105);
+            this.listBox1.Location = new System.Drawing.Point(25, 65);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(730, 284);
+            this.listBox1.Size = new System.Drawing.Size(730, 364);
             this.listBox1.TabIndex = 5;
             // 
             // btnSearch
             // 
             this.btnSearch.BackgroundImage = global::DBDBDIB.Properties.Resources.search;
             this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSearch.Location = new System.Drawing.Point(169, 15);
+            this.btnSearch.Location = new System.Drawing.Point(169, 23);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(35, 26);
             this.btnSearch.TabIndex = 3;
@@ -87,10 +88,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(802, 450);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnNewMsg);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnDeleteMsg);
+            this.Controls.Add(this.txtSearchMsg);
             this.Name = "MessageMainForm";
             this.Text = "MessageMainForm";
             this.Load += new System.EventHandler(this.MessageMainForm_Load);
@@ -101,9 +102,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtSearchMsg;
+        private System.Windows.Forms.Button btnDeleteMsg;
+        private System.Windows.Forms.Button btnNewMsg;
         private System.Windows.Forms.Panel btnSearch;
         private System.Windows.Forms.ListBox listBox1;
     }

@@ -12,6 +12,7 @@ namespace DBDBDIB
 {
     public partial class Mainform : Form
     {
+        UserInfo UserManager = UserInfo.Getinstance();
         public Mainform()
         {
             InitializeComponent();
@@ -19,6 +20,10 @@ namespace DBDBDIB
 
         private void Mainform_Load(object sender, EventArgs e)
         {
+            if(UserManager.loginON == false)
+            {
+                this.Close();
+            }
             panel3.Visible = false;
             panel4.Visible = false;
         }

@@ -29,5 +29,11 @@ namespace DBDBDIB
         {
             Console.WriteLine("Click");
         }
+
+        private void btnNewMsg_Click(object sender, EventArgs e)
+        {
+            MessageWriteForm newForm = new MessageWriteForm();
+            newForm.Show();
+        }
     }
 }
