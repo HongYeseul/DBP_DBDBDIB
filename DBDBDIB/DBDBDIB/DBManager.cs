@@ -11,11 +11,19 @@ namespace DBDBDIB
     class DBManager
     {
         private static DBManager instance = new DBManager();
-        private string strConn = "Server=49.50.174.201;Database=wep;Uid=dbdbdib;Pwd=s123123;Charset=utf8";
+        private string strConn = "Server=49.50.174.201;Database=erp_school;Uid=dbdbdib;Pwd=123123;Charset=utf8";
         public static DBManager GetInstance() { return instance; }
+
+        int msg_counter = 0;
 
         //객체 생성 제한
         private DBManager() { }
+
+        public void msg(string msg)
+        {
+            MessageBox.Show(msg, "확인");
+            msg_counter++;
+        }
 
         public void DBquery(string query)
         {
