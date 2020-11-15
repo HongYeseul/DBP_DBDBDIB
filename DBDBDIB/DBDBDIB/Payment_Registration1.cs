@@ -32,6 +32,8 @@ namespace DBDBDIB
             textBoxSelected.Text = "";
             ListLoad();
             textBoxComent.Text = "";
+            groupBoxForpay1.Visible = true;
+            groupBoxForpay2.Visible = false;
         }
         public void ListLoad()
         {
@@ -55,11 +57,13 @@ namespace DBDBDIB
             content = textBoxContent.Text;
             coment = textBoxComent.Text;
 
-            Payment_Registration2 set2 = new Payment_Registration2();
-            
-            set2.SetReg1(title, content, selectedId, coment);
-            set2.Show();
-            this.Hide();//hide로만 처리하면 되는가.. 내일 회의하고 이거 처리 어떻게했는지 묻고 없애는 법있으면 그방법을 적용
+            //Payment_Registration2 set2 = new Payment_Registration2();
+
+            //set2.SetReg1(title, content, selectedId, coment);
+            //set2.Show();
+            //this.Hide();//hide로만 처리하면 되는가.. 내일 회의하고 이거 처리 어떻게했는지 묻고 없애는 법있으면 그방법을 적용
+            groupBoxForpay1.Visible = false;
+            groupBoxForpay2.Visible = true;
         }
 
         
