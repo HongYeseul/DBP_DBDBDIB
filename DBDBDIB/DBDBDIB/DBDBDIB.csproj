@@ -98,6 +98,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MessageDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageDetail.Designer.cs">
+      <DependentUpon>MessageDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="MessageMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mainform.resx">
       <DependentUpon>Mainform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageDetail.resx">
+      <DependentUpon>MessageDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MessageMainForm.resx">
       <DependentUpon>MessageMainForm.cs</DependentUpon>
