@@ -128,7 +128,6 @@
     <Compile Include="MessageWriteForm.Designer.cs">
       <DependentUpon>MessageWriteForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MysqlDataReader.cs" />
     <Compile Include="UserInfo.cs" />
     <Compile Include="DBManager.cs" />
     <Compile Include="LoginForm.cs">
