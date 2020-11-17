@@ -154,5 +154,11 @@ namespace DBDBDIB
         {
             this._selectedSearch = Search.제목;
         }
+
+        private void btnAck_Click(object sender, EventArgs e)
+        {
+            MessageAck newForm = new MessageAck();
+            newForm.Show();
+        }
     }
 }

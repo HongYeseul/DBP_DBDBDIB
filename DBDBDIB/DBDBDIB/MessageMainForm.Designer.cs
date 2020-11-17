@@ -37,6 +37,7 @@
             this.radioBtnWhoSent = new System.Windows.Forms.RadioButton();
             this.txtSearchContent = new System.Windows.Forms.TextBox();
             this.txtSearchTitle = new System.Windows.Forms.TextBox();
+            this.btnAck = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Panel();
             this.검색하기.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +54,7 @@
             // 
             this.btnNewMsg.Location = new System.Drawing.Point(666, 17);
             this.btnNewMsg.Name = "btnNewMsg";
-            this.btnNewMsg.Size = new System.Drawing.Size(98, 38);
+            this.btnNewMsg.Size = new System.Drawing.Size(89, 31);
             this.btnNewMsg.TabIndex = 4;
             this.btnNewMsg.Text = "쪽지 쓰기";
             this.btnNewMsg.UseVisualStyleBackColor = true;
@@ -138,6 +139,16 @@
             this.txtSearchTitle.Size = new System.Drawing.Size(95, 22);
             this.txtSearchTitle.TabIndex = 7;
             // 
+            // btnAck
+            // 
+            this.btnAck.Location = new System.Drawing.Point(666, 57);
+            this.btnAck.Name = "btnAck";
+            this.btnAck.Size = new System.Drawing.Size(89, 29);
+            this.btnAck.TabIndex = 8;
+            this.btnAck.Text = "수신확인";
+            this.btnAck.UseVisualStyleBackColor = true;
+            this.btnAck.Click += new System.EventHandler(this.btnAck_Click);
+            // 
             // btnSearch
             // 
             this.btnSearch.BackgroundImage = global::DBDBDIB.Properties.Resources.search;
@@ -153,6 +164,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(802, 450);
+            this.Controls.Add(this.btnAck);
             this.Controls.Add(this.검색하기);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btnNewMsg);
@@ -177,5 +189,6 @@
         private System.Windows.Forms.RadioButton radioBtnWhoSent;
         private System.Windows.Forms.TextBox txtSearchContent;
         private System.Windows.Forms.TextBox txtSearchTitle;
+        private System.Windows.Forms.Button btnAck;
     }
 }

@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtSendToWhom = new System.Windows.Forms.TextBox();
+            this.btnAddr = new System.Windows.Forms.Button();
             this.txtMsgBox = new System.Windows.Forms.RichTextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSend = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.labelTextLength = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -46,23 +46,24 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "받는 사람";
             // 
-            // textBox1
+            // txtSendToWhom
             // 
-            this.textBox1.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox1.Location = new System.Drawing.Point(97, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(100, 27);
-            this.textBox1.TabIndex = 1;
+            this.txtSendToWhom.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtSendToWhom.Location = new System.Drawing.Point(97, 26);
+            this.txtSendToWhom.Name = "txtSendToWhom";
+            this.txtSendToWhom.ReadOnly = true;
+            this.txtSendToWhom.Size = new System.Drawing.Size(100, 27);
+            this.txtSendToWhom.TabIndex = 1;
             // 
-            // button1
+            // btnAddr
             // 
-            this.button1.Location = new System.Drawing.Point(203, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 36);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "주소록";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAddr.Location = new System.Drawing.Point(203, 21);
+            this.btnAddr.Name = "btnAddr";
+            this.btnAddr.Size = new System.Drawing.Size(75, 36);
+            this.btnAddr.TabIndex = 2;
+            this.btnAddr.Text = "주소록";
+            this.btnAddr.UseVisualStyleBackColor = true;
+            this.btnAddr.Click += new System.EventHandler(this.btnAddr_Click);
             // 
             // txtMsgBox
             // 
@@ -74,14 +75,15 @@
             this.txtMsgBox.Text = "";
             this.txtMsgBox.TextChanged += new System.EventHandler(this.txtMsgBox_TextChanged);
             // 
-            // button2
+            // btnSend
             // 
-            this.button2.Location = new System.Drawing.Point(652, 17);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(95, 36);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "보내기";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSend.Location = new System.Drawing.Point(652, 17);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(95, 36);
+            this.btnSend.TabIndex = 4;
+            this.btnSend.Text = "보내기";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // label2
             // 
@@ -109,10 +111,10 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.labelTextLength);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnSend);
             this.Controls.Add(this.txtMsgBox);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnAddr);
+            this.Controls.Add(this.txtSendToWhom);
             this.Controls.Add(this.label1);
             this.Name = "MessageWriteForm";
             this.Text = "새 쪽지 쓰기";
@@ -124,11 +126,11 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddr;
         private System.Windows.Forms.RichTextBox txtMsgBox;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelTextLength;
+        public System.Windows.Forms.TextBox txtSendToWhom;
     }
 }

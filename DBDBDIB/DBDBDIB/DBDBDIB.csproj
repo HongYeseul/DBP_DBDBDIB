@@ -98,6 +98,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MessageAck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageAck.Designer.cs">
+      <DependentUpon>MessageAck.cs</DependentUpon>
+    </Compile>
     <Compile Include="MessageDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,12 +116,19 @@
     <Compile Include="MessageMainForm.Designer.cs">
       <DependentUpon>MessageMainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MessageViewMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageViewMember.Designer.cs">
+      <DependentUpon>MessageViewMember.cs</DependentUpon>
+    </Compile>
     <Compile Include="MessageWriteForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MessageWriteForm.Designer.cs">
       <DependentUpon>MessageWriteForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MysqlDataReader.cs" />
     <Compile Include="UserInfo.cs" />
     <Compile Include="DBManager.cs" />
     <Compile Include="LoginForm.cs">
@@ -153,11 +166,17 @@
     <EmbeddedResource Include="Mainform.resx">
       <DependentUpon>Mainform.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MessageAck.resx">
+      <DependentUpon>MessageAck.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MessageDetail.resx">
       <DependentUpon>MessageDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MessageMainForm.resx">
       <DependentUpon>MessageMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageViewMember.resx">
+      <DependentUpon>MessageViewMember.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MessageWriteForm.resx">
       <DependentUpon>MessageWriteForm.cs</DependentUpon>
