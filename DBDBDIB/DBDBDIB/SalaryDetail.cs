@@ -13,28 +13,42 @@ namespace DBDBDIB
 {
     public partial class SalaryDetail : Form
     {
-        public int basicpay = 10000;
+        private int basicpay = 10000;
         private int totalworktime_;
         public int ExtraHour_ { get; set; }
-        private Label[] labels;
-        private double[] rates;
-       
-        private double healthinsurance;
-        private double totalmoney;
+        private List<string> department_ = new List<string>(); //부서 목록
+        private Label[] labels_;
 
         public SalaryDetail()
         {
             InitializeComponent();
-            labels = new Label[] { labelNormal, labelExtra , labelPaymentAmount, labelNationalPension, labelHealthInsurance, labelLongtermCare, labelEmploymentInsurance, labelDeductionAmount, labelRealIncome };
+            labels_ = new Label[] { labelNormal, labelExtra , labelPaymentAmount, labelNationalPension, labelHealthInsurance, labelLongtermCare, labelEmploymentInsurance, labelDeductionAmount, labelRealIncome };
+            dateTimePickerYearMonth.CustomFormat = "yyyy년 MM월"; //년.월 형식을 timepicker에 지정
+            GetDepartment(); //부서를 가져오는 코드
+            comboBoxShowDepartment.SelectedIndex = -1; //선택된 인덱스 초기화
             initValue();
         }
         
-        public void initValue()
+        public void initValue() //label 값 초기화 해주는 코드
         {
-            foreach(Label l in labels)
+            foreach(Label l in labels_) //label 값 0으로 초기화
             {
-                l.Text = "";
+                l.Text = "0";
             }
+        }
+
+        public void GetDepartment()//부서를 가져오는 코드
+        {
+            string query = "SELECT * FROM 부서 WHERE valid = 1";
+            MySqlDataReader rdr = DBManager.GetInstance().select(query); //DB에서 값을 가져옴
+            comboBoxShowDepartment.Items.Clear();
+            while (rdr.Read())
+            {
+                string id = rdr["ID"].ToString();
+                department_.Add(id);
+                comboBoxShowDepartment.Items.Add(rdr["부서명"].ToString());
+            }
+            rdr.Close();
         }
         
         private void buttonInputExtra_Click(object sender, EventArgs e) //추가수당 입력 버튼 클릭시
@@ -44,17 +58,60 @@ namespace DBDBDIB
             dig.Show();
         }
 
-        void SalaryInputDialog_FormClosed(object sender, FormClosedEventArgs e)
+        void SalaryInputDialog_FormClosed(object sender, FormClosedEventArgs e) //추가수당 입력 dialog가 꺼졌을 때
         {
-            ChangeLabel();
+            ChangeLabel(); //업데이트 시킴.
+            //추가수당을 db에 업데이트 시킴.
+            int idx = listViewShowEmployee.FocusedItem.Index;
+            string employeeid = listViewShowEmployee.Items[idx].Text;
+            DateTime dt = dateTimePickerYearMonth.Value;
+            string date = string.Format("{0}-{1}", dt.Year, dt.Month);
+            string query = "UPDATE SalaryDetail SET extratime = " + ExtraHour_+ " WHERE employeeid = " + employeeid + " AND month = '" + date + "-01'";
+            DBManager.GetInstance().DBquery(query); //insert 실행
+
+        }
+
+        private void buttonGetEmployee_Click(object sender, EventArgs e) //불러오기 버튼 클릭시
+        {
+            initValue();
+            listViewShowEmployee.BeginUpdate(); //업데이트 시작
+            if (comboBoxShowDepartment.SelectedIndex == -1)
+            {
+                MessageBox.Show("부서가 선택되지 않았습니다.", "확인");
+                return;
+            }
+            listViewShowEmployee.Items.Clear(); //listview 초기화
+            int idx = comboBoxShowDepartment.SelectedIndex;
+            string query = "SELECT * FROM Employee WHERE department = " + department_[idx];
+            MySqlDataReader rdr = DBManager.GetInstance().select(query); //DB에서 값을 가져옴
+            while (rdr.Read())
+            {
+                ListViewItem items = new ListViewItem(rdr["identification"].ToString()); //사원 id 값을 가져옴.
+                items.SubItems.Add(rdr["name"].ToString()); //사원의 이름을 가져옴.
+                listViewShowEmployee.Items.Add(items); //listview에 더함
+            }
+            rdr.Close();
+            // 컬럼명과 컬럼사이즈 지정
+            listViewShowEmployee.Columns.Add("사원번호", 70, HorizontalAlignment.Left);
+            listViewShowEmployee.Columns.Add("사원이름", 70, HorizontalAlignment.Left);
+
+            listViewShowEmployee.EndUpdate(); //업데이트 종료
         }
 
         public void ChangeLabel()
         {
+            double healthinsurance;
+            double totalmoney;
             totalmoney = (Math.Truncate((totalworktime_ * basicpay) + (ExtraHour_ * basicpay * 1.5)));
             //지급내역서 총급여 label 지정
             labelNormal.Text = String.Format("{0:#,###}", (totalworktime_ * basicpay));
-            labelExtra.Text = String.Format("{0:#,###}", (Math.Truncate(ExtraHour_ * basicpay * 1.5)));
+            if(ExtraHour_ == 0)
+            {
+                labelExtra.Text = "0";
+            }else
+            {
+                labelExtra.Text = String.Format("{0:#,###}", (Math.Truncate(ExtraHour_ * basicpay * 1.5)));
+            }
             labelPaymentAmount.Text = String.Format("{0:#,###}", totalmoney);
 
             //지급내역서 공제내역 label 지정
@@ -73,34 +130,40 @@ namespace DBDBDIB
 
         private void buttonSelectEmployee_Click(object sender, EventArgs e)//확인버튼 클릭시
         {
+            initValue();
             int idx = listViewShowEmployee.FocusedItem.Index;
             string employeeid = listViewShowEmployee.Items[idx].Text;
-            string name = listViewShowEmployee.Items[idx].SubItems[1].Text;
-            
-            string query = "SELECT * FROM SalaryDetail WHERE id = " + employeeid;
+            DateTime dt = dateTimePickerYearMonth.Value;
+            string date = string.Format("{0}-{1}", dt.Year, dt.Month);
+
+            string query = "SELECT * FROM SalaryDetail WHERE employeeid = " + employeeid + " AND month = '" + date + "-01'";
             MySqlDataReader rdr = DBManager.GetInstance().select(query); //DB에서 값을 가져옴
-            while (rdr.Read())
+            if(rdr.Read())
             {
                 DateTime today = DateTime.Now.Date;
                 DateTime firstday = today.AddDays(1 - today.Day);
                 DateTime lastday = firstday.AddMonths(1).AddDays(-1);
+
                 string tmp = rdr["totalwork"].ToString(); //총근무 시간을 가져옴
-                if (rdr["totalwork"].ToString() == "")
-                    totalworktime_ = GetWorkingDays(firstday, lastday)*9;
+                if (rdr["totalwork"].ToString() == "") //추가기능 구현전 아무것도 입력되어 있지 않을 경우
+                    totalworktime_ = 207;
                 else
                     totalworktime_ = Int32.Parse(rdr["totalwork"].ToString());
-
                 tmp = rdr["extratime"].ToString(); //추가시간을 가져옴.
                 if (rdr["extratime"].ToString() != "")
                     ExtraHour_ = Int32.Parse(rdr["extratime"].ToString());
                 else
                     ExtraHour_ = 0;
+            }else {
+                query = "INSERT INTO SalaryDetail(employeeid, month) VALUES(" + employeeid + ", '" + date + "-01')";
+                DBManager.GetInstance().DBquery(query); //insert 실행
+                totalworktime_ = 207;
+                ExtraHour_ = 0;
             }
             ChangeLabel();
-
         }
 
-        int GetWorkingDays(DateTime startDate, DateTime endDate)   //평일수 구하기
+        int GetWorkingDays(DateTime startDate, DateTime endDate)   //평일수 구하기 - 아마 필요 없을듯..
         {
             DayOfWeek currDay = startDate.DayOfWeek;
             int WorkingDays = 0;
@@ -114,22 +177,9 @@ namespace DBDBDIB
             return WorkingDays;
         }
 
-        private void buttonGetEmployee_Click(object sender, EventArgs e) //불러오기 버튼 클릭시
+        private void listViewShowEmployee_SelectedIndexChanged(object sender, EventArgs e) //listview 선택된 사람이 다른것
         {
-            listViewShowEmployee.BeginUpdate(); //업데이트 시작
-            string query = "SELECT * FROM Employee";
-            MySqlDataReader rdr = DBManager.GetInstance().select(query); //DB에서 값을 가져옴
-            while (rdr.Read())
-            {
-                ListViewItem items = new ListViewItem(rdr["identification"].ToString()); //커피 이름을 가져옴.
-                items.SubItems.Add(rdr["name"].ToString()); //커피 가격을 가져옴
-                listViewShowEmployee.Items.Add(items); //listview에 더함
-            }
-            // 컬럼명과 컬럼사이즈 지정
-            listViewShowEmployee.Columns.Add("사원번호", 70, HorizontalAlignment.Left);
-            listViewShowEmployee.Columns.Add("사원이름", 70, HorizontalAlignment.Left);
-
-            listViewShowEmployee.EndUpdate(); //업데이트 종료
+            initValue();
         }
     }
 }
