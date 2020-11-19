@@ -12,6 +12,8 @@ namespace DBDBDIB
 {
     public partial class MessageWriteForm : Form
     {
+        UserInfo UserManager = UserInfo.Getinstance();
+        DBManager DBmanager = DBManager.GetInstance();
         public MessageWriteForm()
         {
             InitializeComponent();
@@ -37,6 +39,24 @@ namespace DBDBDIB
             // 유저 -> 다른 유저에게 보내기
             // 텍스트 박스에 받아온 데이터를 가지고 검색 후 Insert
 
+            string title = txtMsgTitle.Text.ToString();
+            string content = txtMsgBox.Text.ToString();
+
+            try
+            {
+                string query = String.Format("INSERT INTO 쪽지(보낸사람, 받는사람, 제목, 내용) " +
+                    "VALUES({0}, {1}, '{2}', '{3}')", UserManager.Id, txtSendToWhom.Text.ToString(), title, content);
+                DBmanager.DBquery(query);
+            }
+            catch
+            {
+                MessageBox.Show("정상적으로 발송되지 않았습니다.");
+                return;
+            }
+            MessageBox.Show("정상적으로 발송 되었습니다.");
+            txtSendToWhom.Text = "";
+            txtMsgTitle.Text = "";
+            txtMsgBox.Text = "";
         }
 
         private void btnAddr_Click(object sender, EventArgs e)

@@ -35,6 +35,8 @@
             this.btnSend = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.labelTextLength = new System.Windows.Forms.Label();
+            this.txtMsgTitle = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -68,9 +70,9 @@
             // txtMsgBox
             // 
             this.txtMsgBox.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtMsgBox.Location = new System.Drawing.Point(35, 94);
+            this.txtMsgBox.Location = new System.Drawing.Point(35, 113);
             this.txtMsgBox.Name = "txtMsgBox";
-            this.txtMsgBox.Size = new System.Drawing.Size(722, 313);
+            this.txtMsgBox.Size = new System.Drawing.Size(722, 294);
             this.txtMsgBox.TabIndex = 3;
             this.txtMsgBox.Text = "";
             this.txtMsgBox.TextChanged += new System.EventHandler(this.txtMsgBox_TextChanged);
@@ -104,11 +106,30 @@
             this.labelTextLength.Text = "0";
             this.labelTextLength.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // txtMsgTitle
+            // 
+            this.txtMsgTitle.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtMsgTitle.Location = new System.Drawing.Point(83, 80);
+            this.txtMsgTitle.Name = "txtMsgTitle";
+            this.txtMsgTitle.Size = new System.Drawing.Size(315, 27);
+            this.txtMsgTitle.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(45, 88);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 12);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "제목";
+            // 
             // MessageWriteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtMsgTitle);
             this.Controls.Add(this.labelTextLength);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnSend);
@@ -132,5 +153,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelTextLength;
         public System.Windows.Forms.TextBox txtSendToWhom;
+        private System.Windows.Forms.TextBox txtMsgTitle;
+        private System.Windows.Forms.Label label3;
     }
 }
