@@ -43,15 +43,21 @@
             // 
             // dgvattend
             // 
+            this.dgvattend.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvattend.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvattend.Location = new System.Drawing.Point(12, 118);
+            this.dgvattend.Location = new System.Drawing.Point(12, 134);
             this.dgvattend.Name = "dgvattend";
             this.dgvattend.RowTemplate.Height = 23;
-            this.dgvattend.Size = new System.Drawing.Size(582, 259);
+            this.dgvattend.Size = new System.Drawing.Size(883, 402);
             this.dgvattend.TabIndex = 0;
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox1.Controls.Add(this.bLookup);
             this.groupBox1.Controls.Add(this.label1);
@@ -61,16 +67,19 @@
             this.groupBox1.Controls.Add(this.bIn);
             this.groupBox1.Location = new System.Drawing.Point(12, 18);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(582, 83);
+            this.groupBox1.Size = new System.Drawing.Size(883, 106);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "근태관리";
             // 
             // bLookup
             // 
-            this.bLookup.Location = new System.Drawing.Point(498, 48);
+            this.bLookup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bLookup.Location = new System.Drawing.Point(714, 30);
             this.bLookup.Name = "bLookup";
-            this.bLookup.Size = new System.Drawing.Size(52, 23);
+            this.bLookup.Size = new System.Drawing.Size(107, 48);
             this.bLookup.TabIndex = 4;
             this.bLookup.Text = "조회";
             this.bLookup.UseVisualStyleBackColor = true;
@@ -78,8 +87,11 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(330, 55);
+            this.label1.Location = new System.Drawing.Point(473, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 3;
@@ -87,24 +99,33 @@
             // 
             // tbEmp
             // 
-            this.tbEmp.Location = new System.Drawing.Point(385, 49);
+            this.tbEmp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbEmp.Location = new System.Drawing.Point(533, 57);
             this.tbEmp.Name = "tbEmp";
-            this.tbEmp.Size = new System.Drawing.Size(107, 21);
+            this.tbEmp.Size = new System.Drawing.Size(175, 21);
             this.tbEmp.TabIndex = 2;
             // 
             // dtpToday
             // 
-            this.dtpToday.Location = new System.Drawing.Point(334, 24);
+            this.dtpToday.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpToday.Location = new System.Drawing.Point(533, 30);
             this.dtpToday.Name = "dtpToday";
-            this.dtpToday.Size = new System.Drawing.Size(215, 21);
+            this.dtpToday.Size = new System.Drawing.Size(175, 21);
             this.dtpToday.TabIndex = 1;
             this.dtpToday.ValueChanged += new System.EventHandler(this.dtpToday_ValueChanged);
             // 
             // bOut
             // 
-            this.bOut.Location = new System.Drawing.Point(168, 24);
+            this.bOut.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bOut.Location = new System.Drawing.Point(215, 24);
             this.bOut.Name = "bOut";
-            this.bOut.Size = new System.Drawing.Size(143, 45);
+            this.bOut.Size = new System.Drawing.Size(172, 64);
             this.bOut.TabIndex = 0;
             this.bOut.Text = "퇴근";
             this.bOut.UseVisualStyleBackColor = true;
@@ -112,9 +133,12 @@
             // 
             // bIn
             // 
-            this.bIn.Location = new System.Drawing.Point(19, 24);
+            this.bIn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bIn.Location = new System.Drawing.Point(28, 24);
             this.bIn.Name = "bIn";
-            this.bIn.Size = new System.Drawing.Size(143, 45);
+            this.bIn.Size = new System.Drawing.Size(172, 64);
             this.bIn.TabIndex = 0;
             this.bIn.Text = "출근";
             this.bIn.UseVisualStyleBackColor = true;
@@ -124,7 +148,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(606, 389);
+            this.ClientSize = new System.Drawing.Size(907, 553);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvattend);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

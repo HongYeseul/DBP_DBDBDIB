@@ -131,5 +131,6 @@ namespace DBDBDIB
         {
             getDGV(dgvDeptView, "ID AS 부서ID, 부서명, identification AS 부서장, name AS 사원이름", "부서 LEFT JOIN (SELECT * FROM erp_school.Employee WHERE valid=1) AS 사원 ON identification = 부서장", " WHERE ID>1 AND 부서.valid=1");
         }
+
     }
 }

@@ -30,6 +30,7 @@
         {
             this.dgvDeptView = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.bDeptLookUp = new System.Windows.Forms.Button();
             this.bDeptEnroll = new System.Windows.Forms.Button();
             this.tbInsertDeptManager = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.dgvEmpSearchView = new System.Windows.Forms.DataGridView();
             this.tbDeptfSearch = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.bDeptLookUp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeptView)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpSearchView)).BeginInit();
@@ -49,6 +49,9 @@
             // 
             // dgvDeptView
             // 
+            this.dgvDeptView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDeptView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvDeptView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDeptView.Location = new System.Drawing.Point(17, 20);
@@ -57,12 +60,15 @@
             this.dgvDeptView.RowHeadersWidth = 5;
             this.dgvDeptView.RowTemplate.Height = 23;
             this.dgvDeptView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDeptView.Size = new System.Drawing.Size(306, 396);
+            this.dgvDeptView.Size = new System.Drawing.Size(591, 521);
             this.dgvDeptView.TabIndex = 2;
             this.dgvDeptView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDeptView_CellContentClick);
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox1.Controls.Add(this.bDeptLookUp);
             this.groupBox1.Controls.Add(this.bDeptEnroll);
@@ -72,16 +78,26 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.bDeptEdit);
             this.groupBox1.Controls.Add(this.bDeptDelete);
-            this.groupBox1.Location = new System.Drawing.Point(334, 22);
+            this.groupBox1.Location = new System.Drawing.Point(614, 22);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(273, 162);
+            this.groupBox1.Size = new System.Drawing.Size(278, 176);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "부서 관리";
             // 
+            // bDeptLookUp
+            // 
+            this.bDeptLookUp.Location = new System.Drawing.Point(46, 123);
+            this.bDeptLookUp.Name = "bDeptLookUp";
+            this.bDeptLookUp.Size = new System.Drawing.Size(50, 24);
+            this.bDeptLookUp.TabIndex = 17;
+            this.bDeptLookUp.Text = "조회";
+            this.bDeptLookUp.UseVisualStyleBackColor = true;
+            this.bDeptLookUp.Click += new System.EventHandler(this.bDeptLookUp_Click);
+            // 
             // bDeptEnroll
             // 
-            this.bDeptEnroll.Location = new System.Drawing.Point(102, 119);
+            this.bDeptEnroll.Location = new System.Drawing.Point(102, 123);
             this.bDeptEnroll.Name = "bDeptEnroll";
             this.bDeptEnroll.Size = new System.Drawing.Size(50, 24);
             this.bDeptEnroll.TabIndex = 16;
@@ -91,9 +107,12 @@
             // 
             // tbInsertDeptManager
             // 
+            this.tbInsertDeptManager.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbInsertDeptManager.Location = new System.Drawing.Point(69, 76);
             this.tbInsertDeptManager.Name = "tbInsertDeptManager";
-            this.tbInsertDeptManager.Size = new System.Drawing.Size(166, 21);
+            this.tbInsertDeptManager.Size = new System.Drawing.Size(171, 21);
             this.tbInsertDeptManager.TabIndex = 14;
             // 
             // label1
@@ -107,9 +126,12 @@
             // 
             // tbInsertDeptName
             // 
+            this.tbInsertDeptName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbInsertDeptName.Location = new System.Drawing.Point(69, 41);
             this.tbInsertDeptName.Name = "tbInsertDeptName";
-            this.tbInsertDeptName.Size = new System.Drawing.Size(166, 21);
+            this.tbInsertDeptName.Size = new System.Drawing.Size(171, 21);
             this.tbInsertDeptName.TabIndex = 15;
             // 
             // label6
@@ -123,7 +145,7 @@
             // 
             // bDeptEdit
             // 
-            this.bDeptEdit.Location = new System.Drawing.Point(157, 119);
+            this.bDeptEdit.Location = new System.Drawing.Point(157, 123);
             this.bDeptEdit.Name = "bDeptEdit";
             this.bDeptEdit.Size = new System.Drawing.Size(50, 24);
             this.bDeptEdit.TabIndex = 9;
@@ -133,7 +155,7 @@
             // 
             // bDeptDelete
             // 
-            this.bDeptDelete.Location = new System.Drawing.Point(212, 119);
+            this.bDeptDelete.Location = new System.Drawing.Point(212, 123);
             this.bDeptDelete.Name = "bDeptDelete";
             this.bDeptDelete.Size = new System.Drawing.Size(50, 24);
             this.bDeptDelete.TabIndex = 11;
@@ -143,9 +165,12 @@
             // 
             // bDeptEmpSearch
             // 
-            this.bDeptEmpSearch.Location = new System.Drawing.Point(534, 196);
+            this.bDeptEmpSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bDeptEmpSearch.Location = new System.Drawing.Point(818, 208);
             this.bDeptEmpSearch.Name = "bDeptEmpSearch";
-            this.bDeptEmpSearch.Size = new System.Drawing.Size(73, 24);
+            this.bDeptEmpSearch.Size = new System.Drawing.Size(74, 34);
             this.bDeptEmpSearch.TabIndex = 10;
             this.bDeptEmpSearch.Text = "사원 조회";
             this.bDeptEmpSearch.UseVisualStyleBackColor = true;
@@ -153,46 +178,42 @@
             // 
             // dgvEmpSearchView
             // 
+            this.dgvEmpSearchView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEmpSearchView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpSearchView.Location = new System.Drawing.Point(334, 226);
+            this.dgvEmpSearchView.Location = new System.Drawing.Point(614, 248);
             this.dgvEmpSearchView.Name = "dgvEmpSearchView";
             this.dgvEmpSearchView.ReadOnly = true;
             this.dgvEmpSearchView.RowTemplate.Height = 23;
             this.dgvEmpSearchView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmpSearchView.Size = new System.Drawing.Size(273, 189);
+            this.dgvEmpSearchView.Size = new System.Drawing.Size(278, 292);
             this.dgvEmpSearchView.TabIndex = 2;
             // 
             // tbDeptfSearch
             // 
-            this.tbDeptfSearch.Location = new System.Drawing.Point(396, 198);
+            this.tbDeptfSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbDeptfSearch.Location = new System.Drawing.Point(671, 214);
             this.tbDeptfSearch.Name = "tbDeptfSearch";
-            this.tbDeptfSearch.Size = new System.Drawing.Size(130, 21);
+            this.tbDeptfSearch.Size = new System.Drawing.Size(141, 21);
             this.tbDeptfSearch.TabIndex = 15;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(335, 202);
+            this.label2.Location = new System.Drawing.Point(613, 219);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 12);
             this.label2.TabIndex = 12;
             this.label2.Text = "부서 번호";
             // 
-            // bDeptLookUp
-            // 
-            this.bDeptLookUp.Location = new System.Drawing.Point(46, 119);
-            this.bDeptLookUp.Name = "bDeptLookUp";
-            this.bDeptLookUp.Size = new System.Drawing.Size(50, 24);
-            this.bDeptLookUp.TabIndex = 17;
-            this.bDeptLookUp.Text = "조회";
-            this.bDeptLookUp.UseVisualStyleBackColor = true;
-            this.bDeptLookUp.Click += new System.EventHandler(this.bDeptLookUp_Click);
-            // 
             // Approval
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(622, 428);
+            this.ClientSize = new System.Drawing.Size(907, 553);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvEmpSearchView);
             this.Controls.Add(this.label2);
