@@ -21,7 +21,7 @@ namespace DBDBDIB
         private string currentdate = "";
         private string currenttime = "";
 
-        private string loginID = "5500012";
+        private string loginID = UserInfo.Getinstance().Id;
 
         private void initVariables()
         {
@@ -82,5 +82,7 @@ namespace DBDBDIB
         {
             dtpToday.CustomFormat = "yyyy-MM-dd";
         }
+
+
     }
 }
