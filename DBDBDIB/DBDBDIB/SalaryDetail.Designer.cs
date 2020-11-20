@@ -30,6 +30,8 @@
         {
             this.tabControlSalary = new System.Windows.Forms.TabControl();
             this.tabPageShowSalary = new System.Windows.Forms.TabPage();
+            this.label45 = new System.Windows.Forms.Label();
+            this.dateTimePickerYearMonth = new System.Windows.Forms.DateTimePicker();
             this.listViewShowEmployee = new System.Windows.Forms.ListView();
             this.label23 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
@@ -40,6 +42,9 @@
             this.labelDeductionAmount = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.labelLongtermCare = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -90,9 +95,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.labelLongtermCare = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
             this.tabControlSalary.SuspendLayout();
             this.tabPageShowSalary.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -114,6 +116,8 @@
             // 
             // tabPageShowSalary
             // 
+            this.tabPageShowSalary.Controls.Add(this.label45);
+            this.tabPageShowSalary.Controls.Add(this.dateTimePickerYearMonth);
             this.tabPageShowSalary.Controls.Add(this.listViewShowEmployee);
             this.tabPageShowSalary.Controls.Add(this.label23);
             this.tabPageShowSalary.Controls.Add(this.label29);
@@ -126,22 +130,40 @@
             this.tabPageShowSalary.Controls.Add(this.label1);
             this.tabPageShowSalary.Location = new System.Drawing.Point(4, 22);
             this.tabPageShowSalary.Name = "tabPageShowSalary";
-            this.tabPageShowSalary.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageShowSalary.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageShowSalary.Size = new System.Drawing.Size(888, 491);
             this.tabPageShowSalary.TabIndex = 0;
             this.tabPageShowSalary.Text = "급여 내역서 확인";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(20, 23);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(57, 12);
+            this.label45.TabIndex = 33;
+            this.label45.Text = "년월 선택";
+            // 
+            // dateTimePickerYearMonth
+            // 
+            this.dateTimePickerYearMonth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerYearMonth.Location = new System.Drawing.Point(17, 41);
+            this.dateTimePickerYearMonth.Name = "dateTimePickerYearMonth";
+            this.dateTimePickerYearMonth.Size = new System.Drawing.Size(121, 21);
+            this.dateTimePickerYearMonth.TabIndex = 32;
             // 
             // listViewShowEmployee
             // 
             this.listViewShowEmployee.FullRowSelect = true;
             this.listViewShowEmployee.HideSelection = false;
-            this.listViewShowEmployee.Location = new System.Drawing.Point(163, 56);
+            this.listViewShowEmployee.Location = new System.Drawing.Point(163, 89);
             this.listViewShowEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listViewShowEmployee.Name = "listViewShowEmployee";
-            this.listViewShowEmployee.Size = new System.Drawing.Size(149, 373);
+            this.listViewShowEmployee.Size = new System.Drawing.Size(149, 340);
             this.listViewShowEmployee.TabIndex = 31;
             this.listViewShowEmployee.UseCompatibleStateImageBehavior = false;
             this.listViewShowEmployee.View = System.Windows.Forms.View.Details;
+            this.listViewShowEmployee.SelectedIndexChanged += new System.EventHandler(this.listViewShowEmployee_SelectedIndexChanged);
             // 
             // label23
             // 
@@ -156,7 +178,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(51, 166);
+            this.label29.Location = new System.Drawing.Point(47, 199);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(57, 12);
             this.label29.TabIndex = 29;
@@ -165,7 +187,7 @@
             // comboBoxShowDepartment
             // 
             this.comboBoxShowDepartment.FormattingEnabled = true;
-            this.comboBoxShowDepartment.Location = new System.Drawing.Point(21, 193);
+            this.comboBoxShowDepartment.Location = new System.Drawing.Point(17, 226);
             this.comboBoxShowDepartment.Name = "comboBoxShowDepartment";
             this.comboBoxShowDepartment.Size = new System.Drawing.Size(121, 20);
             this.comboBoxShowDepartment.TabIndex = 28;
@@ -213,9 +235,9 @@
             this.labelDeductionAmount.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.labelDeductionAmount.Location = new System.Drawing.Point(287, 329);
             this.labelDeductionAmount.Name = "labelDeductionAmount";
-            this.labelDeductionAmount.Size = new System.Drawing.Size(58, 16);
+            this.labelDeductionAmount.Size = new System.Drawing.Size(16, 16);
             this.labelDeductionAmount.TabIndex = 23;
-            this.labelDeductionAmount.Text = "label24";
+            this.labelDeductionAmount.Text = "0";
             // 
             // label25
             // 
@@ -247,6 +269,33 @@
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "공제 내역";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(303, 90);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(17, 12);
+            this.label20.TabIndex = 28;
+            this.label20.Text = "원";
+            // 
+            // labelLongtermCare
+            // 
+            this.labelLongtermCare.AutoSize = true;
+            this.labelLongtermCare.Location = new System.Drawing.Point(184, 90);
+            this.labelLongtermCare.Name = "labelLongtermCare";
+            this.labelLongtermCare.Size = new System.Drawing.Size(11, 12);
+            this.labelLongtermCare.TabIndex = 27;
+            this.labelLongtermCare.Text = "0";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(13, 90);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(97, 12);
+            this.label22.TabIndex = 26;
+            this.label22.Text = "장기요양보험료 :";
             // 
             // label17
             // 
@@ -280,9 +329,9 @@
             this.labelEmploymentInsurance.AutoSize = true;
             this.labelEmploymentInsurance.Location = new System.Drawing.Point(184, 121);
             this.labelEmploymentInsurance.Name = "labelEmploymentInsurance";
-            this.labelEmploymentInsurance.Size = new System.Drawing.Size(44, 12);
+            this.labelEmploymentInsurance.Size = new System.Drawing.Size(11, 12);
             this.labelEmploymentInsurance.TabIndex = 17;
-            this.labelEmploymentInsurance.Text = "label18";
+            this.labelEmploymentInsurance.Text = "0";
             // 
             // label19
             // 
@@ -298,9 +347,9 @@
             this.labelHealthInsurance.AutoSize = true;
             this.labelHealthInsurance.Location = new System.Drawing.Point(184, 62);
             this.labelHealthInsurance.Name = "labelHealthInsurance";
-            this.labelHealthInsurance.Size = new System.Drawing.Size(44, 12);
+            this.labelHealthInsurance.Size = new System.Drawing.Size(11, 12);
             this.labelHealthInsurance.TabIndex = 14;
-            this.labelHealthInsurance.Text = "label15";
+            this.labelHealthInsurance.Text = "0";
             // 
             // label16
             // 
@@ -316,9 +365,9 @@
             this.labelNationalPension.AutoSize = true;
             this.labelNationalPension.Location = new System.Drawing.Point(184, 29);
             this.labelNationalPension.Name = "labelNationalPension";
-            this.labelNationalPension.Size = new System.Drawing.Size(44, 12);
+            this.labelNationalPension.Size = new System.Drawing.Size(11, 12);
             this.labelNationalPension.TabIndex = 11;
-            this.labelNationalPension.Text = "label12";
+            this.labelNationalPension.Text = "0";
             // 
             // label13
             // 
@@ -335,9 +384,9 @@
             this.labelPaymentAmount.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.labelPaymentAmount.Location = new System.Drawing.Point(293, 139);
             this.labelPaymentAmount.Name = "labelPaymentAmount";
-            this.labelPaymentAmount.Size = new System.Drawing.Size(49, 16);
+            this.labelPaymentAmount.Size = new System.Drawing.Size(16, 16);
             this.labelPaymentAmount.TabIndex = 8;
-            this.labelPaymentAmount.Text = "label9";
+            this.labelPaymentAmount.Text = "0";
             // 
             // label10
             // 
@@ -379,9 +428,9 @@
             this.labelExtra.AutoSize = true;
             this.labelExtra.Location = new System.Drawing.Point(184, 70);
             this.labelExtra.Name = "labelExtra";
-            this.labelExtra.Size = new System.Drawing.Size(38, 12);
+            this.labelExtra.Size = new System.Drawing.Size(11, 12);
             this.labelExtra.TabIndex = 5;
-            this.labelExtra.Text = "label6";
+            this.labelExtra.Text = "0";
             // 
             // label7
             // 
@@ -406,9 +455,9 @@
             this.labelNormal.AutoSize = true;
             this.labelNormal.Location = new System.Drawing.Point(184, 33);
             this.labelNormal.Name = "labelNormal";
-            this.labelNormal.Size = new System.Drawing.Size(38, 12);
+            this.labelNormal.Size = new System.Drawing.Size(11, 12);
             this.labelNormal.TabIndex = 2;
-            this.labelNormal.Text = "label3";
+            this.labelNormal.Text = "0";
             // 
             // label2
             // 
@@ -435,9 +484,9 @@
             this.labelRealIncome.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.labelRealIncome.Location = new System.Drawing.Point(688, 413);
             this.labelRealIncome.Name = "labelRealIncome";
-            this.labelRealIncome.Size = new System.Drawing.Size(69, 21);
+            this.labelRealIncome.Size = new System.Drawing.Size(21, 21);
             this.labelRealIncome.TabIndex = 26;
-            this.labelRealIncome.Text = "label27";
+            this.labelRealIncome.Text = "0";
             // 
             // label28
             // 
@@ -451,7 +500,7 @@
             // 
             // buttonSelectEmployee
             // 
-            this.buttonSelectEmployee.Location = new System.Drawing.Point(325, 197);
+            this.buttonSelectEmployee.Location = new System.Drawing.Point(326, 211);
             this.buttonSelectEmployee.Name = "buttonSelectEmployee";
             this.buttonSelectEmployee.Size = new System.Drawing.Size(75, 49);
             this.buttonSelectEmployee.TabIndex = 3;
@@ -461,7 +510,7 @@
             // 
             // buttonGetEmployee
             // 
-            this.buttonGetEmployee.Location = new System.Drawing.Point(43, 228);
+            this.buttonGetEmployee.Location = new System.Drawing.Point(39, 261);
             this.buttonGetEmployee.Name = "buttonGetEmployee";
             this.buttonGetEmployee.Size = new System.Drawing.Size(75, 36);
             this.buttonGetEmployee.TabIndex = 2;
@@ -472,7 +521,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(160, 31);
+            this.label1.Location = new System.Drawing.Point(161, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 12);
             this.label1.TabIndex = 0;
@@ -484,7 +533,7 @@
             this.tabPageShowTax.Font = new System.Drawing.Font("굴림", 10F);
             this.tabPageShowTax.Location = new System.Drawing.Point(4, 22);
             this.tabPageShowTax.Name = "tabPageShowTax";
-            this.tabPageShowTax.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageShowTax.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageShowTax.Size = new System.Drawing.Size(888, 491);
             this.tabPageShowTax.TabIndex = 1;
             this.tabPageShowTax.Text = "세율 확인";
@@ -492,6 +541,7 @@
             // tableLayoutPanelTaxRate
             // 
             this.tableLayoutPanelTaxRate.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tableLayoutPanelTaxRate.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanelTaxRate.ColumnCount = 3;
             this.tableLayoutPanelTaxRate.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55F));
             this.tableLayoutPanelTaxRate.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
@@ -536,8 +586,8 @@
             // 
             // label44
             // 
-            this.label44.Location = new System.Drawing.Point(481, 313);
-            this.label44.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label44.Location = new System.Drawing.Point(480, 314);
+            this.label44.Margin = new System.Windows.Forms.Padding(5);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(194, 35);
             this.label44.TabIndex = 23;
@@ -546,8 +596,8 @@
             // 
             // label43
             // 
-            this.label43.Location = new System.Drawing.Point(379, 313);
-            this.label43.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label43.Location = new System.Drawing.Point(378, 314);
+            this.label43.Margin = new System.Windows.Forms.Padding(5);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(91, 35);
             this.label43.TabIndex = 22;
@@ -556,251 +606,227 @@
             // 
             // label42
             // 
-            this.label42.Location = new System.Drawing.Point(5, 313);
-            this.label42.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label42.Location = new System.Drawing.Point(6, 314);
+            this.label42.Margin = new System.Windows.Forms.Padding(5);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(363, 35);
+            this.label42.Size = new System.Drawing.Size(361, 35);
             this.label42.TabIndex = 21;
             this.label42.Text = "5억원 초과";
             this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label41
             // 
-            this.label41.Location = new System.Drawing.Point(481, 269);
-            this.label41.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label41.Location = new System.Drawing.Point(480, 270);
+            this.label41.Margin = new System.Windows.Forms.Padding(5);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(194, 34);
+            this.label41.Size = new System.Drawing.Size(194, 33);
             this.label41.TabIndex = 20;
             this.label41.Text = "2,540만원";
             this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label40
             // 
-            this.label40.Location = new System.Drawing.Point(379, 269);
-            this.label40.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label40.Location = new System.Drawing.Point(378, 270);
+            this.label40.Margin = new System.Windows.Forms.Padding(5);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(91, 34);
+            this.label40.Size = new System.Drawing.Size(91, 33);
             this.label40.TabIndex = 19;
             this.label40.Text = "40%";
             this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label39
             // 
-            this.label39.Location = new System.Drawing.Point(5, 269);
-            this.label39.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label39.Location = new System.Drawing.Point(6, 270);
+            this.label39.Margin = new System.Windows.Forms.Padding(5);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(363, 34);
+            this.label39.Size = new System.Drawing.Size(361, 33);
             this.label39.TabIndex = 18;
             this.label39.Text = "3억원 초과 5억원 이하";
             this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label38
             // 
-            this.label38.Location = new System.Drawing.Point(481, 225);
-            this.label38.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label38.Location = new System.Drawing.Point(480, 226);
+            this.label38.Margin = new System.Windows.Forms.Padding(5);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(194, 34);
+            this.label38.Size = new System.Drawing.Size(194, 33);
             this.label38.TabIndex = 17;
             this.label38.Text = "1,940만원";
             this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label37
             // 
-            this.label37.Location = new System.Drawing.Point(379, 225);
-            this.label37.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label37.Location = new System.Drawing.Point(378, 226);
+            this.label37.Margin = new System.Windows.Forms.Padding(5);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(91, 34);
+            this.label37.Size = new System.Drawing.Size(91, 33);
             this.label37.TabIndex = 16;
             this.label37.Text = "38%";
             this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label36
             // 
-            this.label36.Location = new System.Drawing.Point(5, 225);
-            this.label36.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label36.Location = new System.Drawing.Point(6, 226);
+            this.label36.Margin = new System.Windows.Forms.Padding(5);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(363, 34);
+            this.label36.Size = new System.Drawing.Size(361, 33);
             this.label36.TabIndex = 15;
             this.label36.Text = "1억 5천만원 초과 3억원 이하";
             this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label35
             // 
-            this.label35.Location = new System.Drawing.Point(481, 181);
-            this.label35.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label35.Location = new System.Drawing.Point(480, 182);
+            this.label35.Margin = new System.Windows.Forms.Padding(5);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(194, 34);
+            this.label35.Size = new System.Drawing.Size(194, 33);
             this.label35.TabIndex = 14;
             this.label35.Text = "1,490만원";
             this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label34
             // 
-            this.label34.Location = new System.Drawing.Point(379, 181);
-            this.label34.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label34.Location = new System.Drawing.Point(378, 182);
+            this.label34.Margin = new System.Windows.Forms.Padding(5);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(91, 34);
+            this.label34.Size = new System.Drawing.Size(91, 33);
             this.label34.TabIndex = 13;
             this.label34.Text = "35%";
             this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label33
             // 
-            this.label33.Location = new System.Drawing.Point(5, 181);
-            this.label33.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label33.Location = new System.Drawing.Point(6, 182);
+            this.label33.Margin = new System.Windows.Forms.Padding(5);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(363, 34);
+            this.label33.Size = new System.Drawing.Size(361, 33);
             this.label33.TabIndex = 12;
             this.label33.Text = "8,800만원 초과 1억 5천만원 이하";
             this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label32
             // 
-            this.label32.Location = new System.Drawing.Point(481, 137);
-            this.label32.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label32.Location = new System.Drawing.Point(480, 138);
+            this.label32.Margin = new System.Windows.Forms.Padding(5);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(194, 34);
+            this.label32.Size = new System.Drawing.Size(194, 33);
             this.label32.TabIndex = 11;
             this.label32.Text = "522만원";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label31
             // 
-            this.label31.Location = new System.Drawing.Point(379, 137);
-            this.label31.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label31.Location = new System.Drawing.Point(378, 138);
+            this.label31.Margin = new System.Windows.Forms.Padding(5);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(91, 34);
+            this.label31.Size = new System.Drawing.Size(91, 33);
             this.label31.TabIndex = 10;
             this.label31.Text = "24%";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label27
             // 
-            this.label27.Location = new System.Drawing.Point(5, 137);
-            this.label27.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label27.Location = new System.Drawing.Point(6, 138);
+            this.label27.Margin = new System.Windows.Forms.Padding(5);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(363, 34);
+            this.label27.Size = new System.Drawing.Size(361, 33);
             this.label27.TabIndex = 9;
             this.label27.Text = "4,600만원 초과 8,800만원 이하";
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label26
             // 
-            this.label26.Location = new System.Drawing.Point(481, 93);
-            this.label26.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label26.Location = new System.Drawing.Point(480, 94);
+            this.label26.Margin = new System.Windows.Forms.Padding(5);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(194, 34);
+            this.label26.Size = new System.Drawing.Size(194, 33);
             this.label26.TabIndex = 8;
             this.label26.Text = "108만원";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label24
             // 
-            this.label24.Location = new System.Drawing.Point(379, 93);
-            this.label24.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label24.Location = new System.Drawing.Point(378, 94);
+            this.label24.Margin = new System.Windows.Forms.Padding(5);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(91, 34);
+            this.label24.Size = new System.Drawing.Size(91, 33);
             this.label24.TabIndex = 7;
             this.label24.Text = "15%";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label21
             // 
-            this.label21.Location = new System.Drawing.Point(5, 93);
-            this.label21.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label21.Location = new System.Drawing.Point(6, 94);
+            this.label21.Margin = new System.Windows.Forms.Padding(5);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(363, 34);
+            this.label21.Size = new System.Drawing.Size(361, 33);
             this.label21.TabIndex = 6;
             this.label21.Text = "1,200만원 초과 4,600만원 이하";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label15
             // 
-            this.label15.Location = new System.Drawing.Point(379, 49);
-            this.label15.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label15.Location = new System.Drawing.Point(378, 50);
+            this.label15.Margin = new System.Windows.Forms.Padding(5);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(91, 34);
+            this.label15.Size = new System.Drawing.Size(91, 33);
             this.label15.TabIndex = 4;
             this.label15.Text = "6%";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label18
             // 
-            this.label18.Location = new System.Drawing.Point(481, 49);
-            this.label18.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label18.Location = new System.Drawing.Point(480, 50);
+            this.label18.Margin = new System.Windows.Forms.Padding(5);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(194, 34);
+            this.label18.Size = new System.Drawing.Size(194, 33);
             this.label18.TabIndex = 5;
             this.label18.Text = "해당 없음";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label12
             // 
-            this.label12.Location = new System.Drawing.Point(5, 49);
-            this.label12.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label12.Location = new System.Drawing.Point(6, 50);
+            this.label12.Margin = new System.Windows.Forms.Padding(5);
             this.label12.Name = "label12";
             this.label12.Padding = new System.Windows.Forms.Padding(1);
-            this.label12.Size = new System.Drawing.Size(363, 34);
+            this.label12.Size = new System.Drawing.Size(361, 33);
             this.label12.TabIndex = 3;
             this.label12.Text = "1,200만원 이하";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
-            this.label6.Location = new System.Drawing.Point(379, 5);
-            this.label6.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label6.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label6.Location = new System.Drawing.Point(378, 6);
+            this.label6.Margin = new System.Windows.Forms.Padding(5);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 34);
+            this.label6.Size = new System.Drawing.Size(91, 33);
             this.label6.TabIndex = 1;
             this.label6.Text = "세율";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label9
             // 
-            this.label9.Location = new System.Drawing.Point(481, 5);
-            this.label9.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label9.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label9.Location = new System.Drawing.Point(480, 6);
+            this.label9.Margin = new System.Windows.Forms.Padding(5);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(194, 34);
+            this.label9.Size = new System.Drawing.Size(194, 33);
             this.label9.TabIndex = 2;
             this.label9.Text = "누진 공제";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(5, 5);
-            this.label3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label3.Location = new System.Drawing.Point(6, 6);
+            this.label3.Margin = new System.Windows.Forms.Padding(5);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(363, 34);
+            this.label3.Size = new System.Drawing.Size(361, 33);
             this.label3.TabIndex = 0;
             this.label3.Text = "과세표준";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(303, 90);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(17, 12);
-            this.label20.TabIndex = 28;
-            this.label20.Text = "원";
-            // 
-            // labelLongtermCare
-            // 
-            this.labelLongtermCare.AutoSize = true;
-            this.labelLongtermCare.Location = new System.Drawing.Point(184, 90);
-            this.labelLongtermCare.Name = "labelLongtermCare";
-            this.labelLongtermCare.Size = new System.Drawing.Size(44, 12);
-            this.labelLongtermCare.TabIndex = 27;
-            this.labelLongtermCare.Text = "label21";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(13, 90);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(97, 12);
-            this.label22.TabIndex = 26;
-            this.label22.Text = "장기요양보험료 :";
             // 
             // SalaryDetail
             // 
@@ -893,5 +919,7 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label labelLongtermCare;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.DateTimePicker dateTimePickerYearMonth;
     }
 }
