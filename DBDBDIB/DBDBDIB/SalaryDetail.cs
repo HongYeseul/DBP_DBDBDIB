@@ -41,6 +41,11 @@ namespace DBDBDIB
         #region 이벤트 리스너
         private void buttonInputExtra_Click(object sender, EventArgs e) //추가수당 입력 버튼 클릭시
         {
+            if (listViewShowEmployee.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("사원을 선택해주세요", "확인");
+                return;
+            }
             SalaryInputDialog dig = new SalaryInputDialog(this);
             dig.FormClosed += new FormClosedEventHandler(SalaryInputDialog_FormClosed);
             dig.Show();
@@ -108,6 +113,7 @@ namespace DBDBDIB
             if (comboBoxShowDepartment.SelectedIndex == -1)
             {
                 MessageBox.Show("부서가 선택되지 않았습니다.", "확인");
+                listViewShowEmployee.EndUpdate(); //업데이트 종료
                 return;
             }
             listViewShowEmployee.Items.Clear(); //listview 초기화
@@ -160,6 +166,11 @@ namespace DBDBDIB
         {
             DateTime dt = dateTimePickerYearMonth.Value;
             string date = string.Format("{0}-{1}", dt.Year, dt.Month);
+            if(listViewShowEmployee.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("사원을 선택해주세요", "확인");
+                return;
+            }
             int idx = listViewShowEmployee.FocusedItem.Index;
             string employeeid = listViewShowEmployee.Items[idx].Text;
             string query = "select empID,sum(hour(daytime))as h, sum(minute(daytime))as m, sum(second(daytime))as s from(select empID,date,subtime(empOut, empIn) as daytime from Attendance) as tmp where empID ="
