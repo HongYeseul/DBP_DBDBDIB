@@ -32,7 +32,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.buttonForPaymentReg = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.buttonTodayWork = new System.Windows.Forms.Button();
@@ -72,11 +72,11 @@
             this.panel6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panel6.Controls.Add(this.button9);
             this.panel6.Controls.Add(this.button8);
-            this.panel6.Controls.Add(this.button7);
+            this.panel6.Controls.Add(this.buttonForPaymentReg);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 369);
+            this.panel6.Location = new System.Drawing.Point(0, 318);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(175, 100);
+            this.panel6.Size = new System.Drawing.Size(175, 76);
             this.panel6.TabIndex = 0;
             // 
             // button9
@@ -99,21 +99,21 @@
             this.button8.Text = "나의 결재 리스트";
             this.button8.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // buttonForPaymentReg
             // 
-            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button7.Location = new System.Drawing.Point(0, 0);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(175, 24);
-            this.button7.TabIndex = 0;
-            this.button7.Text = "결재등록";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.buttonForPaymentReg.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonForPaymentReg.Location = new System.Drawing.Point(0, 0);
+            this.buttonForPaymentReg.Name = "buttonForPaymentReg";
+            this.buttonForPaymentReg.Size = new System.Drawing.Size(175, 24);
+            this.buttonForPaymentReg.TabIndex = 0;
+            this.buttonForPaymentReg.Text = "결재등록";
+            this.buttonForPaymentReg.UseVisualStyleBackColor = true;
+            this.buttonForPaymentReg.Click += new System.EventHandler(this.buttonForPaymentReg_Click);
             // 
             // button6
             // 
             this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.Location = new System.Drawing.Point(0, 346);
+            this.button6.Location = new System.Drawing.Point(0, 295);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(175, 23);
             this.button6.TabIndex = 0;
@@ -126,9 +126,9 @@
             this.panel4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panel4.Controls.Add(this.buttonTodayWork);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 246);
+            this.panel4.Location = new System.Drawing.Point(0, 216);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(175, 100);
+            this.panel4.Size = new System.Drawing.Size(175, 79);
             this.panel4.TabIndex = 6;
             // 
             // buttonTodayWork
@@ -144,7 +144,7 @@
             // button5
             // 
             this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.Location = new System.Drawing.Point(0, 223);
+            this.button5.Location = new System.Drawing.Point(0, 193);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(175, 23);
             this.button5.TabIndex = 5;
@@ -161,7 +161,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 123);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(175, 100);
+            this.panel3.Size = new System.Drawing.Size(175, 70);
             this.panel3.TabIndex = 4;
             // 
             // button4
@@ -261,7 +261,7 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button buttonForPaymentReg;
         private System.Windows.Forms.Button button6;
     }
 }

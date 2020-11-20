@@ -102,7 +102,7 @@ namespace DBDBDIB
             showSubMenu(panel6);
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void buttonForPaymentReg_Click(object sender, EventArgs e)
         {
             showChildForm(new Payment_Registration1());
         }
