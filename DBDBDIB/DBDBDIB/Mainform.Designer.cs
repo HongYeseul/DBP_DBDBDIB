@@ -44,6 +44,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.Button10 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -88,6 +89,7 @@
             this.button9.TabIndex = 0;
             this.button9.Text = "결재 관리";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button8
             // 
@@ -125,6 +127,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel4.Controls.Add(this.Button10);
             this.panel4.Controls.Add(this.buttonTodayWork);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 246);
@@ -227,6 +230,16 @@
             this.panel5.Size = new System.Drawing.Size(907, 553);
             this.panel5.TabIndex = 1;
             // 
+            // Button10
+            // 
+            this.Button10.Location = new System.Drawing.Point(0, 23);
+            this.Button10.Name = "Button10";
+            this.Button10.Size = new System.Drawing.Size(175, 23);
+            this.Button10.TabIndex = 1;
+            this.Button10.Text = "업무마스터";
+            this.Button10.UseVisualStyleBackColor = true;
+            this.Button10.Click += new System.EventHandler(this.Button10_Click);
+            // 
             // Mainform
             // 
             this.ClientSize = new System.Drawing.Size(1082, 553);
@@ -264,6 +277,7 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button Button10;
     }
 }
 
