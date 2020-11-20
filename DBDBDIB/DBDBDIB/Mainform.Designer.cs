@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnMessage = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -46,7 +47,6 @@
             this.buttonHR = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.btnMessage = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -71,6 +71,17 @@
             this.panel1.Size = new System.Drawing.Size(175, 553);
             this.panel1.TabIndex = 0;
             // 
+            // btnMessage
+            // 
+            this.btnMessage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMessage.Location = new System.Drawing.Point(0, 394);
+            this.btnMessage.Name = "btnMessage";
+            this.btnMessage.Size = new System.Drawing.Size(175, 23);
+            this.btnMessage.TabIndex = 7;
+            this.btnMessage.Text = "쪽지";
+            this.btnMessage.UseVisualStyleBackColor = true;
+            this.btnMessage.Click += new System.EventHandler(this.btnMessage_Click);
+            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -80,7 +91,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 318);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(175, 76);
+            this.panel6.Size = new System.Drawing.Size(175, 100);
             this.panel6.TabIndex = 0;
             // 
             // button9
@@ -179,13 +190,13 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 123);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(175, 70);
+            this.panel3.Size = new System.Drawing.Size(175, 120);
             this.panel3.TabIndex = 4;
             // 
             // buttonSalary
             // 
             this.buttonSalary.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonSalary.Location = new System.Drawing.Point(0, 69);
+            this.buttonSalary.Location = new System.Drawing.Point(0, 70);
             this.buttonSalary.Name = "buttonSalary";
             this.buttonSalary.Size = new System.Drawing.Size(175, 23);
             this.buttonSalary.TabIndex = 3;
@@ -198,7 +209,7 @@
             this.buttonAtt.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonAtt.Location = new System.Drawing.Point(0, 46);
             this.buttonAtt.Name = "buttonAtt";
-            this.buttonAtt.Size = new System.Drawing.Size(175, 23);
+            this.buttonAtt.Size = new System.Drawing.Size(175, 24);
             this.buttonAtt.TabIndex = 2;
             this.buttonAtt.Text = "근태관리";
             this.buttonAtt.UseVisualStyleBackColor = true;
@@ -254,17 +265,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(907, 553);
             this.panel5.TabIndex = 1;
-            // 
-            // btnMessage
-            // 
-            this.btnMessage.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMessage.Location = new System.Drawing.Point(0, 469);
-            this.btnMessage.Name = "btnMessage";
-            this.btnMessage.Size = new System.Drawing.Size(175, 23);
-            this.btnMessage.TabIndex = 7;
-            this.btnMessage.Text = "쪽지";
-            this.btnMessage.UseVisualStyleBackColor = true;
-            this.btnMessage.Click += new System.EventHandler(this.btnMessage_Click);
             // 
             // Mainform
             // 
