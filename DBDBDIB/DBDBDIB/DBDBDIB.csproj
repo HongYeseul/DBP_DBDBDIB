@@ -67,6 +67,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Management" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
@@ -82,6 +83,7 @@
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -99,7 +101,49 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
     <Compile Include="GridViewManager.cs" />
+    <Compile Include="MessageAck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageAck.Designer.cs">
+      <DependentUpon>MessageAck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageDetail.Designer.cs">
+      <DependentUpon>MessageDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageMainForm.Designer.cs">
+      <DependentUpon>MessageMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageViewMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageViewMember.Designer.cs">
+      <DependentUpon>MessageViewMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageWriteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageWriteForm.Designer.cs">
+      <DependentUpon>MessageWriteForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TodayWork.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +177,7 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="HRInfo.cs" />
     <Compile Include="Mainform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +196,12 @@
     <Compile Include="Approval.Designer.cs">
       <DependentUpon>Approval.cs</DependentUpon>
     </Compile>
+    <Compile Include="Post.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Post.Designer.cs">
+      <DependentUpon>Post.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SalaryDetail.cs">
@@ -165,6 +216,12 @@
     <Compile Include="SalaryInputDialog.Designer.cs">
       <DependentUpon>SalaryInputDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Attend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Attend.Designer.cs">
+      <DependentUpon>Attend.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Approval.resx">
       <DependentUpon>Approval.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,14 +231,35 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Attend.resx">
+      <DependentUpon>Attend.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mainform.resx">
       <DependentUpon>Mainform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageAck.resx">
+      <DependentUpon>MessageAck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageDetail.resx">
+      <DependentUpon>MessageDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageMainForm.resx">
+      <DependentUpon>MessageMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageViewMember.resx">
+      <DependentUpon>MessageViewMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageWriteForm.resx">
+      <DependentUpon>MessageWriteForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Payment_Registration1.resx">
       <DependentUpon>Payment_Registration1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Personnel.resx">
       <DependentUpon>Personnel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Post.resx">
+      <DependentUpon>Post.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -195,6 +273,9 @@
     </Compile>
     <EmbeddedResource Include="SalaryDetail.resx">
       <DependentUpon>SalaryDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TodayWork.resx">
+      <DependentUpon>TodayWork.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TodayWorkSaveChange.resx">
       <DependentUpon>TodayWorkSaveChange.cs</DependentUpon>
@@ -218,6 +299,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\rounded-rectangle.png" />
+    <Content Include="Resources\search.png" />
+    <Content Include="Resources\stop.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
