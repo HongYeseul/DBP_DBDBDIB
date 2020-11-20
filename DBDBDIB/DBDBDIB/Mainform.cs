@@ -44,24 +44,24 @@ namespace DBDBDIB
 
         }
 
-        private void button1_Click(object sender, EventArgs e) //인사 버튼
+        private void buttonHR_Click(object sender, EventArgs e) //인사 버튼
         {
             showSubMenu(panel3); //인사 하위 메뉴 보임 숨김
         }
 
-        private void button2_Click(object sender, EventArgs e) //인사>사원등록 버튼
+        private void buttonEmp_Click(object sender, EventArgs e) //인사>사원등록 버튼
         {
             showChildForm(new Personnel());
         }
 
-        private void button3_Click(object sender, EventArgs e)//인사>부서/사원 관리 버튼
+        private void buttonDept_Click(object sender, EventArgs e)//인사>부서/사원 관리 버튼
         {
             showChildForm(new Approval());
         }
 
-        private void button4_Click(object sender, EventArgs e)//인사>급여내역서 버튼
+        private void buttonAtt_Click(object sender, EventArgs e)//인사>급여내역서 버튼
         {
-
+            showChildForm(new Attend());
         }
 
         private void button5_Click(object sender, EventArgs e)//업무 버튼
