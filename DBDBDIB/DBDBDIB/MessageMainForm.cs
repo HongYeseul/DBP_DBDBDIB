@@ -38,7 +38,6 @@ namespace DBDBDIB
             ls.Clear();
             listBox1.Items.Add(String.Format(msgDetails, "읽음유무", "보낸사람", "제목"));
 
-            UserManager.Id = "5500000"; // 나중에 지워야함!!!!!!!!
             string query = "SELECT * FROM 쪽지 join Employee on 쪽지.보낸사람 = Employee.identification WHERE 받는사람 = " + UserManager.Id;
             MySqlDataReader rdr = DBmanager.select(query);
             while (rdr.Read())
