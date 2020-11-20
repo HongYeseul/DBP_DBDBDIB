@@ -126,6 +126,9 @@ namespace DBDBDIB
             showChildForm(new ApprovalListForm());
         }
 
-
+        private void btnMessage_Click(object sender, EventArgs e)
+        {
+            showChildForm(new MessageMainForm());
+        }
     }
 }

@@ -39,13 +39,14 @@
             this.buttonTodayWork = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.buttonSalary = new System.Windows.Forms.Button();
             this.buttonAtt = new System.Windows.Forms.Button();
             this.buttonDept = new System.Windows.Forms.Button();
             this.buttonEmp = new System.Windows.Forms.Button();
             this.buttonHR = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.buttonSalary = new System.Windows.Forms.Button();
+            this.btnMessage = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -56,6 +57,7 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.btnMessage);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.panel4);
@@ -180,6 +182,17 @@
             this.panel3.Size = new System.Drawing.Size(175, 100);
             this.panel3.TabIndex = 4;
             // 
+            // buttonSalary
+            // 
+            this.buttonSalary.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonSalary.Location = new System.Drawing.Point(0, 69);
+            this.buttonSalary.Name = "buttonSalary";
+            this.buttonSalary.Size = new System.Drawing.Size(175, 23);
+            this.buttonSalary.TabIndex = 3;
+            this.buttonSalary.Text = "급여내역서";
+            this.buttonSalary.UseVisualStyleBackColor = true;
+            this.buttonSalary.Click += new System.EventHandler(this.buttonSalary_Click);
+            // 
             // buttonAtt
             // 
             this.buttonAtt.Dock = System.Windows.Forms.DockStyle.Top;
@@ -242,16 +255,16 @@
             this.panel5.Size = new System.Drawing.Size(907, 553);
             this.panel5.TabIndex = 1;
             // 
-            // buttonSalary
+            // btnMessage
             // 
-            this.buttonSalary.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonSalary.Location = new System.Drawing.Point(0, 69);
-            this.buttonSalary.Name = "buttonSalary";
-            this.buttonSalary.Size = new System.Drawing.Size(175, 23);
-            this.buttonSalary.TabIndex = 3;
-            this.buttonSalary.Text = "급여내역서";
-            this.buttonSalary.UseVisualStyleBackColor = true;
-            this.buttonSalary.Click += new System.EventHandler(this.buttonSalary_Click);
+            this.btnMessage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMessage.Location = new System.Drawing.Point(0, 469);
+            this.btnMessage.Name = "btnMessage";
+            this.btnMessage.Size = new System.Drawing.Size(175, 23);
+            this.btnMessage.TabIndex = 7;
+            this.btnMessage.Text = "쪽지";
+            this.btnMessage.UseVisualStyleBackColor = true;
+            this.btnMessage.Click += new System.EventHandler(this.btnMessage_Click);
             // 
             // Mainform
             // 
@@ -292,6 +305,7 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button Button10;
         private System.Windows.Forms.Button buttonSalary;
+        private System.Windows.Forms.Button btnMessage;
     }
 }
 

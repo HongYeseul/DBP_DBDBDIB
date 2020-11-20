@@ -36,22 +36,42 @@ namespace DBDBDIB
                 MySqlCommand cmd = new MySqlCommand(query, conn);
 
                 MySqlDataReader rdr = cmd.ExecuteReader();
-
                 rdr.Read();
-                Id = rdr["identification"].ToString();
-                Name = rdr["name"].ToString();
-                PhoneNum = rdr["phoneNum"].ToString();
-                Position = rdr["position"].ToString();
-                Department = rdr["department"].ToString();
-                BirthDay = rdr["birthDay"].ToString();
-                Gender = rdr["gender"].ToString();
-                Email = rdr["email"].ToString();
-                loginON = true;
+
+
+                try
+                {
+                    Console.WriteLine(rdr["password"].ToString());
+                    if (rdr["password"].ToString() == pw)
+                    {
+
+                        Id = rdr["identification"].ToString();
+                        Name = rdr["name"].ToString();
+                        PhoneNum = rdr["phoneNum"].ToString();
+                        Position = rdr["position"].ToString();
+                        Department = rdr["department"].ToString();
+                        BirthDay = rdr["birthDay"].ToString();
+                        Gender = rdr["gender"].ToString();
+                        Email = rdr["email"].ToString();
+                        loginON = true;
+
+                        MessageBox.Show(Name + "님 로그인 되셨습니다.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("로그인 정보를 다시 확인 해 주세요.");
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("로그인 정보가 잘못되었습니다.");
+                }
+
+
                 rdr.Close();
 
-                MessageBox.Show(Name + "님 로그인 되셨습니다.");
 
-                
+
                 cmd.ExecuteNonQuery();
             }
         }
