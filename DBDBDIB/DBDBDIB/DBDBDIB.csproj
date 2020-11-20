@@ -196,6 +196,9 @@
     <EmbeddedResource Include="SalaryDetail.resx">
       <DependentUpon>SalaryDetail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TodayWorkSaveChange.resx">
+      <DependentUpon>TodayWorkSaveChange.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
