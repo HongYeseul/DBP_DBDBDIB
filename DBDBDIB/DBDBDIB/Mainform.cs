@@ -65,9 +65,12 @@ namespace DBDBDIB
         private void buttonAtt_Click(object sender, EventArgs e)//인사>급여내역서 버튼
         {
             showChildForm(new Attend());
+
+        }
+        private void buttonSalary_Click(object sender, EventArgs e)
+        {
             showChildForm(new SalaryDetail());
         }
-
         private void button5_Click(object sender, EventArgs e)//업무 버튼
         {
             showSubMenu(panel4); //업무 하위 메뉴 보임 숨김
@@ -122,5 +125,7 @@ namespace DBDBDIB
         {
             showChildForm(new ApprovalListForm());
         }
+
+
     }
 }
