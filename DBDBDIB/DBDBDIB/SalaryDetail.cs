@@ -14,7 +14,7 @@ namespace DBDBDIB
     public partial class SalaryDetail : Form
     {
         private int basicpay = 10000;
-        private int totalworktime_;
+        private double totalworktime_;
         public int ExtraHour_ { get; set; }
         private List<string> department_ = new List<string>(); //부서 목록
         private Label[] labels_;
@@ -37,20 +37,8 @@ namespace DBDBDIB
             }
         }
 
-        public void GetDepartment()//부서를 가져오는 코드
-        {
-            string query = "SELECT * FROM 부서 WHERE valid = 1";
-            MySqlDataReader rdr = DBManager.GetInstance().select(query); //DB에서 값을 가져옴
-            comboBoxShowDepartment.Items.Clear();
-            while (rdr.Read())
-            {
-                string id = rdr["ID"].ToString();
-                department_.Add(id);
-                comboBoxShowDepartment.Items.Add(rdr["부서명"].ToString());
-            }
-            rdr.Close();
-        }
-        
+
+        #region 이벤트 리스너
         private void buttonInputExtra_Click(object sender, EventArgs e) //추가수당 입력 버튼 클릭시
         {
             SalaryInputDialog dig = new SalaryInputDialog(this);
@@ -74,6 +62,44 @@ namespace DBDBDIB
         private void buttonGetEmployee_Click(object sender, EventArgs e) //불러오기 버튼 클릭시
         {
             initValue();
+            GetEmployee();
+        }
+        
+        private void buttonSelectEmployee_Click(object sender, EventArgs e)//확인버튼 클릭시
+        {
+            initValue(); 
+
+            // getlocaltime(employeeid,date); //추가기능 전
+            GetTotalHour(); //추가기능 후
+
+            ChangeLabel();
+        }
+
+        private void listViewShowEmployee_SelectedIndexChanged(object sender, EventArgs e) //listview 선택된 사람이 변할경우
+        {
+            initValue();
+        }
+        #endregion
+
+        
+
+        public void GetDepartment()//부서를 가져오는 코드
+        {
+            string query = "SELECT * FROM 부서 WHERE valid = 1";
+            MySqlDataReader rdr = DBManager.GetInstance().select(query); //DB에서 값을 가져옴
+            comboBoxShowDepartment.Items.Clear();
+            while (rdr.Read())
+            {
+                string id = rdr["ID"].ToString();
+                department_.Add(id);
+                comboBoxShowDepartment.Items.Add(rdr["부서명"].ToString());
+            }
+            rdr.Close();
+        }
+
+
+        public void GetEmployee() //사원 가져오는 함수
+        {
             listViewShowEmployee.BeginUpdate(); //업데이트 시작
             if (comboBoxShowDepartment.SelectedIndex == -1)
             {
@@ -97,52 +123,15 @@ namespace DBDBDIB
 
             listViewShowEmployee.EndUpdate(); //업데이트 종료
         }
-
-        public void ChangeLabel()
+        public void getlocaltime(string employeeid, string date)
         {
-            double healthinsurance;
-            double totalmoney;
-            totalmoney = (Math.Truncate((totalworktime_ * basicpay) + (ExtraHour_ * basicpay * 1.5)));
-            //지급내역서 총급여 label 지정
-            labelNormal.Text = String.Format("{0:#,###}", (totalworktime_ * basicpay));
-            if(ExtraHour_ == 0)
-            {
-                labelExtra.Text = "0";
-            }else
-            {
-                labelExtra.Text = String.Format("{0:#,###}", (Math.Truncate(ExtraHour_ * basicpay * 1.5)));
-            }
-            labelPaymentAmount.Text = String.Format("{0:#,###}", totalmoney);
-
-            //지급내역서 공제내역 label 지정
-            labelNationalPension.Text = String.Format("{0:#,###}", (Math.Truncate(totalmoney * 0.09 / 2))); //국민연금 9%/2
-            healthinsurance = (Math.Truncate(totalmoney * 0.0667 / 2));
-            labelHealthInsurance.Text = String.Format("{0:#,###}", (healthinsurance).ToString()); //건강보험료 *6.67% / 2
-            labelLongtermCare.Text = String.Format("{0:#,###}", (Math.Truncate(healthinsurance * 0.09 / 2))); //장기요양보험료 * 9% /2
-            labelEmploymentInsurance.Text = String.Format("{0:#,###}", (Math.Truncate(totalmoney * 0.008))); //고용보험료 * 0.8%
-            double totaldelete = Math.Truncate((totalmoney * 0.09 / 2) + healthinsurance + (healthinsurance * 0.09 / 2) + (totalmoney * 0.008));
-            labelDeductionAmount.Text = String.Format("{0:#,###}", (totaldelete));
-
-
-            //실 수령액
-            labelRealIncome.Text = String.Format("{0:#,###}", (totalmoney - totaldelete));
-        }
-
-        private void buttonSelectEmployee_Click(object sender, EventArgs e)//확인버튼 클릭시
-        {
-            initValue();
-            int idx = listViewShowEmployee.FocusedItem.Index;
-            string employeeid = listViewShowEmployee.Items[idx].Text;
-            DateTime dt = dateTimePickerYearMonth.Value;
-            string date = string.Format("{0}-{1}", dt.Year, dt.Month);
-
             string query = "SELECT * FROM SalaryDetail WHERE employeeid = " + employeeid + " AND month = '" + date + "-01'";
             MySqlDataReader rdr = DBManager.GetInstance().select(query); //DB에서 값을 가져옴
-            if(rdr.Read())
+            if (rdr.Read())
             {
-                DateTime today = DateTime.Now.Date;
-                DateTime firstday = today.AddDays(1 - today.Day);
-                DateTime lastday = firstday.AddMonths(1).AddDays(-1);
+                // DateTime today = DateTime.Now.Date;
+                //DateTime firstday = today.AddDays(1 - today.Day);
+                // DateTime lastday = firstday.AddMonths(1).AddDays(-1);
 
                 string tmp = rdr["totalwork"].ToString(); //총근무 시간을 가져옴
                 if (rdr["totalwork"].ToString() == "") //추가기능 구현전 아무것도 입력되어 있지 않을 경우
@@ -154,15 +143,89 @@ namespace DBDBDIB
                     ExtraHour_ = Int32.Parse(rdr["extratime"].ToString());
                 else
                     ExtraHour_ = 0;
-            }else {
+            }
+            else
+            {
                 query = "INSERT INTO SalaryDetail(employeeid, month) VALUES(" + employeeid + ", '" + date + "-01')";
                 DBManager.GetInstance().DBquery(query); //insert 실행
                 totalworktime_ = 207;
                 ExtraHour_ = 0;
             }
-            ChangeLabel();
+        }
+        public void GetTotalHour() //추가기능 전체 시간 가져오는 함수
+        {
+            DateTime dt = dateTimePickerYearMonth.Value;
+            string date = string.Format("{0}-{1}", dt.Year, dt.Month);
+            int idx = listViewShowEmployee.FocusedItem.Index;
+            string employeeid = listViewShowEmployee.Items[idx].Text;
+            string query = "select empID,sum(hour(daytime))as h, sum(minute(daytime))as m, sum(second(daytime))as s from(select empID,date,subtime(empOut, empIn) as daytime from Attendance) as tmp where empID ="
+                + employeeid + " AND DATE_FORMAT(Date,'%Y-%m') = '"+date + "' group by empID";
+            //사원 id, 시간, 분, 초를 받아옴.
+            MySqlDataReader rdr = DBManager.GetInstance().select(query);
+            int hour = 0, month = 0, second = 0;
+            if (rdr.Read())
+            {
+                hour = Int32.Parse(rdr["h"].ToString());
+                month = Int32.Parse(rdr["m"].ToString());
+                second = Int32.Parse(rdr["s"].ToString());
+            }
+            totalworktime_ = hour + (float)month / 60;
+
+            query = "SELECT * FROM SalaryDetail WHERE employeeid = " + employeeid + " AND month = '" + date + "-01'";
+            rdr = DBManager.GetInstance().select(query); //DB에서 값을 가져옴
+            if (rdr.Read())
+            {
+                if (rdr["extratime"].ToString() != "")
+                    ExtraHour_ = Int32.Parse(rdr["extratime"].ToString());
+                else
+                    ExtraHour_ = 0;
+            }
+            else
+            {
+                query = "INSERT INTO SalaryDetail(employeeid, month) VALUES(" + employeeid + ", '" + date + "-01')";
+                DBManager.GetInstance().DBquery(query); //insert 실행
+                ExtraHour_ = 0;
+            }
         }
 
+        public void ChangeLabel() //급여 계산하는 함수
+        {
+            double healthinsurance; //국민건강보험
+            double totalmoney; //총 급여
+
+            if (ExtraHour_ == 0)
+            {
+                labelExtra.Text = "0";
+            }
+            else
+            {
+                labelExtra.Text = String.Format("{0:#,###}", (Math.Truncate((ExtraHour_ * basicpay * 1.5)/10d))*10);
+            }
+            if (totalworktime_ == 0)
+            {
+                return;
+            }
+            totalmoney = (Math.Truncate(((totalworktime_ * basicpay) + (ExtraHour_ * basicpay * 1.5))/10d)*10);
+            //지급내역서 총급여 label 지정
+            labelNormal.Text = String.Format("{0:#,###}", Math.Truncate((totalworktime_ * basicpay) / 10d) * 10);
+            
+            labelPaymentAmount.Text = String.Format("{0:#,###}", Math.Truncate(totalmoney / 10d) * 10);
+
+            //지급내역서 공제내역 label 지정
+            labelNationalPension.Text = String.Format("{0:#,###}", Math.Truncate((totalmoney * 0.09 / 2) / 10d) * 10); //국민연금 9%/2
+            healthinsurance = (Math.Truncate((totalmoney * 0.0667 / 2) / 10d) * 10);
+            labelHealthInsurance.Text = String.Format("{0:#,###}", (healthinsurance).ToString()); //건강보험료 *6.67% / 2
+            labelLongtermCare.Text = String.Format("{0:#,###}", (Math.Truncate((healthinsurance * 0.09 / 2) / 10d) * 10)); //장기요양보험료 * 9% /2
+            labelEmploymentInsurance.Text = String.Format("{0:#,###}", (Math.Truncate((totalmoney * 0.008) / 10d) * 10)); //고용보험료 * 0.8%
+            double totaldelete = Math.Truncate(((totalmoney * 0.09 / 2) + healthinsurance + (healthinsurance * 0.09 / 2) + (totalmoney * 0.008)) / 10d) * 10;
+            labelDeductionAmount.Text = String.Format("{0:#,###}", (totaldelete));
+
+
+            //실 수령액
+            labelRealIncome.Text = String.Format("{0:#,###}", Math.Truncate((totalmoney - totaldelete) / 10d) * 10);
+        }
+
+        #region 필요없는것
         int GetWorkingDays(DateTime startDate, DateTime endDate)   //평일수 구하기 - 아마 필요 없을듯..
         {
             DayOfWeek currDay = startDate.DayOfWeek;
@@ -176,10 +239,6 @@ namespace DBDBDIB
             }
             return WorkingDays;
         }
-
-        private void listViewShowEmployee_SelectedIndexChanged(object sender, EventArgs e) //listview 선택된 사람이 다른것
-        {
-            initValue();
-        }
+        #endregion
     }
 }
