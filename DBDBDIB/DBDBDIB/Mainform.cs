@@ -22,6 +22,9 @@ namespace DBDBDIB
             panel3.Visible = false;
             panel4.Visible = false;
             panel6.Visible = false;
+
+            if (UserInfo.Getinstance().loginON == false)
+                this.Close();
         }
 
         private void hideSubMenu() //상위 버튼(인사/업무/결재) 클릭 시 숨기는 용도
