@@ -49,15 +49,14 @@
             this.dataGridViewSelect.AllowUserToDeleteRows = false;
             this.dataGridViewSelect.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewSelect.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewSelect.Location = new System.Drawing.Point(111, 85);
-            this.dataGridViewSelect.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.dataGridViewSelect.Location = new System.Drawing.Point(32, 25);
             this.dataGridViewSelect.Name = "dataGridViewSelect";
             this.dataGridViewSelect.ReadOnly = true;
             this.dataGridViewSelect.RowHeadersVisible = false;
             this.dataGridViewSelect.RowHeadersWidth = 51;
             this.dataGridViewSelect.RowTemplate.Height = 27;
             this.dataGridViewSelect.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewSelect.Size = new System.Drawing.Size(1252, 803);
+            this.dataGridViewSelect.Size = new System.Drawing.Size(626, 446);
             this.dataGridViewSelect.TabIndex = 0;
             // 
             // groupBox1
@@ -65,11 +64,9 @@
             this.groupBox1.Controls.Add(this.radioButtonUser);
             this.groupBox1.Controls.Add(this.radioButtonKeyword);
             this.groupBox1.Controls.Add(this.radioButtonDate);
-            this.groupBox1.Location = new System.Drawing.Point(1354, 85);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.groupBox1.Location = new System.Drawing.Point(677, 47);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.groupBox1.Size = new System.Drawing.Size(400, 261);
+            this.groupBox1.Size = new System.Drawing.Size(200, 145);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "검색 항목";
@@ -77,10 +74,9 @@
             // radioButtonUser
             // 
             this.radioButtonUser.AutoSize = true;
-            this.radioButtonUser.Location = new System.Drawing.Point(88, 173);
-            this.radioButtonUser.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.radioButtonUser.Location = new System.Drawing.Point(44, 96);
             this.radioButtonUser.Name = "radioButtonUser";
-            this.radioButtonUser.Size = new System.Drawing.Size(124, 31);
+            this.radioButtonUser.Size = new System.Drawing.Size(73, 19);
             this.radioButtonUser.TabIndex = 2;
             this.radioButtonUser.TabStop = true;
             this.radioButtonUser.Text = "등록자";
@@ -90,10 +86,9 @@
             // radioButtonKeyword
             // 
             this.radioButtonKeyword.AutoSize = true;
-            this.radioButtonKeyword.Location = new System.Drawing.Point(88, 128);
-            this.radioButtonKeyword.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.radioButtonKeyword.Location = new System.Drawing.Point(44, 71);
             this.radioButtonKeyword.Name = "radioButtonKeyword";
-            this.radioButtonKeyword.Size = new System.Drawing.Size(187, 31);
+            this.radioButtonKeyword.Size = new System.Drawing.Size(108, 19);
             this.radioButtonKeyword.TabIndex = 1;
             this.radioButtonKeyword.TabStop = true;
             this.radioButtonKeyword.Text = "업무 키워드";
@@ -103,10 +98,9 @@
             // radioButtonDate
             // 
             this.radioButtonDate.AutoSize = true;
-            this.radioButtonDate.Location = new System.Drawing.Point(88, 83);
-            this.radioButtonDate.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.radioButtonDate.Location = new System.Drawing.Point(44, 46);
             this.radioButtonDate.Name = "radioButtonDate";
-            this.radioButtonDate.Size = new System.Drawing.Size(97, 31);
+            this.radioButtonDate.Size = new System.Drawing.Size(58, 19);
             this.radioButtonDate.TabIndex = 0;
             this.radioButtonDate.TabStop = true;
             this.radioButtonDate.Text = "날짜";
@@ -115,26 +109,23 @@
             // 
             // textBoxSelect
             // 
-            this.textBoxSelect.Location = new System.Drawing.Point(1354, 378);
-            this.textBoxSelect.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.textBoxSelect.Location = new System.Drawing.Point(677, 210);
             this.textBoxSelect.Name = "textBoxSelect";
-            this.textBoxSelect.Size = new System.Drawing.Size(396, 39);
+            this.textBoxSelect.Size = new System.Drawing.Size(200, 25);
             this.textBoxSelect.TabIndex = 2;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(1354, 378);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.dateTimePicker1.Location = new System.Drawing.Point(677, 210);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(396, 39);
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 25);
             this.dateTimePicker1.TabIndex = 3;
             // 
             // buttonSelcet
             // 
-            this.buttonSelcet.Location = new System.Drawing.Point(1354, 459);
-            this.buttonSelcet.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.buttonSelcet.Location = new System.Drawing.Point(677, 255);
             this.buttonSelcet.Name = "buttonSelcet";
-            this.buttonSelcet.Size = new System.Drawing.Size(400, 70);
+            this.buttonSelcet.Size = new System.Drawing.Size(200, 39);
             this.buttonSelcet.TabIndex = 4;
             this.buttonSelcet.Text = "검색";
             this.buttonSelcet.UseVisualStyleBackColor = true;
@@ -142,10 +133,9 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(1354, 621);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.buttonSave.Location = new System.Drawing.Point(677, 345);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(400, 70);
+            this.buttonSave.Size = new System.Drawing.Size(200, 39);
             this.buttonSave.TabIndex = 5;
             this.buttonSave.Text = "등록";
             this.buttonSave.UseVisualStyleBackColor = true;
@@ -153,10 +143,9 @@
             // 
             // buttonChange
             // 
-            this.buttonChange.Location = new System.Drawing.Point(1354, 540);
-            this.buttonChange.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.buttonChange.Location = new System.Drawing.Point(677, 300);
             this.buttonChange.Name = "buttonChange";
-            this.buttonChange.Size = new System.Drawing.Size(192, 70);
+            this.buttonChange.Size = new System.Drawing.Size(96, 39);
             this.buttonChange.TabIndex = 6;
             this.buttonChange.Text = "수정";
             this.buttonChange.UseVisualStyleBackColor = true;
@@ -164,10 +153,9 @@
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(1562, 540);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.buttonDelete.Location = new System.Drawing.Point(781, 300);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(192, 70);
+            this.buttonDelete.Size = new System.Drawing.Size(96, 39);
             this.buttonDelete.TabIndex = 7;
             this.buttonDelete.Text = "삭제";
             this.buttonDelete.UseVisualStyleBackColor = true;
@@ -175,9 +163,9 @@
             // 
             // TodayWork
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 27F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1778, 911);
+            this.ClientSize = new System.Drawing.Size(889, 506);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonChange);
             this.Controls.Add(this.buttonSave);
@@ -186,7 +174,6 @@
             this.Controls.Add(this.textBoxSelect);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridViewSelect);
-            this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "TodayWork";
             this.Text = "TodayWork";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSelect)).EndInit();
