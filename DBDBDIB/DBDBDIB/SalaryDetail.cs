@@ -91,6 +91,10 @@ namespace DBDBDIB
             while (rdr.Read())
             {
                 string id = rdr["ID"].ToString();
+                if (id == "1") //총장일 경우
+                {
+                    continue;
+                }
                 department_.Add(id);
                 comboBoxShowDepartment.Items.Add(rdr["부서명"].ToString());
             }
@@ -108,7 +112,7 @@ namespace DBDBDIB
             }
             listViewShowEmployee.Items.Clear(); //listview 초기화
             int idx = comboBoxShowDepartment.SelectedIndex;
-            string query = "SELECT * FROM Employee WHERE department = " + department_[idx];
+            string query = "SELECT * FROM Employee WHERE department = " + department_[idx] +" AND valid = 1";
             MySqlDataReader rdr = DBManager.GetInstance().select(query); //DB에서 값을 가져옴
             while (rdr.Read())
             {
