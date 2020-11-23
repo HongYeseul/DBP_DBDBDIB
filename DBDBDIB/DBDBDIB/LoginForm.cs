@@ -18,7 +18,6 @@ namespace DBDBDIB
             InitializeComponent();
         }
 
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             UserManager.Login(txtBoxID.Text, txtBoxPW.Text);
@@ -30,7 +29,10 @@ namespace DBDBDIB
             }
             */
             this.Close();
-                
+
+            Mainform form = new Mainform();
+            form.Show();
+            Program.ac.MainForm = form;
         }
 
         private void checkBoxLogin_CheckedChanged(object sender, EventArgs e)
@@ -57,7 +59,7 @@ namespace DBDBDIB
             string id = Properties.Settings.Default.ID;
             string pw = Properties.Settings.Default.Password;
 
-            if (id != "")
+            if (id != "" && UserManager.loginCnt == 0)
             {
                 Properties.Settings.Default.ID = id;
                 Properties.Settings.Default.Password = pw;
@@ -68,8 +70,26 @@ namespace DBDBDIB
                 txtBoxID.Text = id;
                 txtBoxPW.Text = pw;
                 UserManager.Login(id, pw);
-                this.Close();
+
+                Mainform form = new Mainform();
+                form.Show();
+                Program.ac.MainForm = form;
+                this.Close(); //로그인 폼 닫기
+                UserManager.loginCnt++;
             }
+            else
+            {
+                txtBoxID.Text = id;
+                txtBoxPW.Text = pw;
+                checkBoxLogin.Checked = true;
+            }
+        }
+
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //로그인 폼 끄면 process kill되어야 하는데 안돼용
+            //if(UserManager.loginCnt != 0)
+                //this.Close();
         }
     }
 }

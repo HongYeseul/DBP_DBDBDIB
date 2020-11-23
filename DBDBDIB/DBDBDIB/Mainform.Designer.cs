@@ -47,6 +47,7 @@
             this.buttonHR = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -57,6 +58,7 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.btnMessage);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.button6);
@@ -266,6 +268,17 @@
             this.panel5.Size = new System.Drawing.Size(907, 553);
             this.panel5.TabIndex = 1;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLogout.Location = new System.Drawing.Point(0, 491);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(175, 23);
+            this.btnLogout.TabIndex = 8;
+            this.btnLogout.Text = "로그아웃";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // Mainform
             // 
             this.ClientSize = new System.Drawing.Size(1082, 553);
@@ -274,6 +287,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Mainform";
             this.Text = "예시";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Mainform_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Mainform_FormClosed);
             this.Load += new System.EventHandler(this.Mainform_Load);
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
@@ -306,6 +321,7 @@
         private System.Windows.Forms.Button Button10;
         private System.Windows.Forms.Button buttonSalary;
         private System.Windows.Forms.Button btnMessage;
+        private System.Windows.Forms.Button btnLogout;
     }
 }
 

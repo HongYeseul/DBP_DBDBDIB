@@ -21,6 +21,9 @@ namespace DBDBDIB
 
         private void Mainform_Load(object sender, EventArgs e)
         {
+           // LoginForm loginForm = new LoginForm();
+           // loginForm.Show();
+
             panel3.Visible = false;
             panel4.Visible = false;
             panel6.Visible = false;
@@ -157,6 +160,22 @@ namespace DBDBDIB
         private void btnMessage_Click(object sender, EventArgs e)
         {
             showChildForm(new MessageMainForm());
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            UserInfo.Getinstance().loginON = false;
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Hide();
+        }
+
+        private void Mainform_FormClosed(object sender, FormClosedEventArgs e)
+        {
+        }
+
+        private void Mainform_FormClosing(object sender, FormClosingEventArgs e)
+        {
         }
     }
 }

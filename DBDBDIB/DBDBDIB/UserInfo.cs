@@ -13,6 +13,7 @@ namespace DBDBDIB
         private static UserInfo instance = new UserInfo();
         private string strConn = "Server=49.50.174.201;Database=erp_school;Uid=dbdbdib;Pwd=123123;Charset=utf8";
         public bool loginON = false;  //로그인 유무
+        public int loginCnt = 0;
 
         public String Id { get; set; }
         public String Name { get; set; }
