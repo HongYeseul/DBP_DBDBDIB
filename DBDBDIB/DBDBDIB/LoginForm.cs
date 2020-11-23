@@ -28,11 +28,12 @@ namespace DBDBDIB
                 this.Close();
             }
             */
-            this.Close();
-
+            
             Mainform form = new Mainform();
             form.Show();
             Program.ac.MainForm = form;
+
+            this.Close();
         }
 
         private void checkBoxLogin_CheckedChanged(object sender, EventArgs e)
@@ -87,9 +88,6 @@ namespace DBDBDIB
 
         private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //로그인 폼 끄면 process kill되어야 하는데 안돼용
-            //if(UserManager.loginCnt != 0)
-                //this.Close();
         }
     }
 }

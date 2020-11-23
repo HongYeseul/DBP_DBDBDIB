@@ -165,9 +165,10 @@ namespace DBDBDIB
         private void btnLogout_Click(object sender, EventArgs e)
         {
             UserInfo.Getinstance().loginON = false;
-            LoginForm loginForm = new LoginForm();
-            loginForm.Show();
-            this.Hide();
+            LoginForm loginForm = new LoginForm(); //새로운 로그인 폼 생성
+            loginForm.Show(); //폼 보여주기
+            Program.ac.MainForm = loginForm; //새로만든 폼을 program.cs의 메인 폼으로 교체
+            this.Close(); //열려져 있던 메인 폼을 닫아줌
         }
 
         private void Mainform_FormClosed(object sender, FormClosedEventArgs e)
