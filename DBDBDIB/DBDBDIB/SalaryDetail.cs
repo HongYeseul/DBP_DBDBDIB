@@ -14,8 +14,9 @@ namespace DBDBDIB
     public partial class SalaryDetail : Form
     {
         private int basicpay = 10000;
-        private double totalworktime_;
-        public int ExtraHour_ { get; set; }
+        private double totalworktime_; //전체 일한 시간
+        private int OKclick_ = 0; //확인 버튼을 클릭했는지 확인 : 0이면 체크x, 1이면 check o
+        public int ExtraHour_ { get; set; } //추가시간
         private List<string> department_ = new List<string>(); //부서 목록
         private Label[] labels_;
 
@@ -46,6 +47,11 @@ namespace DBDBDIB
                 MessageBox.Show("사원을 선택해주세요", "확인");
                 return;
             }
+            if (OKclick_ == 0)
+            {
+                MessageBox.Show("확인 버튼을 먼저 클릭해주세요", "확인");
+                return;
+            }
             SalaryInputDialog dig = new SalaryInputDialog(this);
             dig.FormClosed += new FormClosedEventHandler(SalaryInputDialog_FormClosed);
             dig.Show();
@@ -72,6 +78,7 @@ namespace DBDBDIB
         
         private void buttonSelectEmployee_Click(object sender, EventArgs e)//확인버튼 클릭시
         {
+            OKclick_ = 1;
             initValue(); 
 
             // getlocaltime(employeeid,date); //추가기능 전
@@ -82,6 +89,7 @@ namespace DBDBDIB
 
         private void listViewShowEmployee_SelectedIndexChanged(object sender, EventArgs e) //listview 선택된 사람이 변할경우
         {
+            OKclick_ = 0;
             initValue();
         }
         #endregion
@@ -117,6 +125,7 @@ namespace DBDBDIB
                 return;
             }
             listViewShowEmployee.Items.Clear(); //listview 초기화
+            listViewShowEmployee.Columns.Clear(); //listview column 초기화
             int idx = comboBoxShowDepartment.SelectedIndex;
             string query = "SELECT * FROM Employee WHERE department = " + department_[idx] +" AND valid = 1";
             MySqlDataReader rdr = DBManager.GetInstance().select(query); //DB에서 값을 가져옴
@@ -165,7 +174,7 @@ namespace DBDBDIB
         public void GetTotalHour() //추가기능 전체 시간 가져오는 함수
         {
             DateTime dt = dateTimePickerYearMonth.Value;
-            string date = string.Format("{0}-{1}", dt.Year, dt.Month);
+            string date = string.Format("{0:0000}-{1:00}", dt.Year, dt.Month);
             if(listViewShowEmployee.SelectedItems.Count == 0)
             {
                 MessageBox.Show("사원을 선택해주세요", "확인");
@@ -205,39 +214,60 @@ namespace DBDBDIB
 
         public void ChangeLabel() //급여 계산하는 함수
         {
-            double healthinsurance; //국민건강보험
-            double totalmoney; //총 급여
-
-            if (ExtraHour_ == 0)
+            double extra = 0; //추가수당
+            double normal = 0; //기본 수당
+            if(ExtraHour_ == 0 && totalworktime_ == 0)
+            {
+                return;
+            }
+            if (ExtraHour_ == 0) //추가 수당이 없을 경우
             {
                 labelExtra.Text = "0";
             }
             else
             {
-                labelExtra.Text = String.Format("{0:#,###}", (Math.Truncate((ExtraHour_ * basicpay * 1.5)/10d))*10);
+                //추가 수당 lael 지정
+                extra = (Math.Truncate((ExtraHour_ * basicpay * 1.5) / 10d)) * 10;
+                labelExtra.Text = String.Format("{0:#,###}", extra);
             }
-            if (totalworktime_ == 0)
+            if (totalworktime_ == 0) //데이터 피딩이 되어있지 않은 경우
             {
-                return;
+                labelNormal.Text = "0";
             }
-            totalmoney = (Math.Truncate(((totalworktime_ * basicpay) + (ExtraHour_ * basicpay * 1.5))/10d)*10);
-            //지급내역서 총급여 label 지정
-            labelNormal.Text = String.Format("{0:#,###}", Math.Truncate((totalworktime_ * basicpay) / 10d) * 10);
-            
-            labelPaymentAmount.Text = String.Format("{0:#,###}", Math.Truncate(totalmoney / 10d) * 10);
+            else
+            {
+                //지급내역서 기본금 label 지정
+                normal = Math.Truncate((totalworktime_ * basicpay) / 10d) * 10;
+                labelNormal.Text = String.Format("{0:#,###}",normal);
+            }
+
+            double totalmoney = normal + extra; //총 지급내역
+            labelPaymentAmount.Text = String.Format("{0:#,###}",totalmoney); //총 지급내역
+            double totalmoney_thousond = Math.Truncate((totalmoney) / 1000d) * 1000;
 
             //지급내역서 공제내역 label 지정
-            labelNationalPension.Text = String.Format("{0:#,###}", Math.Truncate((totalmoney * 0.09 / 2) / 10d) * 10); //국민연금 9%/2
-            healthinsurance = (Math.Truncate((totalmoney * 0.0667 / 2) / 10d) * 10);
-            labelHealthInsurance.Text = String.Format("{0:#,###}", (healthinsurance).ToString()); //건강보험료 *6.67% / 2
-            labelLongtermCare.Text = String.Format("{0:#,###}", (Math.Truncate((healthinsurance * 0.09 / 2) / 10d) * 10)); //장기요양보험료 * 9% /2
-            labelEmploymentInsurance.Text = String.Format("{0:#,###}", (Math.Truncate((totalmoney * 0.008) / 10d) * 10)); //고용보험료 * 0.8%
-            double totaldelete = Math.Truncate(((totalmoney * 0.09 / 2) + healthinsurance + (healthinsurance * 0.09 / 2) + (totalmoney * 0.008)) / 10d) * 10;
-            labelDeductionAmount.Text = String.Format("{0:#,###}", (totaldelete));
+            if(totalmoney_thousond < 320000)
+            {
+                totalmoney_thousond = 320000;
+            }else if(totalmoney_thousond > 5030000)
+            {
+                totalmoney_thousond = 5030000;
+            }
+            double nation = Math.Truncate((totalmoney_thousond * 0.09 / 2) / 10d) * 10;
+            labelNationalPension.Text = String.Format("{0:#,###}", nation); //국민연금 9%/2
+            double healthinsurance = (Math.Truncate((totalmoney * 0.0667 / 2) / 10d) * 10); //국민건강보험
+            labelHealthInsurance.Text = String.Format("{0:#,###}", healthinsurance); //건강보험료 *6.67% / 2
+            double totalhealth = (totalmoney * 0.0667);
+            double longtermcare = (Math.Truncate((totalhealth * 0.1025 / 2) / 10d) * 10);
+            labelLongtermCare.Text = String.Format("{0:#,###}", longtermcare); //장기요양보험료 * 9% /2
+            double employment = (totalmoney * 0.008);
+            labelEmploymentInsurance.Text = String.Format("{0:#,###}",employment); //고용보험료 * 0.8%
+            double totaldelete = nation + healthinsurance + longtermcare + employment;
+            labelDeductionAmount.Text = String.Format("{0:#,###}", totaldelete);
 
 
             //실 수령액
-            labelRealIncome.Text = String.Format("{0:#,###}", Math.Truncate((totalmoney - totaldelete) / 10d) * 10);
+            labelRealIncome.Text = String.Format("{0:#,###}", (totalmoney - totaldelete));
         }
 
         #region 필요없는것
