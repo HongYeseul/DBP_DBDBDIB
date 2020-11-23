@@ -54,8 +54,6 @@ namespace DBDBDIB
                         Gender = rdr["gender"].ToString();
                         Email = rdr["email"].ToString();
                         loginON = true;
-
-                        MessageBox.Show(Name + "님 로그인 되셨습니다.");
                     }
                     else
                     {

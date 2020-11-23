@@ -1,10 +1,12 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -25,6 +27,29 @@ namespace DBDBDIB
 
             if (UserInfo.Getinstance().loginON == false)
                 this.Close();
+            else
+                MessageBox.Show(UserInfo.Getinstance().Name + "님 로그인 되셨습니다.");
+
+            loadMsgNotification();
+        }
+
+        private void loadMsgNotification()
+        {
+            if (UserInfo.Getinstance().loginON == false)
+                return;
+            string query = "SELECT COUNT(*) as cnt FROM 쪽지 WHERE 수신확인 = '읽지않음' AND 받는사람 = " + UserInfo.Getinstance().Id;
+            MySqlDataReader rdr = DBManager.GetInstance().select(query);
+
+            rdr.Read();
+            string cnt = rdr["cnt"].ToString();
+            Console.WriteLine(cnt);
+
+            if (Convert.ToInt32(cnt) != 0)
+            {
+                MessageBox.Show("아직 읽지않은 쪽지가 있습니다.");
+            }
+
+            rdr.Close();
         }
 
         private void hideSubMenu() //상위 버튼(인사/업무/결재) 클릭 시 숨기는 용도

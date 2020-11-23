@@ -16,7 +16,8 @@ namespace DBDBDIB
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            LoginForm login = new LoginForm();
+            Application.Run(login);
             Mainform Main = new Mainform();
             Application.Run(Main);
             //아래 민영

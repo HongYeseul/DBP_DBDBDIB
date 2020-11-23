@@ -74,7 +74,7 @@
             // btnMessage
             // 
             this.btnMessage.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMessage.Location = new System.Drawing.Point(0, 394);
+            this.btnMessage.Location = new System.Drawing.Point(0, 468);
             this.btnMessage.Name = "btnMessage";
             this.btnMessage.Size = new System.Drawing.Size(175, 23);
             this.btnMessage.TabIndex = 7;
@@ -89,7 +89,7 @@
             this.panel6.Controls.Add(this.button8);
             this.panel6.Controls.Add(this.buttonForPaymentReg);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 318);
+            this.panel6.Location = new System.Drawing.Point(0, 368);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(175, 100);
             this.panel6.TabIndex = 0;
@@ -130,7 +130,7 @@
             // button6
             // 
             this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.Location = new System.Drawing.Point(0, 295);
+            this.button6.Location = new System.Drawing.Point(0, 345);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(175, 23);
             this.button6.TabIndex = 0;
@@ -144,7 +144,7 @@
             this.panel4.Controls.Add(this.Button10);
             this.panel4.Controls.Add(this.buttonTodayWork);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 216);
+            this.panel4.Location = new System.Drawing.Point(0, 266);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(175, 79);
             this.panel4.TabIndex = 6;
@@ -172,7 +172,7 @@
             // button5
             // 
             this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.Location = new System.Drawing.Point(0, 193);
+            this.button5.Location = new System.Drawing.Point(0, 243);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(175, 23);
             this.button5.TabIndex = 5;
