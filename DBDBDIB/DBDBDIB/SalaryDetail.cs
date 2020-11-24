@@ -200,7 +200,7 @@ namespace DBDBDIB
             if (rdr.Read())
             {
                 if (rdr["extratime"].ToString() != "")
-                    ExtraHour_ = Int32.Parse(rdr["extratime"].ToString());
+                    ExtraHour_ = Double.Parse(rdr["extratime"].ToString());
                 else
                     ExtraHour_ = 0;
             }
@@ -257,7 +257,7 @@ namespace DBDBDIB
             labelNationalPension.Text = String.Format("{0:#,###}", nation); //국민연금 9%/2
             double healthinsurance = (Math.Truncate((totalmoney * 0.0667 / 2) / 10d) * 10); //국민건강보험
             labelHealthInsurance.Text = String.Format("{0:#,###}", healthinsurance); //건강보험료 *6.67% / 2
-            double totalhealth = (totalmoney * 0.0667);
+            double totalhealth = (healthinsurance * 2);
             double longtermcare = (Math.Truncate((totalhealth * 0.1025 / 2) / 10d) * 10);
             labelLongtermCare.Text = String.Format("{0:#,###}", longtermcare); //장기요양보험료 * 9% /2
             double employment = (totalmoney * 0.008);
