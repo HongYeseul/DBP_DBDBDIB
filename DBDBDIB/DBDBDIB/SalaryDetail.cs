@@ -16,7 +16,7 @@ namespace DBDBDIB
         private int basicpay = 10000;
         private double totalworktime_; //전체 일한 시간
         private int OKclick_ = 0; //확인 버튼을 클릭했는지 확인 : 0이면 체크x, 1이면 check o
-        public int ExtraHour_ { get; set; } //추가시간
+        public double ExtraHour_ { get; set; } //추가시간
         private List<string> department_ = new List<string>(); //부서 목록
         private Label[] labels_;
 
