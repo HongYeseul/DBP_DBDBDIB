@@ -43,11 +43,14 @@
             // 
             // dgvattend
             // 
+            this.dgvattend.AllowUserToAddRows = false;
+            this.dgvattend.AllowUserToDeleteRows = false;
             this.dgvattend.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvattend.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvattend.Location = new System.Drawing.Point(12, 134);
+            this.dgvattend.MultiSelect = false;
             this.dgvattend.Name = "dgvattend";
             this.dgvattend.RowTemplate.Height = 23;
             this.dgvattend.Size = new System.Drawing.Size(883, 402);

@@ -54,21 +54,14 @@ namespace DBDBDIB
             string query = "INSERT INTO "+table+" ("+column+") VALUES ("+data+")";
             DBManager.GetInstance().DBquery(query);
         }
-        public void updateHRData(string table, string data)
+        public void updateHRData(string extra,string table, string data)
         {
-            string query = "";
-            if (empRank == "부서장")
-                query += "UPDATE 부서 SET 부서장=" + empID + " WHERE  부서명='" + empCategory + "'; ";
-            else if (empRank == "사원")
-                query += "UPDATE 부서 SET 부서장=NULL WHERE 부서장="+empID+"; ";
-            query += "UPDATE " + table + " SET " + data;
-            DBManager.GetInstance().DBquery(query);
+            string query = "UPDATE " + table + " SET " + data;
+            DBManager.GetInstance().DBquery(extra+query);
         }
         public void deleteHRData(string table, string need)
         {
             string query = "";
-            //if (empRank == "부서장")
-            //    query = "UPDATE 부서 SET 부서장=NULL WHERE 부서장="+empID+"; UPDATE Employee SET position='사원' WHERE identification="+empID+"; ";
             query += "DELETE FROM " + table + " WHERE " + need;
             DBManager.GetInstance().DBquery(query);
         }

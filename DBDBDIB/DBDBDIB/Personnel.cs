@@ -106,15 +106,15 @@ namespace DBDBDIB
             }
             insertInfoDB();
             hr.insertHRData("Employee", "password, name, gender, birthDay, phoneNum, department, position, address, email,valid", hr.insertQuery(1));//추가-테이블에 넣음
-            hr.insertHRData("SalaryDetail", "employeeid", "(SELECT MAX(identification) FROM Employee)");//month 오류발생
             getDGV(dgvEmpManageView, "identification AS 사원ID, name AS 사원명, gender AS 성별, birthDay AS 생년월일, phoneNum AS 전화번호, address AS 주소, 부서명 AS 소속부서, position AS 직급, email", "Employee,부서", " WHERE department>1 AND Employee.valid=1 AND department=ID");
-            dgvEmpManageView.CurrentCell = dgvEmpManageView.Rows[dgvEmpManageView.Rows.Count - 2].Cells[0];
+            dgvEmpManageView.CurrentCell = dgvEmpManageView.Rows[dgvEmpManageView.Rows.Count - 1].Cells[0];
             initbox();
         }
         private void bEdit_Click(object sender, EventArgs e)
         {
             //선택된 row를 버튼에 뒤집어 씌워야하니까 읽어온걸 버튼에 띄울 수 있어야 함  HR에서는 return할게 필요함
             //클릭하면 dgv에 있는 내용 textbox 채우기
+            string query = "";
             if (tbPW.Text != tbPWcheck.Text)
             {
                 MessageBox.Show("비밀번호가 맞지 않습니다. 다시 입력해주십시오.");
@@ -122,8 +122,23 @@ namespace DBDBDIB
                 return;
             }
             insertInfoDB();
+
+            if (hr.empRank == "부서장")
+            {
+                if (hr.selectDGV("identification", "Employee", " WHERE position = '부서장' AND identification<>'" + hr.empID + "' AND department in (SELECT ID FROM 부서 WHERE 부서명='"+hr.empCategory+"')").Rows.Count != 0)
+                {
+                    MessageBox.Show("해당 부서에는 이미 부서장이 존재합니다.");
+                    cbInsertRank.SelectedIndex = 1;
+                    return;
+                }
+                query += "UPDATE 부서 SET 부서장=" + hr.empID + " WHERE  부서명='" + hr.empCategory + "'; ";
+            }
+
+            else if (hr.empRank == "사원")
+                query += "UPDATE 부서 SET 부서장=NULL WHERE 부서장=" + hr.empID + "; ";
+
             try {
-                hr.updateHRData("Employee", hr.updateQuery(1));//그리드에서 선택한값-테이블에 넣음
+                hr.updateHRData(query,"Employee", hr.updateQuery(1));//그리드에서 선택한값-테이블에 넣음
             }
             catch
             {
@@ -146,7 +161,7 @@ namespace DBDBDIB
                 MessageBox.Show("먼저 부서장 직책을 위임해주십시오.");
                 return;
             }
-            hr.updateHRData("Employee", hr.updateQuery(4));//그리드에서 선택한값-테이블에서 삭제
+            hr.updateHRData("","Employee", hr.updateQuery(4));//그리드에서 선택한값-테이블에서 삭제
             dgvEmpManageView.Rows.RemoveAt(dgvEmpManageView.CurrentRow.Index);
             initbox();
         }
@@ -154,7 +169,7 @@ namespace DBDBDIB
 
         private void dgvEmpManageView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if(dgvEmpManageView.SelectedRows[0].Index < dgvEmpManageView.Rows.Count - 1) {
+            if(dgvEmpManageView.SelectedRows[0].Index < dgvEmpManageView.Rows.Count) {
                 hr.empID = Convert.ToString(dgvEmpManageView.Rows[dgvEmpManageView.SelectedRows[0].Index].Cells[0].Value);
                 tbInsertName.Text = Convert.ToString(dgvEmpManageView.Rows[dgvEmpManageView.SelectedRows[0].Index].Cells[1].Value);
                 cbInsertGender.Text = Convert.ToString(dgvEmpManageView.Rows[dgvEmpManageView.SelectedRows[0].Index].Cells[2].Value);
