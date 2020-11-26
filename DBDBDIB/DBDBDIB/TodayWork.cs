@@ -27,11 +27,17 @@ namespace DBDBDIB
             gridView = new GridViewManager(dataGridViewSelect); // gridview 세팅
             string query = "Select id AS '번호'," +
                 "(SELECT name FROM Employee WHERE 등록자id=identification) AS 등록자" +
-                ",날짜,부서,업무종류,업무내용 FROM 일일업무등록,업무마스터 WHERE 업무마스터id=업무번호";
+                ",날짜,부서,업무종류,업무내용,SUBSTR(시작시간,12) AS 시작시간,SUBSTR(종료시간,12) AS 종료시간 FROM 일일업무등록,업무마스터 WHERE 업무마스터id=업무번호";
 
 
             gridView.SettingSelect(query); //select 세팅
             gridView.SettingGridView(); // gridview 그려주기
+
+            //컬럼 사이즈 설정
+            dataGridViewSelect.Columns[0].FillWeight = 50;
+            dataGridViewSelect.Columns[3].FillWeight = 80;
+            dataGridViewSelect.Columns[5].FillWeight = 250;
+
 
             //dataGridView1.Columns[6].Visible = false; // 화면에 보여주고 싶지 않은 칼럼 지정
         }
@@ -47,31 +53,48 @@ namespace DBDBDIB
         private void buttonChange_Click(object sender, EventArgs e) //수정버튼
         {
             //MessageBox.Show(UserInfo.Getinstance().Id);
+            try
+            {
+                //수정시 선택한 값, id
+                int id = Int32.Parse(dataGridViewSelect.Rows[dataGridViewSelect.CurrentCellAddress.Y].Cells[0].Value.ToString());
+                //수정시 수정되는 업무 등록자
+                string name = dataGridViewSelect.Rows[dataGridViewSelect.CurrentCellAddress.Y].Cells[1].Value.ToString();
 
-            //수정시 선택한 값, id
-            int id = Int32.Parse(dataGridViewSelect.Rows[dataGridViewSelect.CurrentCellAddress.Y].Cells[0].Value.ToString());
-            //수정시 수정되는 업무 등록자
-            string name = dataGridViewSelect.Rows[dataGridViewSelect.CurrentCellAddress.Y].Cells[1].Value.ToString();
+                //수정 창 불러오기
+                TodayWorkSaveChange todayWorkSaveChange = new TodayWorkSaveChange(gridView, "수정", id, name);
+                todayWorkSaveChange.Show();
+            }
+            catch
+            {
+                MessageBox.Show("선택후 진행해 주세요");
+            }
 
-            //수정 창 불러오기
-            TodayWorkSaveChange todayWorkSaveChange = new TodayWorkSaveChange(gridView,"수정", id,name);
-            todayWorkSaveChange.Show();
+            
         }
 
         private void buttonDelete_Click(object sender, EventArgs e) //삭제 버튼
         {
-            //선택된 값 삭제
-            //id(pk)값 가지고 삭제
-            int id= Int32.Parse(dataGridViewSelect.Rows[dataGridViewSelect.CurrentCellAddress.Y].Cells[0].Value.ToString());
-            MessageBox.Show("" + id);
 
-            //삭제 쿼리 보내기
-            string query = "DELETE FROM 일일업무등록 WHERE id = " + id ;
-            DBManager.GetInstance().DBquery(query);
+            try
+            {
+                //선택된 값 삭제
+                //id(pk)값 가지고 삭제
+                int id = Int32.Parse(dataGridViewSelect.Rows[dataGridViewSelect.CurrentCellAddress.Y].Cells[0].Value.ToString());
+                MessageBox.Show("" + id);
+
+                //삭제 쿼리 보내기
+                string query = "DELETE FROM 일일업무등록 WHERE id = " + id;
+                DBManager.GetInstance().DBquery(query);
 
 
-            //화면 닦이는지 확인
-            gridView.SettingGridView();
+                //화면 닦이는지 확인
+                gridView.SettingGridView();
+            }
+            catch
+            {
+                MessageBox.Show("선택후 진행해 주세요");
+            }
+            
 
         }
 
@@ -89,7 +112,7 @@ namespace DBDBDIB
 
                 query = "Select id AS '번호'," +
                         "(SELECT name FROM Employee WHERE 등록자id=identification) AS 등록자" +
-                        ",날짜,부서,업무종류,업무내용 FROM 일일업무등록,업무마스터 WHERE 업무마스터id=업무번호"; //전체검색
+                        ",날짜,부서,업무종류,업무내용,SUBSTR(시작시간,12) AS 시작시간,SUBSTR(종료시간,12) AS 종료시간 FROM 일일업무등록,업무마스터 WHERE 업무마스터id=업무번호"; //전체검색
 
                 gridView.SettingSelect(query);
                 gridView.SettingGridView();
@@ -116,7 +139,7 @@ namespace DBDBDIB
                     
                     query = "Select id AS '번호'," +
                             "(SELECT name FROM Employee WHERE 등록자id=identification) AS 등록자" +
-                            ",날짜,부서,업무종류,업무내용 FROM 일일업무등록,업무마스터 WHERE 업무마스터id=업무번호 AND 날짜='" + date + "'";
+                            ",날짜,부서,업무종류,업무내용,SUBSTR(시작시간,12) AS 시작시간,SUBSTR(종료시간,12) AS 종료시간 FROM 일일업무등록,업무마스터 WHERE 업무마스터id=업무번호 AND 날짜='" + date + "'";
 
                     break;
                 case "키워드": //키워드로 select 쿼리 **
@@ -124,7 +147,7 @@ namespace DBDBDIB
 
                     query = "Select id AS '번호'," +
                             "(SELECT name FROM Employee WHERE 등록자id=identification) AS 등록자" +
-                            ",날짜,부서,업무종류,업무내용 FROM 일일업무등록,업무마스터 WHERE 업무마스터id=업무번호 AND 업무내용 LIKE '%" + textbox + "%'";
+                            ",날짜,부서,업무종류,업무내용,SUBSTR(시작시간,12) AS 시작시간,SUBSTR(종료시간,12) AS 종료시간 FROM 일일업무등록,업무마스터 WHERE 업무마스터id=업무번호 AND 업무내용 LIKE '%" + textbox + "%'";
 
 
                     break;
@@ -135,7 +158,7 @@ namespace DBDBDIB
                         "(SELECT 부서 FROM 업무마스터 WHERE 업무마스터id=업무번호) AS 부서," +
                         "(SELECT 업무종류 FROM 업무마스터 WHERE 업무마스터id=업무번호) AS 업무종류," +
                         "(SELECT 업무내용 FROM 업무마스터 WHERE 업무마스터id=업무번호) AS 업무내용" +
-                        " FROM 일일업무등록,Employee WHERE 등록자id=identification AND name LIKE '%" + textbox + "%'";
+                        ",SUBSTR(시작시간,12) AS 시작시간,SUBSTR(종료시간,12) AS 종료시간 FROM 일일업무등록,Employee WHERE 등록자id=identification AND name LIKE '%" + textbox + "%'";
 
                     break;
             }
