@@ -335,5 +335,10 @@ namespace DBDBDIB
             결재자3직급.Text = "";
             결재자3사원명.Text = "";
         }
+
+        private void dataGridViewWork_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

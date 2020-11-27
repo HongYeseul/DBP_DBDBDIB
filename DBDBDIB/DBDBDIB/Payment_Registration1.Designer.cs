@@ -90,7 +90,7 @@
             this.groupBoxForpay1.Controls.Add(this.label2);
             this.groupBoxForpay1.Location = new System.Drawing.Point(12, 12);
             this.groupBoxForpay1.Name = "groupBoxForpay1";
-            this.groupBoxForpay1.Size = new System.Drawing.Size(861, 473);
+            this.groupBoxForpay1.Size = new System.Drawing.Size(1012, 665);
             this.groupBoxForpay1.TabIndex = 2;
             this.groupBoxForpay1.TabStop = false;
             this.groupBoxForpay1.Text = "결재 등록 기입 사항";
@@ -101,21 +101,22 @@
             this.dataGridViewWork.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewWork.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewWork.ColumnHeadersVisible = false;
-            this.dataGridViewWork.Location = new System.Drawing.Point(135, 198);
+            this.dataGridViewWork.Location = new System.Drawing.Point(131, 283);
             this.dataGridViewWork.Name = "dataGridViewWork";
             this.dataGridViewWork.ReadOnly = true;
             this.dataGridViewWork.RowHeadersVisible = false;
             this.dataGridViewWork.RowHeadersWidth = 62;
             this.dataGridViewWork.RowTemplate.Height = 30;
             this.dataGridViewWork.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewWork.Size = new System.Drawing.Size(702, 144);
+            this.dataGridViewWork.Size = new System.Drawing.Size(856, 194);
             this.dataGridViewWork.TabIndex = 10;
             this.dataGridViewWork.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewWork_CellClick);
+            this.dataGridViewWork.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewWork_CellContentClick);
             // 
             // buttonNext
             // 
-            this.buttonNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonNext.Location = new System.Drawing.Point(715, 429);
+            this.buttonNext.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonNext.Location = new System.Drawing.Point(865, 626);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(122, 33);
             this.buttonNext.TabIndex = 9;
@@ -126,44 +127,44 @@
             // textBoxSelected
             // 
             this.textBoxSelected.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxSelected.Location = new System.Drawing.Point(135, 165);
+            this.textBoxSelected.Location = new System.Drawing.Point(131, 249);
             this.textBoxSelected.Name = "textBoxSelected";
-            this.textBoxSelected.Size = new System.Drawing.Size(702, 28);
+            this.textBoxSelected.Size = new System.Drawing.Size(856, 28);
             this.textBoxSelected.TabIndex = 7;
             // 
             // textBoxComent
             // 
             this.textBoxComent.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxComent.Location = new System.Drawing.Point(135, 348);
+            this.textBoxComent.Location = new System.Drawing.Point(133, 502);
             this.textBoxComent.Multiline = true;
             this.textBoxComent.Name = "textBoxComent";
             this.textBoxComent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxComent.Size = new System.Drawing.Size(702, 63);
+            this.textBoxComent.Size = new System.Drawing.Size(854, 101);
             this.textBoxComent.TabIndex = 6;
             // 
             // textBoxContent
             // 
             this.textBoxContent.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxContent.Location = new System.Drawing.Point(135, 86);
+            this.textBoxContent.Location = new System.Drawing.Point(131, 122);
             this.textBoxContent.Multiline = true;
             this.textBoxContent.Name = "textBoxContent";
             this.textBoxContent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxContent.Size = new System.Drawing.Size(702, 60);
+            this.textBoxContent.Size = new System.Drawing.Size(856, 110);
             this.textBoxContent.TabIndex = 5;
             // 
             // textBoxTitle
             // 
             this.textBoxTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxTitle.Location = new System.Drawing.Point(135, 40);
+            this.textBoxTitle.Location = new System.Drawing.Point(131, 68);
             this.textBoxTitle.Name = "textBoxTitle";
-            this.textBoxTitle.Size = new System.Drawing.Size(702, 28);
+            this.textBoxTitle.Size = new System.Drawing.Size(856, 28);
             this.textBoxTitle.TabIndex = 4;
             // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(19, 354);
+            this.label6.Location = new System.Drawing.Point(23, 502);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(104, 18);
             this.label6.TabIndex = 3;
@@ -173,7 +174,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 168);
+            this.label4.Location = new System.Drawing.Point(26, 252);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 18);
             this.label4.TabIndex = 2;
@@ -183,7 +184,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 89);
+            this.label3.Location = new System.Drawing.Point(26, 125);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 18);
             this.label3.TabIndex = 1;
@@ -193,7 +194,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 43);
+            this.label2.Location = new System.Drawing.Point(26, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 18);
             this.label2.TabIndex = 0;
@@ -218,7 +219,7 @@
             this.groupBoxForpay2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.groupBoxForpay2.Location = new System.Drawing.Point(12, 12);
             this.groupBoxForpay2.Name = "groupBoxForpay2";
-            this.groupBoxForpay2.Size = new System.Drawing.Size(866, 474);
+            this.groupBoxForpay2.Size = new System.Drawing.Size(1018, 666);
             this.groupBoxForpay2.TabIndex = 4;
             this.groupBoxForpay2.TabStop = false;
             this.groupBoxForpay2.Text = "결재자 선택";
@@ -249,14 +250,14 @@
             this.tableLayoutPanelRegister.Controls.Add(this.결재자1사원명, 3, 1);
             this.tableLayoutPanelRegister.Controls.Add(this.결재자2부서, 1, 2);
             this.tableLayoutPanelRegister.Controls.Add(this.결재자2직급, 2, 2);
-            this.tableLayoutPanelRegister.Location = new System.Drawing.Point(39, 27);
+            this.tableLayoutPanelRegister.Location = new System.Drawing.Point(22, 28);
             this.tableLayoutPanelRegister.Name = "tableLayoutPanelRegister";
             this.tableLayoutPanelRegister.RowCount = 4;
             this.tableLayoutPanelRegister.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelRegister.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelRegister.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelRegister.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanelRegister.Size = new System.Drawing.Size(655, 105);
+            this.tableLayoutPanelRegister.Size = new System.Drawing.Size(797, 192);
             this.tableLayoutPanelRegister.TabIndex = 11;
             // 
             // 결재자3사원명
@@ -265,9 +266,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.결재자3사원명.AutoSize = true;
-            this.결재자3사원명.Location = new System.Drawing.Point(493, 79);
+            this.결재자3사원명.Location = new System.Drawing.Point(601, 142);
             this.결재자3사원명.Name = "결재자3사원명";
-            this.결재자3사원명.Size = new System.Drawing.Size(158, 25);
+            this.결재자3사원명.Size = new System.Drawing.Size(192, 49);
             this.결재자3사원명.TabIndex = 15;
             this.결재자3사원명.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -277,9 +278,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.결재자3직급.AutoSize = true;
-            this.결재자3직급.Location = new System.Drawing.Point(330, 79);
+            this.결재자3직급.Location = new System.Drawing.Point(402, 142);
             this.결재자3직급.Name = "결재자3직급";
-            this.결재자3직급.Size = new System.Drawing.Size(156, 25);
+            this.결재자3직급.Size = new System.Drawing.Size(192, 49);
             this.결재자3직급.TabIndex = 14;
             this.결재자3직급.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -289,9 +290,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.결재자3부서.AutoSize = true;
-            this.결재자3부서.Location = new System.Drawing.Point(167, 79);
+            this.결재자3부서.Location = new System.Drawing.Point(203, 142);
             this.결재자3부서.Name = "결재자3부서";
-            this.결재자3부서.Size = new System.Drawing.Size(156, 25);
+            this.결재자3부서.Size = new System.Drawing.Size(192, 49);
             this.결재자3부서.TabIndex = 13;
             this.결재자3부서.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -301,9 +302,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.결재자2사원명.AutoSize = true;
-            this.결재자2사원명.Location = new System.Drawing.Point(493, 53);
+            this.결재자2사원명.Location = new System.Drawing.Point(601, 95);
             this.결재자2사원명.Name = "결재자2사원명";
-            this.결재자2사원명.Size = new System.Drawing.Size(158, 25);
+            this.결재자2사원명.Size = new System.Drawing.Size(192, 46);
             this.결재자2사원명.TabIndex = 12;
             this.결재자2사원명.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -315,7 +316,7 @@
             this.labelfree.AutoSize = true;
             this.labelfree.Location = new System.Drawing.Point(4, 1);
             this.labelfree.Name = "labelfree";
-            this.labelfree.Size = new System.Drawing.Size(156, 25);
+            this.labelfree.Size = new System.Drawing.Size(192, 46);
             this.labelfree.TabIndex = 11;
             this.labelfree.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -326,9 +327,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.부서.AutoSize = true;
             this.부서.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.부서.Location = new System.Drawing.Point(167, 1);
+            this.부서.Location = new System.Drawing.Point(203, 1);
             this.부서.Name = "부서";
-            this.부서.Size = new System.Drawing.Size(156, 25);
+            this.부서.Size = new System.Drawing.Size(192, 46);
             this.부서.TabIndex = 0;
             this.부서.Text = "부서";
             this.부서.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -340,9 +341,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.직급.AutoSize = true;
             this.직급.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.직급.Location = new System.Drawing.Point(330, 1);
+            this.직급.Location = new System.Drawing.Point(402, 1);
             this.직급.Name = "직급";
-            this.직급.Size = new System.Drawing.Size(156, 25);
+            this.직급.Size = new System.Drawing.Size(192, 46);
             this.직급.TabIndex = 1;
             this.직급.Text = "직급";
             this.직급.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -354,9 +355,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.사원명.AutoSize = true;
             this.사원명.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.사원명.Location = new System.Drawing.Point(493, 1);
+            this.사원명.Location = new System.Drawing.Point(601, 1);
             this.사원명.Name = "사원명";
-            this.사원명.Size = new System.Drawing.Size(158, 25);
+            this.사원명.Size = new System.Drawing.Size(192, 46);
             this.사원명.TabIndex = 2;
             this.사원명.Text = "사원명";
             this.사원명.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -368,9 +369,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.제1결재자.AutoSize = true;
             this.제1결재자.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.제1결재자.Location = new System.Drawing.Point(4, 27);
+            this.제1결재자.Location = new System.Drawing.Point(4, 48);
             this.제1결재자.Name = "제1결재자";
-            this.제1결재자.Size = new System.Drawing.Size(156, 25);
+            this.제1결재자.Size = new System.Drawing.Size(192, 46);
             this.제1결재자.TabIndex = 3;
             this.제1결재자.Text = "제1결재자";
             this.제1결재자.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -382,9 +383,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.제2결재자.AutoSize = true;
             this.제2결재자.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.제2결재자.Location = new System.Drawing.Point(4, 53);
+            this.제2결재자.Location = new System.Drawing.Point(4, 95);
             this.제2결재자.Name = "제2결재자";
-            this.제2결재자.Size = new System.Drawing.Size(156, 25);
+            this.제2결재자.Size = new System.Drawing.Size(192, 46);
             this.제2결재자.TabIndex = 4;
             this.제2결재자.Text = "제2결재자";
             this.제2결재자.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -396,9 +397,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.제3결재자.AutoSize = true;
             this.제3결재자.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.제3결재자.Location = new System.Drawing.Point(4, 79);
+            this.제3결재자.Location = new System.Drawing.Point(4, 142);
             this.제3결재자.Name = "제3결재자";
-            this.제3결재자.Size = new System.Drawing.Size(156, 25);
+            this.제3결재자.Size = new System.Drawing.Size(192, 49);
             this.제3결재자.TabIndex = 5;
             this.제3결재자.Text = "제3결재자";
             this.제3결재자.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -409,9 +410,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.결재자1부서.AutoSize = true;
-            this.결재자1부서.Location = new System.Drawing.Point(167, 27);
+            this.결재자1부서.Location = new System.Drawing.Point(203, 48);
             this.결재자1부서.Name = "결재자1부서";
-            this.결재자1부서.Size = new System.Drawing.Size(156, 25);
+            this.결재자1부서.Size = new System.Drawing.Size(192, 46);
             this.결재자1부서.TabIndex = 6;
             this.결재자1부서.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -421,9 +422,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.결재자1직급.AutoSize = true;
-            this.결재자1직급.Location = new System.Drawing.Point(330, 27);
+            this.결재자1직급.Location = new System.Drawing.Point(402, 48);
             this.결재자1직급.Name = "결재자1직급";
-            this.결재자1직급.Size = new System.Drawing.Size(156, 25);
+            this.결재자1직급.Size = new System.Drawing.Size(192, 46);
             this.결재자1직급.TabIndex = 7;
             this.결재자1직급.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -433,9 +434,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.결재자1사원명.AutoSize = true;
-            this.결재자1사원명.Location = new System.Drawing.Point(493, 27);
+            this.결재자1사원명.Location = new System.Drawing.Point(601, 48);
             this.결재자1사원명.Name = "결재자1사원명";
-            this.결재자1사원명.Size = new System.Drawing.Size(158, 25);
+            this.결재자1사원명.Size = new System.Drawing.Size(192, 46);
             this.결재자1사원명.TabIndex = 8;
             this.결재자1사원명.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -445,9 +446,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.결재자2부서.AutoSize = true;
-            this.결재자2부서.Location = new System.Drawing.Point(167, 53);
+            this.결재자2부서.Location = new System.Drawing.Point(203, 95);
             this.결재자2부서.Name = "결재자2부서";
-            this.결재자2부서.Size = new System.Drawing.Size(156, 25);
+            this.결재자2부서.Size = new System.Drawing.Size(192, 46);
             this.결재자2부서.TabIndex = 9;
             this.결재자2부서.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -457,17 +458,17 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.결재자2직급.AutoSize = true;
-            this.결재자2직급.Location = new System.Drawing.Point(330, 53);
+            this.결재자2직급.Location = new System.Drawing.Point(402, 95);
             this.결재자2직급.Name = "결재자2직급";
-            this.결재자2직급.Size = new System.Drawing.Size(156, 25);
+            this.결재자2직급.Size = new System.Drawing.Size(192, 46);
             this.결재자2직급.TabIndex = 10;
             this.결재자2직급.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonPayment
             // 
-            this.buttonPayment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonPayment.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonPayment.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.buttonPayment.Location = new System.Drawing.Point(726, 428);
+            this.buttonPayment.Location = new System.Drawing.Point(895, 613);
             this.buttonPayment.Name = "buttonPayment";
             this.buttonPayment.Size = new System.Drawing.Size(105, 33);
             this.buttonPayment.TabIndex = 10;
@@ -481,10 +482,10 @@
             this.listBoxName.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.listBoxName.FormattingEnabled = true;
             this.listBoxName.ItemHeight = 18;
-            this.listBoxName.Location = new System.Drawing.Point(622, 201);
+            this.listBoxName.Location = new System.Drawing.Point(751, 297);
             this.listBoxName.Name = "listBoxName";
             this.listBoxName.ScrollAlwaysVisible = true;
-            this.listBoxName.Size = new System.Drawing.Size(207, 220);
+            this.listBoxName.Size = new System.Drawing.Size(249, 292);
             this.listBoxName.TabIndex = 8;
             // 
             // listBoxRank
@@ -493,10 +494,10 @@
             this.listBoxRank.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.listBoxRank.FormattingEnabled = true;
             this.listBoxRank.ItemHeight = 18;
-            this.listBoxRank.Location = new System.Drawing.Point(329, 201);
+            this.listBoxRank.Location = new System.Drawing.Point(392, 297);
             this.listBoxRank.Name = "listBoxRank";
             this.listBoxRank.ScrollAlwaysVisible = true;
-            this.listBoxRank.Size = new System.Drawing.Size(210, 220);
+            this.listBoxRank.Size = new System.Drawing.Size(249, 292);
             this.listBoxRank.TabIndex = 7;
             this.listBoxRank.SelectedIndexChanged += new System.EventHandler(this.listBoxRank_SelectedIndexChanged);
             // 
@@ -506,10 +507,10 @@
             this.listBoxApart.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.listBoxApart.FormattingEnabled = true;
             this.listBoxApart.ItemHeight = 18;
-            this.listBoxApart.Location = new System.Drawing.Point(39, 201);
+            this.listBoxApart.Location = new System.Drawing.Point(22, 297);
             this.listBoxApart.Name = "listBoxApart";
             this.listBoxApart.ScrollAlwaysVisible = true;
-            this.listBoxApart.Size = new System.Drawing.Size(207, 220);
+            this.listBoxApart.Size = new System.Drawing.Size(249, 292);
             this.listBoxApart.TabIndex = 6;
             this.listBoxApart.SelectedIndexChanged += new System.EventHandler(this.listBoxApart_SelectedIndexChanged);
             // 
@@ -518,7 +519,7 @@
             this.radioButtonThir.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButtonThir.AutoSize = true;
             this.radioButtonThir.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.radioButtonThir.Location = new System.Drawing.Point(618, 155);
+            this.radioButtonThir.Location = new System.Drawing.Point(704, 251);
             this.radioButtonThir.Name = "radioButtonThir";
             this.radioButtonThir.Size = new System.Drawing.Size(115, 22);
             this.radioButtonThir.TabIndex = 5;
@@ -532,7 +533,7 @@
             this.radioButtonSec.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButtonSec.AutoSize = true;
             this.radioButtonSec.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.radioButtonSec.Location = new System.Drawing.Point(391, 155);
+            this.radioButtonSec.Location = new System.Drawing.Point(477, 251);
             this.radioButtonSec.Name = "radioButtonSec";
             this.radioButtonSec.Size = new System.Drawing.Size(115, 22);
             this.radioButtonSec.TabIndex = 4;
@@ -546,7 +547,7 @@
             this.radioButtonfirst.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButtonfirst.AutoSize = true;
             this.radioButtonfirst.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.radioButtonfirst.Location = new System.Drawing.Point(148, 155);
+            this.radioButtonfirst.Location = new System.Drawing.Point(234, 251);
             this.radioButtonfirst.Name = "radioButtonfirst";
             this.radioButtonfirst.Size = new System.Drawing.Size(115, 22);
             this.radioButtonfirst.TabIndex = 3;
@@ -559,9 +560,9 @@
             // 
             this.buttonDel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonDel.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.buttonDel.Location = new System.Drawing.Point(724, 102);
+            this.buttonDel.Location = new System.Drawing.Point(865, 171);
             this.buttonDel.Name = "buttonDel";
-            this.buttonDel.Size = new System.Drawing.Size(105, 34);
+            this.buttonDel.Size = new System.Drawing.Size(135, 34);
             this.buttonDel.TabIndex = 2;
             this.buttonDel.Text = "삭제";
             this.buttonDel.UseVisualStyleBackColor = true;
@@ -571,9 +572,9 @@
             // 
             this.buttonUpdate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonUpdate.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.buttonUpdate.Location = new System.Drawing.Point(724, 62);
+            this.buttonUpdate.Location = new System.Drawing.Point(865, 112);
             this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(105, 34);
+            this.buttonUpdate.Size = new System.Drawing.Size(135, 34);
             this.buttonUpdate.TabIndex = 1;
             this.buttonUpdate.Text = "수정";
             this.buttonUpdate.UseVisualStyleBackColor = true;
@@ -583,9 +584,9 @@
             // 
             this.buttonAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonAdd.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.buttonAdd.Location = new System.Drawing.Point(724, 22);
+            this.buttonAdd.Location = new System.Drawing.Point(865, 50);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(105, 34);
+            this.buttonAdd.Size = new System.Drawing.Size(135, 34);
             this.buttonAdd.TabIndex = 0;
             this.buttonAdd.Text = "추가";
             this.buttonAdd.UseVisualStyleBackColor = true;
@@ -595,9 +596,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(885, 497);
+            this.ClientSize = new System.Drawing.Size(1036, 689);
             this.Controls.Add(this.groupBoxForpay2);
             this.Controls.Add(this.groupBoxForpay1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Payment_Registration1";
             this.Text = "결재등록";
             this.groupBoxForpay1.ResumeLayout(false);
