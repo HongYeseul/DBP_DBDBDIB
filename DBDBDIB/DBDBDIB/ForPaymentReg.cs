@@ -25,7 +25,7 @@ namespace DBDBDIB
         }
         public MySqlDataReader SetApart()
         {
-            MySqlDataReader rdr = DBManager.GetInstance().select("SELECT 부서명 FROM erp_school.부서;");
+            MySqlDataReader rdr = DBManager.GetInstance().select("SELECT 부서명 FROM erp_school.부서 WHERE valid=1;");
             return rdr;
         }
         public MySqlDataReader SearchApartId(string apart)
