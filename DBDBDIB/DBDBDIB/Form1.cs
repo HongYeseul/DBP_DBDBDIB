@@ -56,48 +56,60 @@ namespace DBDBDIB
         }
         private void buttonPayment_Accept_Click(object sender, EventArgs e) // 결재진행을 누를 시
         {
-            string selected = PaymentListView.SelectedRows[0].Cells[0].Value.ToString();
-            int id = Convert.ToInt32(selected);
-            string paymenttime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            if(paymentprocesscount + 1 == usercount && usercount == 1)
+            if (PaymentListView.Rows.Count != 0) // 결재내역에 있으면
             {
-                string first_payment_accepttime = "UPDATE 결재 SET 진행상황 = 진행상황 + 1, 1승인시간 = '" + paymenttime + "'" + "WHERE ID = " + id;
-                DBManager.GetInstance().DBquery(first_payment_accepttime);
-                MessageBox.Show(paymenttime + "에 결재가 완료되었습니다.", "결재알림", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                paymentviewer();
-            }
-            else if(paymentprocesscount + 1 == usercount && usercount == 2)
-            {
-                string second_payment_accepttime = "UPDATE 결재 SET 진행상황 = 진행상황 + 1, 2승인시간 = '" + paymenttime + "'" + "WHERE ID = " + id;
-                DBManager.GetInstance().DBquery(second_payment_accepttime);
-                MessageBox.Show(paymenttime + "에 결재가 완료되었습니다.", "결재알림", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                paymentviewer();
-            }
-            else if(paymentprocesscount + 1 == usercount && usercount == 3)
-            {
-                string second_payment_accepttime = "UPDATE 결재 SET 진행상황 = 진행상황 + 1, 3승인시간 = '" + paymenttime + "'" + "WHERE ID = " + id;
-                DBManager.GetInstance().DBquery(second_payment_accepttime);
-                MessageBox.Show(paymenttime + "에 결재가 완료되었습니다.", "결재알림", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                paymentviewer();
+                string selected = PaymentListView.SelectedRows[0].Cells[0].Value.ToString();
+                int id = Convert.ToInt32(selected);
+                string paymenttime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                if (paymentprocesscount + 1 == usercount && usercount == 1)
+                {
+                    string first_payment_accepttime = "UPDATE 결재 SET 진행상황 = 진행상황 + 1, 1승인시간 = '" + paymenttime + "'" + "WHERE ID = " + id;
+                    DBManager.GetInstance().DBquery(first_payment_accepttime);
+                    MessageBox.Show(paymenttime + "에 결재가 완료되었습니다.", "결재알림", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    paymentviewer();
+                }
+                else if (paymentprocesscount + 1 == usercount && usercount == 2)
+                {
+                    string second_payment_accepttime = "UPDATE 결재 SET 진행상황 = 진행상황 + 1, 2승인시간 = '" + paymenttime + "'" + "WHERE ID = " + id;
+                    DBManager.GetInstance().DBquery(second_payment_accepttime);
+                    MessageBox.Show(paymenttime + "에 결재가 완료되었습니다.", "결재알림", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    paymentviewer();
+                }
+                else if (paymentprocesscount + 1 == usercount && usercount == 3)
+                {
+                    string second_payment_accepttime = "UPDATE 결재 SET 진행상황 = 진행상황 + 1, 3승인시간 = '" + paymenttime + "'" + "WHERE ID = " + id;
+                    DBManager.GetInstance().DBquery(second_payment_accepttime);
+                    MessageBox.Show(paymenttime + "에 결재가 완료되었습니다.", "결재알림", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    paymentviewer();
+                }
+                else
+                {
+                    MessageBox.Show("현재 결재할 수 있는 사용자가아닙니다.", "결재알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show("현재 결재할 수 있는 사용자가아닙니다.", "결재알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("현재 결재수락할 수 있는 결재목록이 없습니다.", "결재알림", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
         private void buttonPayment_Deny_Click(object sender, EventArgs e) // 결재반려를 누를 시
         {
-            string selected = PaymentListView.SelectedRows[0].Cells[0].Value.ToString();
-            int id = Convert.ToInt32(selected);
-            if (paymentprocesscount + 1 == usercount)
+            if (PaymentListView.Rows.Count != 0) // 결재내역에 없으면
             {
-                labelpaymentdeny.Visible = true;
-                textBoxPaymentdenymemo.Visible = true;
-                buttonDenycheck.Visible = true;
+                if (paymentprocesscount + 1 == usercount)
+                {
+                    labelpaymentdeny.Visible = true;
+                    textBoxPaymentdenymemo.Visible = true;
+                    buttonDenycheck.Visible = true;
+                }
+                else
+                {
+                    MessageBox.Show("현재 반려할 수 있는 사용자가아닙니다.", "결재알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show("현재 반려할 수 있는 사용자가아닙니다.", "결재알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("현재 결재반려할 수 있는 결재목록이 없습니다.", "결재알림", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
         private void PaymentListView_CellClick(object sender, DataGridViewCellEventArgs e) // 그냥 셀 클릭 시
