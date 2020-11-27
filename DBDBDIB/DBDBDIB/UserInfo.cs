@@ -13,6 +13,7 @@ namespace DBDBDIB
         private static UserInfo instance = new UserInfo();
         private string strConn = "Server=49.50.174.201;Database=erp_school;Uid=dbdbdib;Pwd=123123;Charset=utf8";
         public bool loginON = false;  //로그인 유무
+        public int loginCnt = 0; // 몇 번째 재 로그인인지 셉니다.
 
         public String Id { get; set; }
         public String Name { get; set; }
@@ -36,22 +37,40 @@ namespace DBDBDIB
                 MySqlCommand cmd = new MySqlCommand(query, conn);
 
                 MySqlDataReader rdr = cmd.ExecuteReader();
-
                 rdr.Read();
-                Id = rdr["identification"].ToString();
-                Name = rdr["name"].ToString();
-                PhoneNum = rdr["phoneNum"].ToString();
-                Position = rdr["position"].ToString();
-                Department = rdr["department"].ToString();
-                BirthDay = rdr["birthDay"].ToString();
-                Gender = rdr["gender"].ToString();
-                Email = rdr["email"].ToString();
-                loginON = true;
+
+
+                try
+                {
+                    Console.WriteLine(rdr["password"].ToString());
+                    if (rdr["password"].ToString() == pw)
+                    {
+
+                        Id = rdr["identification"].ToString();
+                        Name = rdr["name"].ToString();
+                        PhoneNum = rdr["phoneNum"].ToString();
+                        Position = rdr["position"].ToString();
+                        Department = rdr["department"].ToString();
+                        BirthDay = rdr["birthDay"].ToString();
+                        Gender = rdr["gender"].ToString();
+                        Email = rdr["email"].ToString();
+                        loginON = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("로그인 정보를 다시 확인 해 주세요.");
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("로그인 정보가 잘못되었습니다.");
+                }
+
+
                 rdr.Close();
 
-                MessageBox.Show(Name + "님 로그인 되셨습니다.");
 
-                
+
                 cmd.ExecuteNonQuery();
             }
         }

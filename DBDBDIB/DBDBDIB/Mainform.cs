@@ -1,10 +1,12 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,6 +14,9 @@ namespace DBDBDIB
 {
     public partial class Mainform : Form
     {
+        //지연 시간 잴 변수... 
+        DateTime dtDelayStart;
+
         public Mainform()
         {
             InitializeComponent();
@@ -22,6 +27,62 @@ namespace DBDBDIB
             panel3.Visible = false;
             panel4.Visible = false;
             panel6.Visible = false;
+
+            if (UserInfo.Getinstance().loginON == false)
+                this.Close();
+            else
+                MessageBox.Show(UserInfo.Getinstance().Name + "님 로그인 되셨습니다.");
+
+            loadMsgNotification();
+
+        }
+
+        //필요없는 코드(?)
+        private void DelaySystem(int MS)
+        { 
+            /* 함수명 : DelaySystem * 1000ms = 1초 
+             * * 전달인자 : 얼마나 지연시킬것인가에 대한 변수 * 
+             */
+            DateTime dtAfter = DateTime.Now; 
+            TimeSpan dtDuration = new TimeSpan(0, 0, 0, 0, MS); 
+            DateTime dtThis = dtAfter.Add(dtDuration); 
+            while (dtThis >= dtAfter)
+            { 
+                //DoEvent () 를 사용 해서 지연 시간 동안 
+                //버튼 클릭 이벤트 및 다른 윈도우 이벤트를 받을 수 있게끔 하는 역할 
+                //없으면 지연 동안 다른 이벤트를 받지 못함... 
+                System.Windows.Forms.Application.DoEvents(); 
+                //현재 시간 얻어 오기... 
+                dtAfter = DateTime.Now; 
+            } 
+        }
+
+
+        private void loadMsgNotification()
+        {
+            if (UserInfo.Getinstance().loginON == false)
+                return;
+            string query = "SELECT COUNT(*) as cnt FROM 쪽지 WHERE 수신확인 = '읽지않음' AND 받는사람 = " + UserInfo.Getinstance().Id;
+            MySqlDataReader rdr = DBManager.GetInstance().select(query);
+
+            rdr.Read();
+            string cnt = rdr["cnt"].ToString();
+            Console.WriteLine(cnt);
+
+            if (Convert.ToInt32(cnt) != 0)
+            {
+                MessageBox.Show("아직 읽지않은 쪽지가 있습니다.");
+                /*
+                dtDelayStart = DateTime.Now;
+
+                MsgNotify.Visible = true;
+                //5초간 지연 
+                DelaySystem(3000);
+                MsgNotify.Visible = false;
+                */
+            }
+
+            rdr.Close();
         }
 
         private void hideSubMenu() //상위 버튼(인사/업무/결재) 클릭 시 숨기는 용도
@@ -47,26 +108,30 @@ namespace DBDBDIB
 
         }
 
-        private void button1_Click(object sender, EventArgs e) //인사 버튼
+        private void buttonHR_Click(object sender, EventArgs e) //인사 버튼
         {
             showSubMenu(panel3); //인사 하위 메뉴 보임 숨김
         }
 
-        private void button2_Click(object sender, EventArgs e) //인사>사원등록 버튼
+        private void buttonEmp_Click(object sender, EventArgs e) //인사>사원등록 버튼
         {
             showChildForm(new Personnel());
         }
 
-        private void button3_Click(object sender, EventArgs e)//인사>부서/사원 관리 버튼
+        private void buttonDept_Click(object sender, EventArgs e)//인사>부서/사원 관리 버튼
         {
             showChildForm(new Approval());
         }
 
-        private void button4_Click(object sender, EventArgs e)//인사>급여내역서 버튼
+        private void buttonAtt_Click(object sender, EventArgs e)//인사>급여내역서 버튼
+        {
+            showChildForm(new Attend());
+
+        }
+        private void buttonSalary_Click(object sender, EventArgs e)
         {
             showChildForm(new SalaryDetail());
         }
-
         private void button5_Click(object sender, EventArgs e)//업무 버튼
         {
             showSubMenu(panel4); //업무 하위 메뉴 보임 숨김
@@ -102,7 +167,7 @@ namespace DBDBDIB
             showSubMenu(panel6);
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void buttonForPaymentReg_Click(object sender, EventArgs e)
         {
             showChildForm(new Payment_Registration1());
         }
@@ -120,6 +185,28 @@ namespace DBDBDIB
         private void button8_Click(object sender, EventArgs e)
         {
             showChildForm(new ApprovalListForm());
+        }
+
+        private void btnMessage_Click(object sender, EventArgs e)
+        {
+            showChildForm(new MessageMainForm());
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            UserInfo.Getinstance().loginON = false;
+            LoginForm loginForm = new LoginForm(); //새로운 로그인 폼 생성
+            loginForm.Show(); //폼 보여주기
+            Program.ac.MainForm = loginForm; //새로만든 폼을 program.cs의 메인 폼으로 교체
+            this.Close(); //열려져 있던 메인 폼을 닫아줌
+        }
+
+        private void Mainform_FormClosed(object sender, FormClosedEventArgs e)
+        {
+        }
+
+        private void Mainform_FormClosing(object sender, FormClosingEventArgs e)
+        {
         }
     }
 }

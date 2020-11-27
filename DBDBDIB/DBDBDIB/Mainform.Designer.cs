@@ -29,22 +29,25 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnMessage = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.buttonForPaymentReg = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.Button10 = new System.Windows.Forms.Button();
             this.buttonTodayWork = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonSalary = new System.Windows.Forms.Button();
+            this.buttonAtt = new System.Windows.Forms.Button();
+            this.buttonDept = new System.Windows.Forms.Button();
+            this.buttonEmp = new System.Windows.Forms.Button();
+            this.buttonHR = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.Button10 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -55,12 +58,14 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.btnLogout);
+            this.panel1.Controls.Add(this.btnMessage);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.buttonHR);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -68,14 +73,36 @@
             this.panel1.Size = new System.Drawing.Size(175, 553);
             this.panel1.TabIndex = 0;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLogout.Location = new System.Drawing.Point(0, 491);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(175, 23);
+            this.btnLogout.TabIndex = 8;
+            this.btnLogout.Text = "로그아웃";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // btnMessage
+            // 
+            this.btnMessage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMessage.Location = new System.Drawing.Point(0, 468);
+            this.btnMessage.Name = "btnMessage";
+            this.btnMessage.Size = new System.Drawing.Size(175, 23);
+            this.btnMessage.TabIndex = 7;
+            this.btnMessage.Text = "쪽지";
+            this.btnMessage.UseVisualStyleBackColor = true;
+            this.btnMessage.Click += new System.EventHandler(this.btnMessage_Click);
+            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panel6.Controls.Add(this.button9);
             this.panel6.Controls.Add(this.button8);
-            this.panel6.Controls.Add(this.button7);
+            this.panel6.Controls.Add(this.buttonForPaymentReg);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 369);
+            this.panel6.Location = new System.Drawing.Point(0, 368);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(175, 100);
             this.panel6.TabIndex = 0;
@@ -102,21 +129,21 @@
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // button7
+            // buttonForPaymentReg
             // 
-            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button7.Location = new System.Drawing.Point(0, 0);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(175, 24);
-            this.button7.TabIndex = 0;
-            this.button7.Text = "결재등록";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.buttonForPaymentReg.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonForPaymentReg.Location = new System.Drawing.Point(0, 0);
+            this.buttonForPaymentReg.Name = "buttonForPaymentReg";
+            this.buttonForPaymentReg.Size = new System.Drawing.Size(175, 24);
+            this.buttonForPaymentReg.TabIndex = 0;
+            this.buttonForPaymentReg.Text = "결재등록";
+            this.buttonForPaymentReg.UseVisualStyleBackColor = true;
+            this.buttonForPaymentReg.Click += new System.EventHandler(this.buttonForPaymentReg_Click);
             // 
             // button6
             // 
             this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.Location = new System.Drawing.Point(0, 346);
+            this.button6.Location = new System.Drawing.Point(0, 345);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(175, 23);
             this.button6.TabIndex = 0;
@@ -130,10 +157,20 @@
             this.panel4.Controls.Add(this.Button10);
             this.panel4.Controls.Add(this.buttonTodayWork);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 246);
+            this.panel4.Location = new System.Drawing.Point(0, 266);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(175, 100);
+            this.panel4.Size = new System.Drawing.Size(175, 79);
             this.panel4.TabIndex = 6;
+            // 
+            // Button10
+            // 
+            this.Button10.Location = new System.Drawing.Point(0, 23);
+            this.Button10.Name = "Button10";
+            this.Button10.Size = new System.Drawing.Size(175, 23);
+            this.Button10.TabIndex = 1;
+            this.Button10.Text = "업무마스터";
+            this.Button10.UseVisualStyleBackColor = true;
+            this.Button10.Click += new System.EventHandler(this.Button10_Click);
             // 
             // buttonTodayWork
             // 
@@ -148,7 +185,7 @@
             // button5
             // 
             this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.Location = new System.Drawing.Point(0, 223);
+            this.button5.Location = new System.Drawing.Point(0, 243);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(175, 23);
             this.button5.TabIndex = 5;
@@ -159,58 +196,70 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panel3.Controls.Add(this.button4);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.buttonSalary);
+            this.panel3.Controls.Add(this.buttonAtt);
+            this.panel3.Controls.Add(this.buttonDept);
+            this.panel3.Controls.Add(this.buttonEmp);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 123);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(175, 100);
+            this.panel3.Size = new System.Drawing.Size(175, 120);
             this.panel3.TabIndex = 4;
             // 
-            // button4
+            // buttonSalary
             // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.Location = new System.Drawing.Point(0, 46);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(175, 23);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "급여내역서";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.buttonSalary.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonSalary.Location = new System.Drawing.Point(0, 70);
+            this.buttonSalary.Name = "buttonSalary";
+            this.buttonSalary.Size = new System.Drawing.Size(175, 23);
+            this.buttonSalary.TabIndex = 3;
+            this.buttonSalary.Text = "급여내역서";
+            this.buttonSalary.UseVisualStyleBackColor = true;
+            this.buttonSalary.Click += new System.EventHandler(this.buttonSalary_Click);
             // 
-            // button3
+            // buttonAtt
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.Location = new System.Drawing.Point(0, 23);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(175, 23);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "부서/사원 관리";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buttonAtt.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonAtt.Location = new System.Drawing.Point(0, 46);
+            this.buttonAtt.Name = "buttonAtt";
+            this.buttonAtt.Size = new System.Drawing.Size(175, 24);
+            this.buttonAtt.TabIndex = 2;
+            this.buttonAtt.Text = "근태관리";
+            this.buttonAtt.UseVisualStyleBackColor = true;
+            this.buttonAtt.Click += new System.EventHandler(this.buttonAtt_Click);
             // 
-            // button2
+            // buttonDept
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(175, 23);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "사원등록";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonDept.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonDept.Location = new System.Drawing.Point(0, 23);
+            this.buttonDept.Name = "buttonDept";
+            this.buttonDept.Size = new System.Drawing.Size(175, 23);
+            this.buttonDept.TabIndex = 1;
+            this.buttonDept.Text = "부서관리";
+            this.buttonDept.UseVisualStyleBackColor = true;
+            this.buttonDept.Click += new System.EventHandler(this.buttonDept_Click);
             // 
-            // button1
+            // buttonEmp
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.Location = new System.Drawing.Point(0, 100);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(175, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "인사";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonEmp.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonEmp.Location = new System.Drawing.Point(0, 0);
+            this.buttonEmp.Name = "buttonEmp";
+            this.buttonEmp.Size = new System.Drawing.Size(175, 23);
+            this.buttonEmp.TabIndex = 0;
+            this.buttonEmp.Text = "사원관리";
+            this.buttonEmp.UseVisualStyleBackColor = true;
+            this.buttonEmp.Click += new System.EventHandler(this.buttonEmp_Click);
+            // 
+            // buttonHR
+            // 
+            this.buttonHR.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonHR.Location = new System.Drawing.Point(0, 100);
+            this.buttonHR.Name = "buttonHR";
+            this.buttonHR.Size = new System.Drawing.Size(175, 23);
+            this.buttonHR.TabIndex = 3;
+            this.buttonHR.Text = "인사";
+            this.buttonHR.UseVisualStyleBackColor = true;
+            this.buttonHR.Click += new System.EventHandler(this.buttonHR_Click);
             // 
             // panel2
             // 
@@ -230,16 +279,6 @@
             this.panel5.Size = new System.Drawing.Size(907, 553);
             this.panel5.TabIndex = 1;
             // 
-            // Button10
-            // 
-            this.Button10.Location = new System.Drawing.Point(0, 23);
-            this.Button10.Name = "Button10";
-            this.Button10.Size = new System.Drawing.Size(175, 23);
-            this.Button10.TabIndex = 1;
-            this.Button10.Text = "업무마스터";
-            this.Button10.UseVisualStyleBackColor = true;
-            this.Button10.Click += new System.EventHandler(this.Button10_Click);
-            // 
             // Mainform
             // 
             this.ClientSize = new System.Drawing.Size(1082, 553);
@@ -248,6 +287,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Mainform";
             this.Text = "예시";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Mainform_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Mainform_FormClosed);
             this.Load += new System.EventHandler(this.Mainform_Load);
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
@@ -265,19 +306,22 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonAtt;
+        private System.Windows.Forms.Button buttonDept;
+        private System.Windows.Forms.Button buttonEmp;
+        private System.Windows.Forms.Button buttonHR;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button buttonTodayWork;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button buttonForPaymentReg;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button Button10;
+        private System.Windows.Forms.Button buttonSalary;
+        private System.Windows.Forms.Button btnMessage;
+        private System.Windows.Forms.Button btnLogout;
     }
 }
 

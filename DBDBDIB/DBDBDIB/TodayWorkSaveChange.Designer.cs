@@ -36,6 +36,13 @@
             this.comboBox업무내용 = new System.Windows.Forms.ComboBox();
             this.comboBox업무종류 = new System.Windows.Forms.ComboBox();
             this.buttonSaveANDChange = new System.Windows.Forms.Button();
+            this.labelName = new System.Windows.Forms.Label();
+            this.dateTimePickerStart = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -101,19 +108,71 @@
             // 
             // buttonSaveANDChange
             // 
-            this.buttonSaveANDChange.Location = new System.Drawing.Point(138, 177);
+            this.buttonSaveANDChange.Location = new System.Drawing.Point(140, 188);
             this.buttonSaveANDChange.Name = "buttonSaveANDChange";
             this.buttonSaveANDChange.Size = new System.Drawing.Size(189, 41);
             this.buttonSaveANDChange.TabIndex = 10;
             this.buttonSaveANDChange.Text = "등록";
             this.buttonSaveANDChange.UseVisualStyleBackColor = true;
-            this.buttonSaveANDChange.Click += new System.EventHandler(this.button1_Click);
+            this.buttonSaveANDChange.Click += new System.EventHandler(this.buttonSaveANDChange_Click);
+            // 
+            // labelName
+            // 
+            this.labelName.AutoSize = true;
+            this.labelName.Location = new System.Drawing.Point(247, 28);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(182, 15);
+            this.labelName.TabIndex = 11;
+            this.labelName.Text = "아무개님의 일일업무 등록";
+            // 
+            // dateTimePickerStart
+            // 
+            this.dateTimePickerStart.CustomFormat = "HH:mm";
+            this.dateTimePickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerStart.Location = new System.Drawing.Point(6, 24);
+            this.dateTimePickerStart.Name = "dateTimePickerStart";
+            this.dateTimePickerStart.ShowUpDown = true;
+            this.dateTimePickerStart.Size = new System.Drawing.Size(75, 25);
+            this.dateTimePickerStart.TabIndex = 13;
+            // 
+            // dateTimePickerEnd
+            // 
+            this.dateTimePickerEnd.CustomFormat = "HH:mm";
+            this.dateTimePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerEnd.Location = new System.Drawing.Point(6, 24);
+            this.dateTimePickerEnd.Name = "dateTimePickerEnd";
+            this.dateTimePickerEnd.ShowUpDown = true;
+            this.dateTimePickerEnd.Size = new System.Drawing.Size(75, 25);
+            this.dateTimePickerEnd.TabIndex = 15;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dateTimePickerStart);
+            this.groupBox1.Location = new System.Drawing.Point(32, 170);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(84, 67);
+            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "시작시간";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dateTimePickerEnd);
+            this.groupBox2.Location = new System.Drawing.Point(345, 170);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(84, 67);
+            this.groupBox2.TabIndex = 17;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "종료시간";
             // 
             // TodayWorkSaveChange
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 261);
+            this.ClientSize = new System.Drawing.Size(463, 262);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.labelName);
             this.Controls.Add(this.buttonSaveANDChange);
             this.Controls.Add(this.comboBox업무종류);
             this.Controls.Add(this.comboBox업무내용);
@@ -124,6 +183,9 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Name = "TodayWorkSaveChange";
             this.Text = "TodayWorkSaveChange";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TodayWorkSaveChange_FormClosed);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,5 +201,10 @@
         private System.Windows.Forms.ComboBox comboBox업무내용;
         private System.Windows.Forms.ComboBox comboBox업무종류;
         private System.Windows.Forms.Button buttonSaveANDChange;
+        private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.DateTimePicker dateTimePickerStart;
+        private System.Windows.Forms.DateTimePicker dateTimePickerEnd;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

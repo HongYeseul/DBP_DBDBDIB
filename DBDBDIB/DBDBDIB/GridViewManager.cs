@@ -9,8 +9,9 @@ using System.Windows.Forms;
 
 namespace DBDBDIB
 {
-    class GridViewManager
+    public class GridViewManager
     {
+
         private string select = "";
         private DataGridView dataGridView;
 
