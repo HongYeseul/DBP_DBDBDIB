@@ -55,14 +55,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDeptView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvDeptView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDeptView.Location = new System.Drawing.Point(17, 20);
+            this.dgvDeptView.Location = new System.Drawing.Point(30, 32);
             this.dgvDeptView.MultiSelect = false;
             this.dgvDeptView.Name = "dgvDeptView";
             this.dgvDeptView.ReadOnly = true;
             this.dgvDeptView.RowHeadersWidth = 5;
             this.dgvDeptView.RowTemplate.Height = 23;
             this.dgvDeptView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDeptView.Size = new System.Drawing.Size(591, 521);
+            this.dgvDeptView.Size = new System.Drawing.Size(488, 496);
             this.dgvDeptView.TabIndex = 2;
             this.dgvDeptView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDeptView_CellClick);
             // 
@@ -80,9 +80,9 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.bDeptEdit);
             this.groupBox1.Controls.Add(this.bDeptDelete);
-            this.groupBox1.Location = new System.Drawing.Point(614, 22);
+            this.groupBox1.Location = new System.Drawing.Point(533, 32);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(278, 176);
+            this.groupBox1.Size = new System.Drawing.Size(340, 169);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "부서 관리";
@@ -114,7 +114,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbInsertDeptManager.Location = new System.Drawing.Point(69, 76);
             this.tbInsertDeptManager.Name = "tbInsertDeptManager";
-            this.tbInsertDeptManager.Size = new System.Drawing.Size(171, 21);
+            this.tbInsertDeptManager.Size = new System.Drawing.Size(233, 21);
             this.tbInsertDeptManager.TabIndex = 14;
             // 
             // label1
@@ -133,7 +133,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbInsertDeptName.Location = new System.Drawing.Point(69, 41);
             this.tbInsertDeptName.Name = "tbInsertDeptName";
-            this.tbInsertDeptName.Size = new System.Drawing.Size(171, 21);
+            this.tbInsertDeptName.Size = new System.Drawing.Size(233, 21);
             this.tbInsertDeptName.TabIndex = 15;
             // 
             // label6
@@ -170,9 +170,9 @@
             this.bDeptEmpSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bDeptEmpSearch.Location = new System.Drawing.Point(818, 208);
+            this.bDeptEmpSearch.Location = new System.Drawing.Point(789, 208);
             this.bDeptEmpSearch.Name = "bDeptEmpSearch";
-            this.bDeptEmpSearch.Size = new System.Drawing.Size(74, 34);
+            this.bDeptEmpSearch.Size = new System.Drawing.Size(88, 34);
             this.bDeptEmpSearch.TabIndex = 10;
             this.bDeptEmpSearch.Text = "사원 조회";
             this.bDeptEmpSearch.UseVisualStyleBackColor = true;
@@ -185,12 +185,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEmpSearchView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpSearchView.Location = new System.Drawing.Point(614, 248);
+            this.dgvEmpSearchView.Location = new System.Drawing.Point(534, 245);
             this.dgvEmpSearchView.Name = "dgvEmpSearchView";
             this.dgvEmpSearchView.ReadOnly = true;
             this.dgvEmpSearchView.RowTemplate.Height = 23;
             this.dgvEmpSearchView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmpSearchView.Size = new System.Drawing.Size(278, 292);
+            this.dgvEmpSearchView.Size = new System.Drawing.Size(342, 283);
             this.dgvEmpSearchView.TabIndex = 2;
             // 
             // tbDeptfSearch
@@ -198,15 +198,15 @@
             this.tbDeptfSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbDeptfSearch.Location = new System.Drawing.Point(671, 214);
+            this.tbDeptfSearch.Location = new System.Drawing.Point(607, 214);
             this.tbDeptfSearch.Name = "tbDeptfSearch";
-            this.tbDeptfSearch.Size = new System.Drawing.Size(141, 21);
+            this.tbDeptfSearch.Size = new System.Drawing.Size(172, 21);
             this.tbDeptfSearch.TabIndex = 15;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(613, 219);
+            this.label2.Location = new System.Drawing.Point(549, 219);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 12);
             this.label2.TabIndex = 12;
