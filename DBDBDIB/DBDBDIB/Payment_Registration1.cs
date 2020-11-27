@@ -222,8 +222,13 @@ namespace DBDBDIB
         }
         public void SetApprover1()//1결재자 세팅
         {
-            rank= listBoxRank.SelectedItem.ToString();
+            if (listBoxRank.SelectedItem == null || listBoxName.SelectedItem == null)
+            {
+                MessageBox.Show("1결재자의 부서, 직급, 나이를 선택해 부세요", "결재자 선택 요청");
+                return; }
+            rank = listBoxRank.SelectedItem.ToString();
             string name= listBoxName.SelectedItem.ToString();
+           
             결재자1부서.Text= listBoxApart.SelectedItem.ToString();
             결재자1직급.Text = rank;
             결재자1사원명.Text = name;
@@ -236,8 +241,13 @@ namespace DBDBDIB
         }
         public void SetApprover2()//2결재자 세팅
         {
+            if (listBoxRank.SelectedItem == null || listBoxName.SelectedItem == null)
+            {
+                MessageBox.Show("2결재자의 부서, 직급, 나이를 선택해 부세요", "결재자 선택 요청");
+                return; }
             rank = listBoxRank.SelectedItem.ToString();
             string name = listBoxName.SelectedItem.ToString();
+          
             결재자2부서.Text = listBoxApart.SelectedItem.ToString();
             결재자2직급.Text = rank;
             결재자2사원명.Text = name;
@@ -250,8 +260,13 @@ namespace DBDBDIB
         }
         public void SetApprover3()//3결재자 세팅
         {
-            rank = listBoxRank.SelectedItem.ToString();
+            if (listBoxRank.SelectedItem == null || listBoxName.SelectedItem == null)
+            {
+                MessageBox.Show("3결재자의 부서, 직급, 나이를 선택해 부세요", "결재자 선택 요청");
+                return;
+            }           rank = listBoxRank.SelectedItem.ToString();
             string name = listBoxName.SelectedItem.ToString();
+        
             결재자3부서.Text = listBoxApart.SelectedItem.ToString();
             결재자3직급.Text = rank;
             결재자3사원명.Text = name;
@@ -265,12 +280,14 @@ namespace DBDBDIB
 
         private void buttonUpdate_Click(object sender, EventArgs e)//수정 클릭시
         {
-            if (Approvercnt == 1)
+            if (Approvercnt == 1 )
             { SetApprover1(); }
-            else if (Approvercnt == 2)
+            else if (Approvercnt == 2 )
             { SetApprover2(); }
-            else if (Approvercnt == 3)
+            else if (Approvercnt == 3 )
             { SetApprover3(); }
+            else
+                return;
         }
 
         private void buttonDel_Click(object sender, EventArgs e)//삭제 클릭시
@@ -284,6 +301,11 @@ namespace DBDBDIB
         }
         public void DelApprover1()//1결재자 삭제
         {
+            if(Approver1==0)
+            {
+                MessageBox.Show("1결재자의 부서, 직급, 나이를 선택해 부세요", "결재자 선택 요청");
+                return;
+            }
             Approver1 = 0;
             결재자1부서.Text = "";
             결재자1직급.Text = "";
@@ -291,6 +313,11 @@ namespace DBDBDIB
         }
         public void DelApprover2()//2결재자 삭제
         {
+            if (Approver2==0)
+            {
+                MessageBox.Show("2결재자의 부서, 직급, 나이를 선택해 부세요", "결재자 선택 요청");
+                return;
+            }
             Approver2 = 0;
             결재자2부서.Text = "";
             결재자2직급.Text = "";
@@ -298,6 +325,11 @@ namespace DBDBDIB
         }
         public void DelApprover3()//3결재자 삭제
         {
+            if (Approver3==0)
+            {
+                MessageBox.Show("3결재자의 부서, 직급, 나이를 선택해 부세요", "결재자 선택 요청");
+                return;
+            }
             Approver3 = 0;
             결재자3부서.Text = "";
             결재자3직급.Text = "";

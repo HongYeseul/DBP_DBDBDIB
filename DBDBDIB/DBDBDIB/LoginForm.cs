@@ -16,38 +16,24 @@ namespace DBDBDIB
         public LoginForm()
         {
             InitializeComponent();
-            InitializeLogin();
-        }
-
-        private void InitializeLogin()
-        {
-            string id = Properties.Settings.Default.ID;
-            string pw = Properties.Settings.Default.Password;
-
-            if (id != "")
-            {
-                Properties.Settings.Default.ID = id;
-                Properties.Settings.Default.Password = pw;
-                Properties.Settings.Default.Save();
-                checkBoxLogin.Checked = true;
-                txtBoxID.Text = id;
-                txtBoxPW.Text = pw;
-                UserManager.Login(id, pw);
-            }
-
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             UserManager.Login(txtBoxID.Text, txtBoxPW.Text);
-            if (UserManager.loginON == true)
+            /*if (UserManager.loginON == true)
             {
                 Mainform newForm = new Mainform();
                 newForm.Show();
                 this.Close();
             }
+            */
             
-                
+            Mainform form = new Mainform();
+            form.Show();
+            Program.ac.MainForm = form;
+
+            this.Close();
         }
 
         private void checkBoxLogin_CheckedChanged(object sender, EventArgs e)
@@ -67,6 +53,41 @@ namespace DBDBDIB
                 Properties.Settings.Default.Save();
             }
             */
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            string id = Properties.Settings.Default.ID;
+            string pw = Properties.Settings.Default.Password;
+
+            if (id != "" && UserManager.loginCnt == 0)
+            {
+                Properties.Settings.Default.ID = id;
+                Properties.Settings.Default.Password = pw;
+                Properties.Settings.Default.Save();
+                txtBoxID.Text = id;
+                txtBoxPW.Text = pw;
+                checkBoxLogin.Checked = true;
+                txtBoxID.Text = id;
+                txtBoxPW.Text = pw;
+                UserManager.Login(id, pw);
+
+                Mainform form = new Mainform();
+                form.Show();
+                Program.ac.MainForm = form;
+                this.Close(); //로그인 폼 닫기
+                UserManager.loginCnt++;
+            }
+            else
+            {
+                txtBoxID.Text = id;
+                txtBoxPW.Text = pw;
+                checkBoxLogin.Checked = true;
+            }
+        }
+
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
         }
     }
 }

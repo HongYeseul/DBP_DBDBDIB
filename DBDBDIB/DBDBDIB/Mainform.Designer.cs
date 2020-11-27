@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.btnMessage = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
@@ -57,6 +58,7 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.btnMessage);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.button6);
@@ -71,10 +73,21 @@
             this.panel1.Size = new System.Drawing.Size(175, 553);
             this.panel1.TabIndex = 0;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLogout.Location = new System.Drawing.Point(0, 491);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(175, 23);
+            this.btnLogout.TabIndex = 8;
+            this.btnLogout.Text = "로그아웃";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // btnMessage
             // 
             this.btnMessage.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMessage.Location = new System.Drawing.Point(0, 394);
+            this.btnMessage.Location = new System.Drawing.Point(0, 468);
             this.btnMessage.Name = "btnMessage";
             this.btnMessage.Size = new System.Drawing.Size(175, 23);
             this.btnMessage.TabIndex = 7;
@@ -89,7 +102,7 @@
             this.panel6.Controls.Add(this.button8);
             this.panel6.Controls.Add(this.buttonForPaymentReg);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 318);
+            this.panel6.Location = new System.Drawing.Point(0, 368);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(175, 100);
             this.panel6.TabIndex = 0;
@@ -130,7 +143,7 @@
             // button6
             // 
             this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.Location = new System.Drawing.Point(0, 295);
+            this.button6.Location = new System.Drawing.Point(0, 345);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(175, 23);
             this.button6.TabIndex = 0;
@@ -144,7 +157,7 @@
             this.panel4.Controls.Add(this.Button10);
             this.panel4.Controls.Add(this.buttonTodayWork);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 216);
+            this.panel4.Location = new System.Drawing.Point(0, 266);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(175, 79);
             this.panel4.TabIndex = 6;
@@ -172,7 +185,7 @@
             // button5
             // 
             this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.Location = new System.Drawing.Point(0, 193);
+            this.button5.Location = new System.Drawing.Point(0, 243);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(175, 23);
             this.button5.TabIndex = 5;
@@ -274,6 +287,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Mainform";
             this.Text = "예시";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Mainform_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Mainform_FormClosed);
             this.Load += new System.EventHandler(this.Mainform_Load);
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
@@ -306,6 +321,7 @@
         private System.Windows.Forms.Button Button10;
         private System.Windows.Forms.Button buttonSalary;
         private System.Windows.Forms.Button btnMessage;
+        private System.Windows.Forms.Button btnLogout;
     }
 }
 
