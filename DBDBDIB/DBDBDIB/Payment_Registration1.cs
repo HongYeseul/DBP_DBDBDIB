@@ -92,6 +92,8 @@ namespace DBDBDIB
             title = textBoxTitle.Text;
             content = textBoxContent.Text;
             coment = textBoxComent.Text;
+            if (coment.Equals("") || coment == null)
+                coment = null;
             if (title.Equals(""))
                 ++check;
             if (content.Equals(""))
@@ -113,8 +115,8 @@ namespace DBDBDIB
         private void buttonPayment_Click(object sender, EventArgs e)//결재 버튼눌렀을때
         {
             int chckapprovernum = 0;
-            if (coment.Equals(""))
-                coment = null;
+            //if (coment.Equals("")||coment==null)
+                //coment = null;
             if (Approver1 == 0)//1결재자 비었는지 체크
             {
                 MessageBox.Show("1결재자와 2결재자는 필수 항목입니다.", "결재자 추가 요청");

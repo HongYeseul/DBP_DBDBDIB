@@ -172,6 +172,7 @@
             // 
             // dPBirth
             // 
+            this.dPBirth.CustomFormat = "    ";
             this.dPBirth.Location = new System.Drawing.Point(63, 126);
             this.dPBirth.Name = "dPBirth";
             this.dPBirth.Size = new System.Drawing.Size(214, 21);
@@ -228,6 +229,7 @@
             // 
             // cbInsertRank
             // 
+            this.cbInsertRank.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbInsertRank.FormattingEnabled = true;
             this.cbInsertRank.Location = new System.Drawing.Point(63, 64);
             this.cbInsertRank.Name = "cbInsertRank";
@@ -236,6 +238,7 @@
             // 
             // cbInsertDept
             // 
+            this.cbInsertDept.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbInsertDept.FormattingEnabled = true;
             this.cbInsertDept.Location = new System.Drawing.Point(254, 64);
             this.cbInsertDept.Name = "cbInsertDept";
@@ -244,6 +247,7 @@
             // 
             // cbInsertGender
             // 
+            this.cbInsertGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbInsertGender.FormattingEnabled = true;
             this.cbInsertGender.Location = new System.Drawing.Point(314, 126);
             this.cbInsertGender.Name = "cbInsertGender";
@@ -417,7 +421,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 4;
-            this.label2.Text = "나이";
+            this.label2.Text = "생년";
             // 
             // label4
             // 
@@ -439,6 +443,8 @@
             // 
             // cbCategory
             // 
+            this.cbCategory.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.cbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategory.FormattingEnabled = true;
             this.cbCategory.Location = new System.Drawing.Point(60, 35);
             this.cbCategory.Name = "cbCategory";
