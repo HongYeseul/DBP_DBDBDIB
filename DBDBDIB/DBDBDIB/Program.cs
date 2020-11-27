@@ -23,7 +23,6 @@ namespace DBDBDIB
             ac.MainForm = startForm;
             Application.Run(ac);
 
-
             //Mainform Main = new Mainform();
             //Application.Run(Main);
             //LoginForm login = new LoginForm();
