@@ -105,6 +105,11 @@ namespace DBDBDIB
                 return;
             }
             insertInfoDB();
+            if (tbInsertName.Text == "" || tbInsertPhone.Text == "" || tbemail.Text == "" || tbInsertPost.Text == "" || tbPW.Text == "" || tbInsertAddress1.Text == "" || tbInsertAddress2.Text == "")
+            {
+                MessageBox.Show("모든 항목을 기입해주십시오.");
+                return;
+            }
             hr.insertHRData("Employee", "password, name, gender, birthDay, phoneNum, department, position, address, email,valid", hr.insertQuery(1));//추가-테이블에 넣음
             getDGV(dgvEmpManageView, "identification AS 사원ID, name AS 사원명, gender AS 성별, birthDay AS 생년월일, phoneNum AS 전화번호, address AS 주소, 부서명 AS 소속부서, position AS 직급, email", "Employee,부서", " WHERE department>1 AND Employee.valid=1 AND department=ID");
             dgvEmpManageView.CurrentCell = dgvEmpManageView.Rows[dgvEmpManageView.Rows.Count - 1].Cells[0];
@@ -138,7 +143,7 @@ namespace DBDBDIB
                 query += "UPDATE 부서 SET 부서장=NULL WHERE 부서장=" + hr.empID + "; ";
 
             try {
-                hr.updateHRData(query,"Employee", hr.updateQuery(1));//그리드에서 선택한값-테이블에 넣음
+                hr.updateHRData(query,"Employee", hr.updateQuery(1));
             }
             catch
             {
@@ -161,7 +166,15 @@ namespace DBDBDIB
                 MessageBox.Show("먼저 부서장 직책을 위임해주십시오.");
                 return;
             }
-            hr.updateHRData("","Employee", hr.updateQuery(4));//그리드에서 선택한값-테이블에서 삭제
+            try
+            {
+                hr.updateHRData("", "Employee", hr.updateQuery(4));//그리드에서 선택한값-테이블에서 삭제
+            }
+            catch
+            {
+                MessageBox.Show("삭제할 사원을 선택하십시오.");
+                return;
+            }
             dgvEmpManageView.Rows.RemoveAt(dgvEmpManageView.CurrentRow.Index);
             initbox();
         }

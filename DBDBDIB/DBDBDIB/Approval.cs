@@ -117,7 +117,7 @@ namespace DBDBDIB
             getDGV(dgvEmpSearchView, "identification AS 사원번호, name AS 사원이름, 부서명, position AS 직급", "부서,Employee", query);
         }
 
-        private void dgvDeptView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvDeptView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             hr.deptID = Convert.ToString(dgvDeptView.Rows[dgvDeptView.SelectedRows[0].Index].Cells[0].Value);
             tbInsertDeptName.Text = Convert.ToString(dgvDeptView.Rows[dgvDeptView.SelectedRows[0].Index].Cells[1].Value);
