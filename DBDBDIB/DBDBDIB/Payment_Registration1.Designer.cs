@@ -219,7 +219,7 @@
             this.groupBoxForpay2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.groupBoxForpay2.Location = new System.Drawing.Point(12, 12);
             this.groupBoxForpay2.Name = "groupBoxForpay2";
-            this.groupBoxForpay2.Size = new System.Drawing.Size(1018, 666);
+            this.groupBoxForpay2.Size = new System.Drawing.Size(1012, 666);
             this.groupBoxForpay2.TabIndex = 4;
             this.groupBoxForpay2.TabStop = false;
             this.groupBoxForpay2.Text = "결재자 선택";
@@ -250,7 +250,7 @@
             this.tableLayoutPanelRegister.Controls.Add(this.결재자1사원명, 3, 1);
             this.tableLayoutPanelRegister.Controls.Add(this.결재자2부서, 1, 2);
             this.tableLayoutPanelRegister.Controls.Add(this.결재자2직급, 2, 2);
-            this.tableLayoutPanelRegister.Location = new System.Drawing.Point(22, 28);
+            this.tableLayoutPanelRegister.Location = new System.Drawing.Point(19, 28);
             this.tableLayoutPanelRegister.Name = "tableLayoutPanelRegister";
             this.tableLayoutPanelRegister.RowCount = 4;
             this.tableLayoutPanelRegister.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -468,7 +468,7 @@
             // 
             this.buttonPayment.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonPayment.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.buttonPayment.Location = new System.Drawing.Point(895, 613);
+            this.buttonPayment.Location = new System.Drawing.Point(892, 613);
             this.buttonPayment.Name = "buttonPayment";
             this.buttonPayment.Size = new System.Drawing.Size(105, 33);
             this.buttonPayment.TabIndex = 10;
@@ -482,7 +482,7 @@
             this.listBoxName.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.listBoxName.FormattingEnabled = true;
             this.listBoxName.ItemHeight = 18;
-            this.listBoxName.Location = new System.Drawing.Point(751, 297);
+            this.listBoxName.Location = new System.Drawing.Point(748, 297);
             this.listBoxName.Name = "listBoxName";
             this.listBoxName.ScrollAlwaysVisible = true;
             this.listBoxName.Size = new System.Drawing.Size(249, 292);
@@ -494,7 +494,7 @@
             this.listBoxRank.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.listBoxRank.FormattingEnabled = true;
             this.listBoxRank.ItemHeight = 18;
-            this.listBoxRank.Location = new System.Drawing.Point(392, 297);
+            this.listBoxRank.Location = new System.Drawing.Point(389, 297);
             this.listBoxRank.Name = "listBoxRank";
             this.listBoxRank.ScrollAlwaysVisible = true;
             this.listBoxRank.Size = new System.Drawing.Size(249, 292);
@@ -507,7 +507,7 @@
             this.listBoxApart.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.listBoxApart.FormattingEnabled = true;
             this.listBoxApart.ItemHeight = 18;
-            this.listBoxApart.Location = new System.Drawing.Point(22, 297);
+            this.listBoxApart.Location = new System.Drawing.Point(19, 297);
             this.listBoxApart.Name = "listBoxApart";
             this.listBoxApart.ScrollAlwaysVisible = true;
             this.listBoxApart.Size = new System.Drawing.Size(249, 292);
@@ -519,7 +519,7 @@
             this.radioButtonThir.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButtonThir.AutoSize = true;
             this.radioButtonThir.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.radioButtonThir.Location = new System.Drawing.Point(704, 251);
+            this.radioButtonThir.Location = new System.Drawing.Point(701, 251);
             this.radioButtonThir.Name = "radioButtonThir";
             this.radioButtonThir.Size = new System.Drawing.Size(115, 22);
             this.radioButtonThir.TabIndex = 5;
@@ -533,7 +533,7 @@
             this.radioButtonSec.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButtonSec.AutoSize = true;
             this.radioButtonSec.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.radioButtonSec.Location = new System.Drawing.Point(477, 251);
+            this.radioButtonSec.Location = new System.Drawing.Point(474, 251);
             this.radioButtonSec.Name = "radioButtonSec";
             this.radioButtonSec.Size = new System.Drawing.Size(115, 22);
             this.radioButtonSec.TabIndex = 4;
@@ -547,7 +547,7 @@
             this.radioButtonfirst.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButtonfirst.AutoSize = true;
             this.radioButtonfirst.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.radioButtonfirst.Location = new System.Drawing.Point(234, 251);
+            this.radioButtonfirst.Location = new System.Drawing.Point(231, 251);
             this.radioButtonfirst.Name = "radioButtonfirst";
             this.radioButtonfirst.Size = new System.Drawing.Size(115, 22);
             this.radioButtonfirst.TabIndex = 3;
@@ -560,7 +560,7 @@
             // 
             this.buttonDel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonDel.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.buttonDel.Location = new System.Drawing.Point(865, 171);
+            this.buttonDel.Location = new System.Drawing.Point(862, 171);
             this.buttonDel.Name = "buttonDel";
             this.buttonDel.Size = new System.Drawing.Size(135, 34);
             this.buttonDel.TabIndex = 2;
@@ -572,7 +572,7 @@
             // 
             this.buttonUpdate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonUpdate.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.buttonUpdate.Location = new System.Drawing.Point(865, 112);
+            this.buttonUpdate.Location = new System.Drawing.Point(862, 112);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(135, 34);
             this.buttonUpdate.TabIndex = 1;
@@ -584,7 +584,7 @@
             // 
             this.buttonAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonAdd.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.buttonAdd.Location = new System.Drawing.Point(865, 50);
+            this.buttonAdd.Location = new System.Drawing.Point(862, 50);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(135, 34);
             this.buttonAdd.TabIndex = 0;
