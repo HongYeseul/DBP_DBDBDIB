@@ -56,7 +56,7 @@
             this.dataGridViewSelect.RowHeadersWidth = 51;
             this.dataGridViewSelect.RowTemplate.Height = 27;
             this.dataGridViewSelect.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewSelect.Size = new System.Drawing.Size(626, 446);
+            this.dataGridViewSelect.Size = new System.Drawing.Size(735, 591);
             this.dataGridViewSelect.TabIndex = 0;
             // 
             // groupBox1
@@ -64,7 +64,7 @@
             this.groupBox1.Controls.Add(this.radioButtonUser);
             this.groupBox1.Controls.Add(this.radioButtonKeyword);
             this.groupBox1.Controls.Add(this.radioButtonDate);
-            this.groupBox1.Location = new System.Drawing.Point(677, 47);
+            this.groupBox1.Location = new System.Drawing.Point(794, 117);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 145);
             this.groupBox1.TabIndex = 1;
@@ -109,21 +109,21 @@
             // 
             // textBoxSelect
             // 
-            this.textBoxSelect.Location = new System.Drawing.Point(677, 210);
+            this.textBoxSelect.Location = new System.Drawing.Point(794, 280);
             this.textBoxSelect.Name = "textBoxSelect";
             this.textBoxSelect.Size = new System.Drawing.Size(200, 25);
             this.textBoxSelect.TabIndex = 2;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(677, 210);
+            this.dateTimePicker1.Location = new System.Drawing.Point(794, 280);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 25);
             this.dateTimePicker1.TabIndex = 3;
             // 
             // buttonSelcet
             // 
-            this.buttonSelcet.Location = new System.Drawing.Point(677, 255);
+            this.buttonSelcet.Location = new System.Drawing.Point(794, 325);
             this.buttonSelcet.Name = "buttonSelcet";
             this.buttonSelcet.Size = new System.Drawing.Size(200, 39);
             this.buttonSelcet.TabIndex = 4;
@@ -133,7 +133,7 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(677, 345);
+            this.buttonSave.Location = new System.Drawing.Point(794, 415);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(200, 39);
             this.buttonSave.TabIndex = 5;
@@ -143,7 +143,7 @@
             // 
             // buttonChange
             // 
-            this.buttonChange.Location = new System.Drawing.Point(677, 300);
+            this.buttonChange.Location = new System.Drawing.Point(794, 370);
             this.buttonChange.Name = "buttonChange";
             this.buttonChange.Size = new System.Drawing.Size(96, 39);
             this.buttonChange.TabIndex = 6;
@@ -153,7 +153,7 @@
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(781, 300);
+            this.buttonDelete.Location = new System.Drawing.Point(898, 370);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(96, 39);
             this.buttonDelete.TabIndex = 7;
@@ -165,7 +165,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(889, 506);
+            this.ClientSize = new System.Drawing.Size(1018, 642);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonChange);
             this.Controls.Add(this.buttonSave);
