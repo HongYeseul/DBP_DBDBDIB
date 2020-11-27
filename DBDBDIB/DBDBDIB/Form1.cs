@@ -53,6 +53,9 @@ namespace DBDBDIB
             dt1.Merge(dt3);
             dt1.DefaultView.Sort = "ID"; // 데이터그리드뷰에서 ID를 정렬한다.
             PaymentListView.DataSource = dt1;
+
+            if (PaymentListView.Rows.Count == 0) 
+                PaymentListView.DataSource = null;
         }
         private void buttonPayment_Accept_Click(object sender, EventArgs e) // 결재진행을 누를 시
         {
@@ -114,6 +117,10 @@ namespace DBDBDIB
         }
         private void PaymentListView_CellClick(object sender, DataGridViewCellEventArgs e) // 그냥 셀 클릭 시
         {
+            if (Convert.ToInt32(PaymentListView.SelectedRows[0].Cells[0].Value) < 0)
+            {
+                return;
+            }
             string selected = PaymentListView.SelectedRows[0].Cells[0].Value.ToString();
             int id = Convert.ToInt32(selected);
             string commentquery = "SELECT * FROM 결재 WHERE ID = " + id;
@@ -134,7 +141,8 @@ namespace DBDBDIB
             int id = Convert.ToInt32(selected);
             if (MessageBox.Show("결재를 반려하시겠습니까?", "결재반려확인", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                string paymentdenymemo = "UPDATE 결재 SET 반려메모 ='" + textBoxPaymentdenymemo.Text + "'" + "," + "반려여부 = '1'" + "WHERE ID = " + id;
+                string paymentdenymemo = "UPDATE 결재 SET 반려메모 ='" + textBoxPaymentdenymemo.Text + "'" + "," + "반려여부 = '1' , 진행상황 = '0'" + 
+                    "WHERE ID = " + id;
                 DBManager.GetInstance().DBquery(paymentdenymemo);
                 MessageBox.Show("결재가 반려되었습니다.", "결재반려", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 paymentviewer();

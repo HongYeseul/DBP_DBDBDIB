@@ -53,7 +53,7 @@
             // 
             // buttonPayment_Deny
             // 
-            this.buttonPayment_Deny.Location = new System.Drawing.Point(761, 341);
+            this.buttonPayment_Deny.Location = new System.Drawing.Point(783, 341);
             this.buttonPayment_Deny.Name = "buttonPayment_Deny";
             this.buttonPayment_Deny.Size = new System.Drawing.Size(95, 33);
             this.buttonPayment_Deny.TabIndex = 3;
@@ -131,7 +131,7 @@
             // 
             // buttonDenycheck
             // 
-            this.buttonDenycheck.Location = new System.Drawing.Point(777, 477);
+            this.buttonDenycheck.Location = new System.Drawing.Point(780, 477);
             this.buttonDenycheck.Name = "buttonDenycheck";
             this.buttonDenycheck.Size = new System.Drawing.Size(99, 29);
             this.buttonDenycheck.TabIndex = 10;
