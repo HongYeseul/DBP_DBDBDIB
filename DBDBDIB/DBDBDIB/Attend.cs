@@ -69,7 +69,7 @@ namespace DBDBDIB
             if (dtpToday.Checked)
                 query = " AND Date='" + dtpToday.Value.ToString("%y-%M-%d") +"'";
             if (tbEmp.Text != "")
-                query += " AND empID="+tbEmp.Text; 
+                query += " AND name='"+tbEmp.Text+"'"; //사원이름으로 검색가능하도록
             dgvVisible(query);
         }
         private void dgvVisible(string where)
