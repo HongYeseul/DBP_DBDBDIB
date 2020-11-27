@@ -28,16 +28,17 @@ namespace DBDBDIB
                 this.Close();
             }
             */
-            if (checkBoxLogin.Checked)
-            {
-                Console.WriteLine("체크됨");
-                Properties.Settings.Default.ID = txtBoxID.Text.ToString();
-                Properties.Settings.Default.Password = txtBoxPW.Text.ToString();
-                Properties.Settings.Default.Save();
-            }
-
+            
             if (UserManager.loginON == true)
             {
+                if (checkBoxLogin.Checked)
+                {
+                    Console.WriteLine("체크됨");
+                    Properties.Settings.Default.ID = txtBoxID.Text.ToString();
+                    Properties.Settings.Default.Password = txtBoxPW.Text.ToString();
+                    Properties.Settings.Default.Save();
+                }
+
                 Mainform form = new Mainform();
                 form.Show();
                 Program.ac.MainForm = form;
