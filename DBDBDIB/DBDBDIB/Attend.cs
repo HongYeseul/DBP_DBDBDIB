@@ -25,8 +25,6 @@ namespace DBDBDIB
 
         private void initVariables()
         {
-            dtpToday.Format = DateTimePickerFormat.Custom;
-            dtpToday.CustomFormat = "    ";
             tbEmp.Text = null;
         }
         private void bIn_Click(object sender, EventArgs e)
@@ -68,7 +66,7 @@ namespace DBDBDIB
         private void bLookup_Click(object sender, EventArgs e)
         {
             string query = "";
-            if (dtpToday.Text != "    ")
+            if (dtpToday.Checked)
                 query = " AND Date='" + dtpToday.Value.ToString("%y-%M-%d") +"'";
             if (tbEmp.Text != "")
                 query += " AND empID="+tbEmp.Text; 

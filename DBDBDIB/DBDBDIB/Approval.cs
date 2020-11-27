@@ -34,16 +34,21 @@ namespace DBDBDIB
         private void getDGV(DataGridView dgv, string column, string table, string data)
         { 
             dgv.DataSource = hr.selectDGV(column, table, data);
-            dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
 
         private void bDeptEnroll_Click(object sender, EventArgs e)
         {
             insertDeptInfoDB();
-            DataTable dt = hr.selectDGV("COUNT(*)", "부서", " WHERE 부서명='"+hr.deptName+"'");
+            DataTable dt = hr.selectDGV("COUNT(*)", "부서", " WHERE valid=1 AND 부서명='" + hr.deptName+"'");
             if (Convert.ToInt32(dt.Rows[0][0])>0)
             {
                 MessageBox.Show("기입하신 부서명과 동일한 부서가 이미 존재합니다.");
+                return;
+            }
+            dt =hr.selectDGV("COUNT(*)", "Employee", " WHERE valid=1 AND identification='" + hr.deptMaster + "'");
+            if (Convert.ToInt32(dt.Rows[0][0]) == 0)
+            {
+                MessageBox.Show("유효하지 않은 사원입니다.");
                 return;
             }
             try
@@ -119,9 +124,15 @@ namespace DBDBDIB
 
         private void dgvDeptView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            hr.deptID = Convert.ToString(dgvDeptView.Rows[dgvDeptView.SelectedRows[0].Index].Cells[0].Value);
-            tbInsertDeptName.Text = Convert.ToString(dgvDeptView.Rows[dgvDeptView.SelectedRows[0].Index].Cells[1].Value);
-            tbInsertDeptManager.Text = Convert.ToString(dgvDeptView.Rows[dgvDeptView.SelectedRows[0].Index].Cells[2].Value);
+            try {
+                hr.deptID = Convert.ToString(dgvDeptView.Rows[dgvDeptView.SelectedRows[0].Index].Cells[0].Value);
+                tbInsertDeptName.Text = Convert.ToString(dgvDeptView.Rows[dgvDeptView.SelectedRows[0].Index].Cells[1].Value);
+                tbInsertDeptManager.Text = Convert.ToString(dgvDeptView.Rows[dgvDeptView.SelectedRows[0].Index].Cells[2].Value);
+            }
+            catch{
+                return;
+            }
+
         }
 
         private void bDeptLookUp_Click(object sender, EventArgs e)

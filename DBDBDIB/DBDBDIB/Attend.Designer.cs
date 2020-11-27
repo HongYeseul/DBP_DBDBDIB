@@ -117,6 +117,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpToday.Location = new System.Drawing.Point(533, 30);
             this.dtpToday.Name = "dtpToday";
+            this.dtpToday.ShowCheckBox = true;
             this.dtpToday.Size = new System.Drawing.Size(175, 21);
             this.dtpToday.TabIndex = 1;
             this.dtpToday.ValueChanged += new System.EventHandler(this.dtpToday_ValueChanged);
