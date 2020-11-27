@@ -421,7 +421,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 4;
-            this.label2.Text = "나이";
+            this.label2.Text = "생년";
             // 
             // label4
             // 
