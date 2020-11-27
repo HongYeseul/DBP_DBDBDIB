@@ -126,15 +126,38 @@ namespace DBDBDIB
         }
         private void PaymentListView_CellClick(object sender, DataGridViewCellEventArgs e) // 그냥 셀 클릭 시
         {
-            string selected = PaymentListView.SelectedRows[0].Cells[0].Value.ToString();
-            int id = Convert.ToInt32(selected);
-            string commentquery = "SELECT * FROM 결재 WHERE ID = " + id;
-            MySqlDataReader rdr = DBManager.GetInstance().select(commentquery);
+            int rowIndex = PaymentListView.CurrentCellAddress.Y;
+            string num = PaymentListView.Rows[rowIndex].Cells[0].Value.ToString();
+            int selectedId = Convert.ToInt32(num);
+            int firstpaymentid = 0;
+            int secondpaymentid = 0;
+            int thirdpaymentid = 0;
+            string checkpayment1 = "SELECT 진행상황,결재자수,제1결재자,제2결재자" +
+                ",ifnull(제3결재자,0)AS 제3결재자 FROM 결재 WHERE ID = " + selectedId;
+            MySqlDataReader rdr = DBManager.GetInstance().select(checkpayment1);
+
             while (rdr.Read())
             {
-                textBoxComent.Text = rdr["코멘트"].ToString();
+                paymentprocesscount = Convert.ToInt32(rdr["진행상황"].ToString()); // 진행상황 값 받아오기
+                firstpaymentid = Convert.ToInt32(rdr["제1결재자"].ToString()); // 제 1결재자 값 받아오기
+                secondpaymentid = Convert.ToInt32(rdr["제2결재자"].ToString()); // 제 2결재자 값 받아오기
+                thirdpaymentid = Convert.ToInt32(rdr["제3결재자"].ToString()); // 제 3결재 값 받아오기
             }
-            rdr.Close();
+
+            if (firstpaymentid == id)
+            {
+                usercount = 1;
+            }
+            else if (secondpaymentid == id)
+            {
+                usercount = 2;
+            }
+            else if (thirdpaymentid == id)
+            {
+                usercount = 3;
+            }
+
+            textBoxComent.Text = PaymentListView.SelectedRows[0].Cells[4].Value.ToString();
         }
         private void paymentform_Load(object sender, EventArgs e) // 결재확인 load
         {
@@ -157,38 +180,7 @@ namespace DBDBDIB
                 MessageBox.Show("결재반려가 취소되었습니다.", "결재반려취소", MessageBoxButtons.OK);
             }
         }
-        private void PaymentListView_CellContentClick(object sender, DataGridViewCellEventArgs e) // 업무 그리드뷰 클릭 시
-        {
-            int rowIndex = PaymentListView.CurrentCellAddress.Y;
-            string num = PaymentListView.Rows[rowIndex].Cells[0].Value.ToString();
-            int selectedId = Convert.ToInt32(num);
-            int firstpaymentid = 0;
-            int secondpaymentid = 0;
-            int thirdpaymentid = 0;
-            string checkpayment1 = "SELECT 진행상황,결재자수,제1결재자,제2결재자" +
-                ",ifnull(제3결재자,0)AS 제3결재자 FROM 결재 WHERE ID = " + selectedId;
-            MySqlDataReader rdr = DBManager.GetInstance().select(checkpayment1);
-
-            while(rdr.Read())
-            {
-                paymentprocesscount = Convert.ToInt32(rdr["진행상황"].ToString()); // 진행상황 값 받아오기
-                firstpaymentid = Convert.ToInt32(rdr["제1결재자"].ToString()); // 제 1결재자 값 받아오기
-                secondpaymentid = Convert.ToInt32(rdr["제2결재자"].ToString()); // 제 2결재자 값 받아오기
-                thirdpaymentid = Convert.ToInt32(rdr["제3결재자"].ToString()); // 제 3결재 값 받아오기
-            }
-
-            if(firstpaymentid == id)
-            {
-                usercount = 1;
-            }
-            else if(secondpaymentid == id)
-            {
-                usercount = 2;
-            }
-            else if(thirdpaymentid == id)
-            {
-                usercount = 3;
-            }
-        }
+      
     }
 }
+

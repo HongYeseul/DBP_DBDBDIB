@@ -110,7 +110,7 @@
             this.PaymentListView.Size = new System.Drawing.Size(858, 184);
             this.PaymentListView.TabIndex = 6;
             this.PaymentListView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PaymentListView_CellClick);
-            this.PaymentListView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PaymentListView_CellContentClick);
+        
             // 
             // labelpaymentdeny
             // 
