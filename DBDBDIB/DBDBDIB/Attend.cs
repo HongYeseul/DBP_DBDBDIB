@@ -41,6 +41,7 @@ namespace DBDBDIB
             }
             hr.insertHRData("Attendance", "Date, empID, empIn", "'" + currentdate + "', " + loginID + ", '" + currenttime + "'");           
             dgvVisible("");
+            dgvattend.CurrentCell = dgvattend.Rows[dgvattend.Rows.Count - 1].Cells[0];
         }
 
         private void bOut_Click(object sender, EventArgs e)
@@ -60,8 +61,9 @@ namespace DBDBDIB
                 return;
             }
             login_logout_check = Convert.ToString(hr.selectDGV("id ", "Attendance ", " WHERE Date='" + currentdate + "'" + " AND empID=" + loginID).Rows[0][0]);
-            hr.updateHRData("Attendance", "empOut='" + DateTime.Now.ToString("%H:%m:%s") + "' WHERE id=" + login_logout_check);
+            hr.updateHRData("","Attendance", "empOut='" + DateTime.Now.ToString("%H:%m:%s") + "' WHERE id=" + login_logout_check);
             dgvVisible("");
+            dgvattend.CurrentCell = dgvattend.Rows[dgvattend.Rows.Count - 1].Cells[0];
         }
         private void bLookup_Click(object sender, EventArgs e)
         {
@@ -74,7 +76,7 @@ namespace DBDBDIB
         }
         private void dgvVisible(string where)
         {
-            dgvattend.DataSource = hr.selectDGV("Date as 날짜, empID as 사원번호, name as 사원이름, empIn as 출근, empOut as 퇴근", "Employee,Attendance"," WHERE identification=empID"+where);
+            dgvattend.DataSource = hr.selectDGV("Date as 날짜, empID as 사원번호, name as 사원이름, empIn as 출근, empOut as 퇴근", "Employee,Attendance"," WHERE identification=empID"+where+" ORDER BY Date,empIn");
             dgvattend.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
 

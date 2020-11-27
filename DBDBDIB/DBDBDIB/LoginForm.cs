@@ -29,22 +29,28 @@ namespace DBDBDIB
             }
             */
             
-            Mainform form = new Mainform();
-            form.Show();
-            Program.ac.MainForm = form;
+            if (UserManager.loginON == true)
+            {
+                if (checkBoxLogin.Checked)
+                {
+                    Console.WriteLine("체크됨");
+                    Properties.Settings.Default.ID = txtBoxID.Text.ToString();
+                    Properties.Settings.Default.Password = txtBoxPW.Text.ToString();
+                    Properties.Settings.Default.Save();
+                }
 
-            this.Close();
+                Mainform form = new Mainform();
+                form.Show();
+                Program.ac.MainForm = form;
+
+                this.Close();
+            }
+            
         }
 
         private void checkBoxLogin_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBoxLogin.Checked)
-            {
-                Console.WriteLine("체크됨");
-                Properties.Settings.Default.ID = txtBoxID.Text.ToString();
-                Properties.Settings.Default.Password = txtBoxPW.Text.ToString();
-                Properties.Settings.Default.Save();
-            }
+            
             /*
             else
             {
@@ -82,7 +88,7 @@ namespace DBDBDIB
             {
                 txtBoxID.Text = id;
                 txtBoxPW.Text = pw;
-                checkBoxLogin.Checked = true;
+                checkBoxLogin.Checked = false;
             }
         }
 

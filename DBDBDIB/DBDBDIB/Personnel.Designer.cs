@@ -125,6 +125,7 @@
             // 
             // dgvEmpManageView
             // 
+            this.dgvEmpManageView.AllowUserToAddRows = false;
             this.dgvEmpManageView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmpManageView.Location = new System.Drawing.Point(6, 294);
             this.dgvEmpManageView.Name = "dgvEmpManageView";
@@ -460,6 +461,7 @@
             // 
             // dgvEmpView
             // 
+            this.dgvEmpView.AllowUserToAddRows = false;
             this.dgvEmpView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));

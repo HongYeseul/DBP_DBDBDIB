@@ -194,6 +194,11 @@ namespace DBDBDIB
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("로그아웃");
+            Properties.Settings.Default.ID = "";
+            Properties.Settings.Default.Password = "";
+            Properties.Settings.Default.Save();
+
             UserInfo.Getinstance().loginON = false;
             LoginForm loginForm = new LoginForm(); //새로운 로그인 폼 생성
             loginForm.Show(); //폼 보여주기

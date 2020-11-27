@@ -59,7 +59,7 @@ namespace DBDBDIB
             hr.ChangeDept(Convert.ToString(dt.Rows[0][0]),1);
             getDGV(dgvDeptView, "ID AS 부서ID, 부서명, 부서장, name AS 사원이름", "부서 LEFT JOIN Employee ON identification = 부서장", " WHERE ID>1 AND 부서.valid=1 AND Employee.valid=1");
             //dgvDeptView.Rows.Add(dt.Rows[0][0], tbInsertDeptName.Text, tbInsertDeptManager.Text, dt.Rows[0][1]);
-            dgvDeptView.CurrentCell = dgvDeptView.Rows[dgvDeptView.Rows.Count - 2].Cells[0];
+            dgvDeptView.CurrentCell = dgvDeptView.Rows[dgvDeptView.Rows.Count - 1].Cells[0];
             initBox();
         }
 
@@ -73,7 +73,7 @@ namespace DBDBDIB
             }
             try
             {
-                hr.updateHRData("부서", hr.updateQuery(2));//그리드에서 선택한값
+                hr.updateHRData("","부서", hr.updateQuery(2));//그리드에서 선택한값
             }
             catch
             {
@@ -101,7 +101,7 @@ namespace DBDBDIB
                 MessageBox.Show("부서 내 인원이 남아있어 부서를 삭제할 수 없습니다.");
                 return;
             }
-            hr.updateHRData("부서", hr.updateQuery(3));//그리드에서 선택한값
+            hr.updateHRData("","부서", hr.updateQuery(3));//그리드에서 선택한값
             dgvDeptView.Rows.RemoveAt(dgvDeptView.CurrentRow.Index);
             getDGV(dgvEmpSearchView, "identification AS 사원번호, name AS 사원이름, 부서명, position AS 직급", "부서,Employee", " WHERE Employee.valid=1 AND ID>1 AND ID = department AND ID=" + hr.deptID);
             initBox();
@@ -117,14 +117,11 @@ namespace DBDBDIB
             getDGV(dgvEmpSearchView, "identification AS 사원번호, name AS 사원이름, 부서명, position AS 직급", "부서,Employee", query);
         }
 
-        private void dgvDeptView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvDeptView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvDeptView.SelectedRows[0].Index < dgvDeptView.Rows.Count - 1)
-            {
-                hr.deptID = Convert.ToString(dgvDeptView.Rows[dgvDeptView.SelectedRows[0].Index].Cells[0].Value);
-                tbInsertDeptName.Text = Convert.ToString(dgvDeptView.Rows[dgvDeptView.SelectedRows[0].Index].Cells[1].Value);
-                tbInsertDeptManager.Text = Convert.ToString(dgvDeptView.Rows[dgvDeptView.SelectedRows[0].Index].Cells[2].Value);
-            }
+            hr.deptID = Convert.ToString(dgvDeptView.Rows[dgvDeptView.SelectedRows[0].Index].Cells[0].Value);
+            tbInsertDeptName.Text = Convert.ToString(dgvDeptView.Rows[dgvDeptView.SelectedRows[0].Index].Cells[1].Value);
+            tbInsertDeptManager.Text = Convert.ToString(dgvDeptView.Rows[dgvDeptView.SelectedRows[0].Index].Cells[2].Value);
         }
 
         private void bDeptLookUp_Click(object sender, EventArgs e)

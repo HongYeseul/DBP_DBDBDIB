@@ -49,12 +49,14 @@
             // 
             // dgvDeptView
             // 
+            this.dgvDeptView.AllowUserToAddRows = false;
             this.dgvDeptView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDeptView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvDeptView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDeptView.Location = new System.Drawing.Point(17, 20);
+            this.dgvDeptView.MultiSelect = false;
             this.dgvDeptView.Name = "dgvDeptView";
             this.dgvDeptView.ReadOnly = true;
             this.dgvDeptView.RowHeadersWidth = 5;
@@ -62,7 +64,7 @@
             this.dgvDeptView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDeptView.Size = new System.Drawing.Size(591, 521);
             this.dgvDeptView.TabIndex = 2;
-            this.dgvDeptView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDeptView_CellContentClick);
+            this.dgvDeptView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDeptView_CellClick);
             // 
             // groupBox1
             // 
@@ -178,6 +180,7 @@
             // 
             // dgvEmpSearchView
             // 
+            this.dgvEmpSearchView.AllowUserToAddRows = false;
             this.dgvEmpSearchView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
