@@ -34,17 +34,17 @@
             this.button_Task_Delete = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.TaskmasterView = new System.Windows.Forms.DataGridView();
-            this.taskid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.taskaf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.taskkind = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.taskcontents = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.taskdeleteflag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBoxTaskKind = new System.Windows.Forms.ComboBox();
             this.textBoxTaskContents = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBoxAFcompany = new System.Windows.Forms.ComboBox();
+            this.buttonCellClickCancel = new System.Windows.Forms.Button();
+            this.taskid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.taskaf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.taskkind = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.taskcontents = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.TaskmasterView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,6 +91,8 @@
             // 
             // TaskmasterView
             // 
+            this.TaskmasterView.AllowUserToAddRows = false;
+            this.TaskmasterView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -104,41 +106,16 @@
             this.taskid,
             this.taskaf,
             this.taskkind,
-            this.taskcontents,
-            this.taskdeleteflag});
+            this.taskcontents});
             this.TaskmasterView.Location = new System.Drawing.Point(12, 59);
             this.TaskmasterView.Name = "TaskmasterView";
+            this.TaskmasterView.ReadOnly = true;
+            this.TaskmasterView.RowHeadersVisible = false;
             this.TaskmasterView.RowTemplate.Height = 23;
+            this.TaskmasterView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.TaskmasterView.Size = new System.Drawing.Size(714, 311);
             this.TaskmasterView.TabIndex = 0;
             this.TaskmasterView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TaskmasterView_CellClick);
-            // 
-            // taskid
-            // 
-            this.taskid.HeaderText = "업무번호";
-            this.taskid.Name = "taskid";
-            this.taskid.Width = 80;
-            // 
-            // taskaf
-            // 
-            this.taskaf.HeaderText = "소속";
-            this.taskaf.Name = "taskaf";
-            // 
-            // taskkind
-            // 
-            this.taskkind.HeaderText = "업무분류";
-            this.taskkind.Name = "taskkind";
-            // 
-            // taskcontents
-            // 
-            this.taskcontents.HeaderText = "업무내용";
-            this.taskcontents.Name = "taskcontents";
-            this.taskcontents.Width = 450;
-            // 
-            // taskdeleteflag
-            // 
-            this.taskdeleteflag.HeaderText = "삭제유효성";
-            this.taskdeleteflag.Name = "taskdeleteflag";
             // 
             // comboBoxTaskKind
             // 
@@ -193,11 +170,50 @@
             this.comboBoxAFcompany.Size = new System.Drawing.Size(121, 20);
             this.comboBoxAFcompany.TabIndex = 21;
             // 
+            // buttonCellClickCancel
+            // 
+            this.buttonCellClickCancel.Location = new System.Drawing.Point(746, 60);
+            this.buttonCellClickCancel.Name = "buttonCellClickCancel";
+            this.buttonCellClickCancel.Size = new System.Drawing.Size(130, 110);
+            this.buttonCellClickCancel.TabIndex = 22;
+            this.buttonCellClickCancel.Text = "수정/삭제 취소";
+            this.buttonCellClickCancel.UseVisualStyleBackColor = true;
+            this.buttonCellClickCancel.Click += new System.EventHandler(this.buttonCellClickCancel_Click);
+            // 
+            // taskid
+            // 
+            this.taskid.HeaderText = "업무번호";
+            this.taskid.Name = "taskid";
+            this.taskid.ReadOnly = true;
+            this.taskid.Width = 78;
+            // 
+            // taskaf
+            // 
+            this.taskaf.HeaderText = "소속";
+            this.taskaf.Name = "taskaf";
+            this.taskaf.ReadOnly = true;
+            this.taskaf.Width = 54;
+            // 
+            // taskkind
+            // 
+            this.taskkind.HeaderText = "업무분류";
+            this.taskkind.Name = "taskkind";
+            this.taskkind.ReadOnly = true;
+            this.taskkind.Width = 78;
+            // 
+            // taskcontents
+            // 
+            this.taskcontents.HeaderText = "업무내용";
+            this.taskcontents.Name = "taskcontents";
+            this.taskcontents.ReadOnly = true;
+            this.taskcontents.Width = 78;
+            // 
             // taskmasterform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(891, 514);
+            this.Controls.Add(this.buttonCellClickCancel);
             this.Controls.Add(this.comboBoxAFcompany);
             this.Controls.Add(this.comboBoxTaskKind);
             this.Controls.Add(this.textBoxTaskContents);
@@ -224,16 +240,16 @@
         private System.Windows.Forms.Button button_Task_Delete;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView TaskmasterView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn taskid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn taskaf;
-        private System.Windows.Forms.DataGridViewTextBoxColumn taskkind;
-        private System.Windows.Forms.DataGridViewTextBoxColumn taskcontents;
-        private System.Windows.Forms.DataGridViewTextBoxColumn taskdeleteflag;
         private System.Windows.Forms.ComboBox comboBoxTaskKind;
         private System.Windows.Forms.TextBox textBoxTaskContents;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBoxAFcompany;
+        private System.Windows.Forms.Button buttonCellClickCancel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn taskid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn taskaf;
+        private System.Windows.Forms.DataGridViewTextBoxColumn taskkind;
+        private System.Windows.Forms.DataGridViewTextBoxColumn taskcontents;
     }
 }

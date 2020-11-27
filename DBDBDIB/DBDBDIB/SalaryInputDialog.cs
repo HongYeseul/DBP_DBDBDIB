@@ -27,13 +27,13 @@ namespace DBDBDIB
                 DBManager.GetInstance().msg("시간을 입력해주세요");
                 return;
             }
-            int i = 0;
-            if (int.TryParse(textBoxInputHour.Text, out i) == false) //가격이 정수가 아닐경우
+            double i = 0;
+            if (double.TryParse(textBoxInputHour.Text, out i) == false) //가격이 정수가 아닐경우
             {
                 DBManager.GetInstance().msg("정수 가격을 입력해주세요");
                 return;
             }
-            detail_.ExtraHour_ = Int32.Parse(textBoxInputHour.Text);
+            detail_.ExtraHour_ = Double.Parse(textBoxInputHour.Text);
             this.Close();
         }
     }
