@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonPayment_Accept = new System.Windows.Forms.Button();
             this.buttonPayment_Deny = new System.Windows.Forms.Button();
             this.textBoxComent = new System.Windows.Forms.TextBox();
@@ -45,7 +45,7 @@
             // 
             this.buttonPayment_Accept.Location = new System.Drawing.Point(651, 341);
             this.buttonPayment_Accept.Name = "buttonPayment_Accept";
-            this.buttonPayment_Accept.Size = new System.Drawing.Size(75, 23);
+            this.buttonPayment_Accept.Size = new System.Drawing.Size(104, 33);
             this.buttonPayment_Accept.TabIndex = 2;
             this.buttonPayment_Accept.Text = "결재진행";
             this.buttonPayment_Accept.UseVisualStyleBackColor = true;
@@ -53,9 +53,9 @@
             // 
             // buttonPayment_Deny
             // 
-            this.buttonPayment_Deny.Location = new System.Drawing.Point(804, 341);
+            this.buttonPayment_Deny.Location = new System.Drawing.Point(761, 341);
             this.buttonPayment_Deny.Name = "buttonPayment_Deny";
-            this.buttonPayment_Deny.Size = new System.Drawing.Size(75, 23);
+            this.buttonPayment_Deny.Size = new System.Drawing.Size(95, 33);
             this.buttonPayment_Deny.TabIndex = 3;
             this.buttonPayment_Deny.Text = "결재반려";
             this.buttonPayment_Deny.UseVisualStyleBackColor = true;
@@ -92,14 +92,14 @@
             // 
             this.PaymentListView.AllowUserToAddRows = false;
             this.PaymentListView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.PaymentListView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.PaymentListView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.PaymentListView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.PaymentListView.Location = new System.Drawing.Point(20, 58);
             this.PaymentListView.Name = "PaymentListView";
@@ -131,9 +131,9 @@
             // 
             // buttonDenycheck
             // 
-            this.buttonDenycheck.Location = new System.Drawing.Point(804, 480);
+            this.buttonDenycheck.Location = new System.Drawing.Point(777, 477);
             this.buttonDenycheck.Name = "buttonDenycheck";
-            this.buttonDenycheck.Size = new System.Drawing.Size(75, 23);
+            this.buttonDenycheck.Size = new System.Drawing.Size(99, 29);
             this.buttonDenycheck.TabIndex = 10;
             this.buttonDenycheck.Text = "확인";
             this.buttonDenycheck.UseVisualStyleBackColor = true;
