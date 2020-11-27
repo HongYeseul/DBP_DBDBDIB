@@ -102,6 +102,7 @@
             this.dataGridViewWork.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewWork.ColumnHeadersVisible = false;
             this.dataGridViewWork.Location = new System.Drawing.Point(131, 283);
+            this.dataGridViewWork.MultiSelect = false;
             this.dataGridViewWork.Name = "dataGridViewWork";
             this.dataGridViewWork.ReadOnly = true;
             this.dataGridViewWork.RowHeadersVisible = false;
