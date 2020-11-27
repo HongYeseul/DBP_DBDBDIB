@@ -39,9 +39,12 @@
             this.dgv_MyApprList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_MyApprList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_MyApprList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_MyApprList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_MyApprList.Location = new System.Drawing.Point(12, 66);
             this.dgv_MyApprList.Name = "dgv_MyApprList";
+            this.dgv_MyApprList.ReadOnly = true;
             this.dgv_MyApprList.RowHeadersWidth = 51;
             this.dgv_MyApprList.RowTemplate.Height = 27;
             this.dgv_MyApprList.Size = new System.Drawing.Size(865, 428);
