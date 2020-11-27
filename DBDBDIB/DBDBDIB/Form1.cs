@@ -37,9 +37,9 @@ namespace DBDBDIB
             string checkpayment1 = "SELECT ID,기안자,제목,내용,코멘트,제1결재자,제2결재자" +
                 ",ifnull(제3결재자,0)AS 제3결재자 FROM 결재 WHERE 진행상황 < 결재자수 AND 1승인시간 IS NULL AND 반려여부 = 0 AND 제1결재자 = " + id;
             string checkpayment2 = "SELECT ID,기안자,제목,내용,코멘트,제1결재자,제2결재자" +
-                ",ifnull(제3결재자,0)AS 제3결재자 FROM 결재 WHERE 진행상황 < 결재자수 AND 2승인시간 IS NULL AND 반려여부 = 0 AND 제2결재자 = " + id;
+                ",ifnull(제3결재자,0)AS 제3결재자 FROM 결재 WHERE 진행상황 < 결재자수 AND 진행상황=1 AND 2승인시간 IS NULL AND 반려여부 = 0 AND 제2결재자 = " + id;
             string checkpayment3 = "SELECT ID,기안자,제목,내용,코멘트,제1결재자,제2결재자" +
-                ",ifnull(제3결재자,0)AS 제3결재자 FROM 결재 WHERE 진행상황 < 결재자수 AND 3승인시간 IS NULL AND 반려여부 = 0 AND 제3결재자 = " + id;
+                ",ifnull(제3결재자,0)AS 제3결재자 FROM 결재 WHERE 진행상황 < 결재자수 AND 진행상황=2 AND 3승인시간 IS NULL AND 반려여부 = 0 AND 제3결재자 = " + id;
             MySqlDataReader rdr1 = DBManager.GetInstance().select(checkpayment1);
             MySqlDataReader rdr2 = DBManager.GetInstance().select(checkpayment2);
             MySqlDataReader rdr3 = DBManager.GetInstance().select(checkpayment3);
@@ -54,7 +54,7 @@ namespace DBDBDIB
             dt1.DefaultView.Sort = "ID"; // 데이터그리드뷰에서 ID를 정렬한다.
             PaymentListView.DataSource = dt1;
 
-            if (PaymentListView.Rows.Count == 0) 
+            if (PaymentListView.Rows.Count == 0) // 결재내역에 없으면
                 PaymentListView.DataSource = null;
         }
         private void buttonPayment_Accept_Click(object sender, EventArgs e) // 결재진행을 누를 시
@@ -85,6 +85,10 @@ namespace DBDBDIB
                     MessageBox.Show(paymenttime + "에 결재가 완료되었습니다.", "결재알림", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     paymentviewer();
                 }
+                else if (usercount == 4)
+                {
+                    MessageBox.Show("선택 후 결재를 진행해 주세요.", "결재알림", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
                 else
                 {
                     MessageBox.Show("현재 결재할 수 있는 사용자가아닙니다.", "결재알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -105,10 +109,15 @@ namespace DBDBDIB
                     textBoxPaymentdenymemo.Visible = true;
                     buttonDenycheck.Visible = true;
                 }
+                else if (usercount == 4)
+                {
+                    MessageBox.Show("선택 후 반려를 진행해 주세요.", "결재알림", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
                 else
                 {
                     MessageBox.Show("현재 반려할 수 있는 사용자가아닙니다.", "결재알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                 
             }
             else
             {
@@ -117,10 +126,6 @@ namespace DBDBDIB
         }
         private void PaymentListView_CellClick(object sender, DataGridViewCellEventArgs e) // 그냥 셀 클릭 시
         {
-            if (Convert.ToInt32(PaymentListView.SelectedRows[0].Cells[0].Value) < 0)
-            {
-                return;
-            }
             string selected = PaymentListView.SelectedRows[0].Cells[0].Value.ToString();
             int id = Convert.ToInt32(selected);
             string commentquery = "SELECT * FROM 결재 WHERE ID = " + id;

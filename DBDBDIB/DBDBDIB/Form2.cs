@@ -14,7 +14,6 @@ namespace DBDBDIB
 {
     public partial class taskmasterform : Form
     {
-        
         public taskmasterform()
         {
             InitializeComponent();
@@ -32,7 +31,7 @@ namespace DBDBDIB
             using (MySqlConnection conn = new MySqlConnection(strconn))
             {
                 conn.Open();
-                string Combolist = "SELECT * FROM 부서";
+                string Combolist = "SELECT * FROM 부서 WHERE valid = 1";
                 MySqlCommand cmd = new MySqlCommand(Combolist, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
@@ -187,8 +186,8 @@ namespace DBDBDIB
             buttonCellClickCancel.Visible = false;
             button_Task_Apply.Visible = true;
             TaskmasterView.ClearSelection();
-            comboBoxAFcompany.Text = "";
-            comboBoxTaskKind.Text = "";
+            comboBoxAFcompany.SelectedIndex = -1; // 입력방지 콤보박스 값 초기화
+            comboBoxTaskKind.SelectedIndex = -1; // 입력방지 콤보박스 값 초기화
             textBoxTaskContents.Text = "";
         }
     }
