@@ -213,5 +213,11 @@ namespace DBDBDIB
         private void Mainform_FormClosing(object sender, FormClosingEventArgs e)
         {
         }
+
+        private void btnChatting_Click(object sender, EventArgs e)
+        {
+            Chatting newForm = new Chatting();
+            newForm.Show();
+        }
     }
 }
