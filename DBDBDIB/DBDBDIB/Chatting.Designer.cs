@@ -101,6 +101,7 @@
             this.Controls.Add(this.txtBoxMsg);
             this.Name = "Chatting";
             this.Text = "Chatting";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Chatting_FormClosed);
             this.Load += new System.EventHandler(this.Chatting_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

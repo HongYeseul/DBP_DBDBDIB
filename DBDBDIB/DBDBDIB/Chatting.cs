@@ -104,6 +104,9 @@ namespace DBDBDIB
 
         }
 
-        
+        private void Chatting_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            client.Close();
+        }
     }
 }
