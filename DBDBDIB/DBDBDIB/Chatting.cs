@@ -48,7 +48,7 @@ namespace DBDBDIB
 
             var json = new JObject();
             json.Add("name", UserManager.Name);
-            json.Add("room", txtRoomNum.Text);
+            json.Add("room", RoomNum.Text);
             json.Add("msg", line);
 
             Console.WriteLine(json.ToString());
@@ -61,7 +61,7 @@ namespace DBDBDIB
         {
             var json = new JObject();
             json.Add("name", UserManager.Name);
-            json.Add("room", txtRoomNum.Text);
+            json.Add("room", RoomNum.Text);
             json.Add("msg", "채팅을 시작합니다.");
 
             Console.WriteLine(json.ToString());

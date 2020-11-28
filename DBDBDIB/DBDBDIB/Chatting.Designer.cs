@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.txtBoxMsg = new System.Windows.Forms.RichTextBox();
-            this.txtRoomNum = new System.Windows.Forms.TextBox();
             this.txtUserMsg = new System.Windows.Forms.TextBox();
             this.btnSend = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnConnect = new System.Windows.Forms.Button();
+            this.RoomNum = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.RoomNum)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBoxMsg
@@ -44,13 +45,6 @@
             this.txtBoxMsg.Size = new System.Drawing.Size(389, 298);
             this.txtBoxMsg.TabIndex = 0;
             this.txtBoxMsg.Text = "";
-            // 
-            // txtRoomNum
-            // 
-            this.txtRoomNum.Location = new System.Drawing.Point(286, 6);
-            this.txtRoomNum.Name = "txtRoomNum";
-            this.txtRoomNum.Size = new System.Drawing.Size(53, 21);
-            this.txtRoomNum.TabIndex = 1;
             // 
             // txtUserMsg
             // 
@@ -72,7 +66,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(235, 9);
+            this.label1.Location = new System.Drawing.Point(249, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 12);
             this.label1.TabIndex = 4;
@@ -88,21 +82,45 @@
             this.btnConnect.UseVisualStyleBackColor = true;
             this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
+            // RoomNum
+            // 
+            this.RoomNum.Location = new System.Drawing.Point(300, 6);
+            this.RoomNum.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.RoomNum.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.RoomNum.Name = "RoomNum";
+            this.RoomNum.ReadOnly = true;
+            this.RoomNum.Size = new System.Drawing.Size(39, 21);
+            this.RoomNum.TabIndex = 6;
+            this.RoomNum.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // Chatting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(413, 362);
+            this.Controls.Add(this.RoomNum);
             this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.txtUserMsg);
-            this.Controls.Add(this.txtRoomNum);
             this.Controls.Add(this.txtBoxMsg);
             this.Name = "Chatting";
             this.Text = "Chatting";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Chatting_FormClosed);
             this.Load += new System.EventHandler(this.Chatting_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.RoomNum)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,10 +129,10 @@
         #endregion
 
         private System.Windows.Forms.RichTextBox txtBoxMsg;
-        private System.Windows.Forms.TextBox txtRoomNum;
         private System.Windows.Forms.TextBox txtUserMsg;
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnConnect;
+        private System.Windows.Forms.NumericUpDown RoomNum;
     }
 }
