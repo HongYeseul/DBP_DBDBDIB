@@ -50,6 +50,7 @@
             this.dataGridViewSelect.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewSelect.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewSelect.Location = new System.Drawing.Point(32, 25);
+            this.dataGridViewSelect.MultiSelect = false;
             this.dataGridViewSelect.Name = "dataGridViewSelect";
             this.dataGridViewSelect.ReadOnly = true;
             this.dataGridViewSelect.RowHeadersVisible = false;

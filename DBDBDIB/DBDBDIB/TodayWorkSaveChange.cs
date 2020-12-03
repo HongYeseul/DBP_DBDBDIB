@@ -16,6 +16,7 @@ namespace DBDBDIB
         private string CASE = "";
         GridViewManager gridView;
         int changeid;
+        DateTime changeDate,changeStart, changeEnd;
 
         public TodayWorkSaveChange(GridViewManager View, string buttonText, int id = 0, string name="")
         {
@@ -48,16 +49,22 @@ namespace DBDBDIB
             string query = "SELECT 부서,업무종류,업무내용,날짜,시작시간,종료시간 FROM 일일업무등록,업무마스터 WHERE 업무마스터id=업무번호 AND id = " +changeid;
             MySqlDataReader rdr = DBManager.GetInstance().select(query);
             string com1="", com2="", com3="";
-            
+
             while (rdr.Read())
             {
                 com1 = rdr["부서"].ToString();
                 com2 = rdr["업무종류"].ToString();
                 com3 = rdr["업무내용"].ToString();
-                dateTimePicker1.Value = (DateTime)rdr["날짜"];
-                dateTimePickerStart.Value = (DateTime)rdr["시작시간"];
-                dateTimePickerEnd.Value = (DateTime)rdr["종료시간"];
+                changeDate = (DateTime)rdr["날짜"];
+                changeStart = (DateTime)rdr["시작시간"];
+                changeEnd = (DateTime)rdr["종료시간"];
             }
+
+            //시간 세팅
+            dateTimePicker1.Value = changeDate;
+            dateTimePickerStart.Value = changeStart;
+            dateTimePickerEnd.Value = changeEnd;
+
 
             comboBox소속.SelectedItem = com1; 
             comboBox업무종류.SelectedItem = com2;
@@ -85,12 +92,9 @@ namespace DBDBDIB
             comboBox업무종류.Items.Clear();
             comboBox업무내용.Items.Clear();
         }
-        
-        
-        
+              
         
         //콤보박스 값들은 이벤트에 따라 바뀌여야함. 
-
         private void comboBox소속_SelectedIndexChanged(object sender, EventArgs e) //부서선택
         {
             //한번 닦기
@@ -115,8 +119,7 @@ namespace DBDBDIB
             
 
         }
-
-        
+       
 
         private void comboBox업무종류_SelectedIndexChanged(object sender, EventArgs e) //장기단기 선택
         {
@@ -144,11 +147,11 @@ namespace DBDBDIB
             }
         }
 
-
         private void comboBox업무내용_SelectedIndexChanged(object sender, EventArgs e)
         {
             //의미없다
         }
+
 
         private void buttonSaveANDChange_Click(object sender, EventArgs e) //등록 혹인 수정 버튼 클릭 ** 시작,종료시간 추가기능
         {
@@ -161,6 +164,14 @@ namespace DBDBDIB
             DateTime et = dateTimePickerEnd.Value; //종료 시간
             string end = string.Format("{0}-{1}-{2} {3}:{4}:{5}", et.Year, et.Month, et.Day, et.Hour, et.Minute, et.Second);
             //string end = string.Format("{0}:{1}:{2}", et.Hour, et.Minute,et.Second);
+
+            //null값 확인
+            if(comboBox소속.SelectedItem==null|| comboBox업무종류.SelectedItem == null || comboBox업무내용.SelectedItem == null)
+            {
+                MessageBox.Show("모든 값을 선택후 진행해주세요");
+                return;
+            }
+
             string com1 = comboBox소속.SelectedItem.ToString();
             string com2 = comboBox업무종류.SelectedItem.ToString();
             string com3 = comboBox업무내용.SelectedItem.ToString();
@@ -171,9 +182,19 @@ namespace DBDBDIB
             }
 
             //시작시간, 종료시간 검토하기.
-            if (!CheckTimeStartEnd(date)) //이미 등록된 시간대라면,
+            //수정이면서 시간 변동이 없을 때 -> 통과 되야함
+            if (CASE.Equals("수정")&&DateTime.Compare(dt,changeDate)==0&& TimeSpan.Compare(st.TimeOfDay, changeStart.TimeOfDay)==0
+                && TimeSpan.Compare(et.TimeOfDay, changeEnd.TimeOfDay)==0)
             {
-                MessageBox.Show("이미 업무가 등록된 시간대 입니다. 또는 잘못된 시간 입력입니다.");
+                // 그냥 통과
+            }else if (TimeSpan.Compare(st.TimeOfDay, et.TimeOfDay) > 0) //종료시간이 더 이를때
+            {
+                MessageBox.Show("잘못된 시간 입력입니다.");
+                return;
+            }
+            else if (!CheckTimeStartEnd(date)) //이미 등록된 시간대라면,
+            {
+                MessageBox.Show("이미 업무가 등록된 시간대 입니다.");
                 return;
             }
 
@@ -228,13 +249,15 @@ namespace DBDBDIB
                 start = (DateTime)rdr["시작시간"];
                 end = (DateTime)rdr["종료시간"];
 
-                if(TimeSpan.Compare(nowStart.TimeOfDay, nowEnd.TimeOfDay) > 0)
+                //수정 내역 낑겨 있을 경우
+                if (CASE.Equals("수정") && DateTime.Compare(Convert.ToDateTime(date), changeDate) == 0 && TimeSpan.Compare(start.TimeOfDay, changeStart.TimeOfDay) == 0
+                && TimeSpan.Compare(end.TimeOfDay, changeEnd.TimeOfDay) == 0)
                 {
-                    return false;
+                    // 그냥 통과, 다음 시간 체크하기
+                    continue;
                 }
-
                 //검사 코드 추가 ****
-                if(TimeSpan.Compare(nowStart.TimeOfDay, start.TimeOfDay) >0 && TimeSpan.Compare(end.TimeOfDay, nowStart.TimeOfDay) >0) ///잘못됬음.
+                else if (TimeSpan.Compare(nowStart.TimeOfDay, start.TimeOfDay) >0 && TimeSpan.Compare(end.TimeOfDay, nowStart.TimeOfDay) >0) ///잘못됬음.
                 {
                     return false;
                 }else if(TimeSpan.Compare(nowEnd.TimeOfDay, start.TimeOfDay) > 0 && TimeSpan.Compare(end.TimeOfDay, nowEnd.TimeOfDay) > 0)
