@@ -226,7 +226,7 @@ namespace DBDBDIB
         {
             if (listBoxRank.SelectedItem == null || listBoxName.SelectedItem == null)
             {
-                MessageBox.Show("1결재자의 부서, 직급, 나이를 선택해 부세요", "결재자 선택 요청");
+                MessageBox.Show("1결재자의 부서, 직급, 이름을 선택해 부세요", "결재자 선택 요청");
                 return; }
             rank = listBoxRank.SelectedItem.ToString();
             string name= listBoxName.SelectedItem.ToString();
@@ -245,7 +245,7 @@ namespace DBDBDIB
         {
             if (listBoxRank.SelectedItem == null || listBoxName.SelectedItem == null)
             {
-                MessageBox.Show("2결재자의 부서, 직급, 나이를 선택해 부세요", "결재자 선택 요청");
+                MessageBox.Show("2결재자의 부서, 직급, 이름을 선택해 부세요", "결재자 선택 요청");
                 return; }
             rank = listBoxRank.SelectedItem.ToString();
             string name = listBoxName.SelectedItem.ToString();
@@ -264,7 +264,7 @@ namespace DBDBDIB
         {
             if (listBoxRank.SelectedItem == null || listBoxName.SelectedItem == null)
             {
-                MessageBox.Show("3결재자의 부서, 직급, 나이를 선택해 부세요", "결재자 선택 요청");
+                MessageBox.Show("3결재자의 부서, 직급, 이름을 선택해 부세요", "결재자 선택 요청");
                 return;
             }           rank = listBoxRank.SelectedItem.ToString();
             string name = listBoxName.SelectedItem.ToString();
@@ -305,7 +305,7 @@ namespace DBDBDIB
         {
             if(Approver1==0)
             {
-                MessageBox.Show("1결재자의 부서, 직급, 나이를 선택해 부세요", "결재자 선택 요청");
+                MessageBox.Show("1결재자의 부서, 직급, 이름을 선택해 부세요", "결재자 선택 요청");
                 return;
             }
             Approver1 = 0;
@@ -317,7 +317,7 @@ namespace DBDBDIB
         {
             if (Approver2==0)
             {
-                MessageBox.Show("2결재자의 부서, 직급, 나이를 선택해 부세요", "결재자 선택 요청");
+                MessageBox.Show("2결재자의 부서, 직급, 이름을 선택해 부세요", "결재자 선택 요청");
                 return;
             }
             Approver2 = 0;
@@ -329,7 +329,7 @@ namespace DBDBDIB
         {
             if (Approver3==0)
             {
-                MessageBox.Show("3결재자의 부서, 직급, 나이를 선택해 부세요", "결재자 선택 요청");
+                MessageBox.Show("3결재자의 부서, 직급, 이름을 선택해 부세요", "결재자 선택 요청");
                 return;
             }
             Approver3 = 0;
