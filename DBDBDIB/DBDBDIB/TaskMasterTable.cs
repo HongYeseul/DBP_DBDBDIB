@@ -36,14 +36,7 @@ namespace DBDBDIB
         }
         private void syndataview() // 동기화 함수
         {
-            try {
-                TaskmasterView.Rows.Clear();
-            }
-            catch
-            {
-
-            }
-            
+            TaskmasterView.Rows.Clear();
             string Tasklist = "SELECT 업무번호,부서,업무종류,업무내용 FROM 업무마스터 WHERE 업무유효성 = 1";
             MySqlDataReader rdr = DBManager.GetInstance().select(Tasklist);
             DataTable dt = new DataTable();

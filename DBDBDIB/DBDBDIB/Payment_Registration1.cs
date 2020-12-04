@@ -102,7 +102,6 @@ namespace DBDBDIB
                 ++check;
             if (check == 0)
             { //2번 그룹박스 보여주기
-
                 groupBoxForpay1.Visible = false;
                 groupBoxForpay2.Visible = true;
                 SetForm2();
