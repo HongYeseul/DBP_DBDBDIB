@@ -31,11 +31,15 @@
             this.dgv_MyApprList = new System.Windows.Forms.DataGridView();
             this.combo_Appr = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_MyApprList)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv_MyApprList
             // 
+            this.dgv_MyApprList.AllowUserToAddRows = false;
+            this.dgv_MyApprList.AllowUserToDeleteRows = false;
             this.dgv_MyApprList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -43,8 +47,10 @@
             this.dgv_MyApprList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_MyApprList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_MyApprList.Location = new System.Drawing.Point(12, 66);
+            this.dgv_MyApprList.MultiSelect = false;
             this.dgv_MyApprList.Name = "dgv_MyApprList";
             this.dgv_MyApprList.ReadOnly = true;
+            this.dgv_MyApprList.RowHeadersVisible = false;
             this.dgv_MyApprList.RowHeadersWidth = 51;
             this.dgv_MyApprList.RowTemplate.Height = 27;
             this.dgv_MyApprList.Size = new System.Drawing.Size(865, 428);
@@ -52,12 +58,15 @@
             // 
             // combo_Appr
             // 
+            this.combo_Appr.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_Appr.FormattingEnabled = true;
+            this.combo_Appr.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.combo_Appr.Items.AddRange(new object[] {
-            "모든 결재 내역",
+            "등록 결재 내역",
             "결재 중 내역",
             "결재 완료 내역",
-            "결재할 내역"});
+            "결재할 내역",
+            "반려 내역"});
             this.combo_Appr.Location = new System.Drawing.Point(95, 23);
             this.combo_Appr.Name = "combo_Appr";
             this.combo_Appr.Size = new System.Drawing.Size(195, 23);
@@ -73,11 +82,31 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "모아보기";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(330, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(367, 15);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "*진행상황: 결재 승인 수(ex. 1 = 제1결재자만 승인함)";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(330, 31);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(234, 15);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "*결재자수: 총 결재해야 하는 인원";
+            // 
             // ApprovalListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(889, 506);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.combo_Appr);
             this.Controls.Add(this.dgv_MyApprList);
@@ -94,5 +123,7 @@
         private System.Windows.Forms.DataGridView dgv_MyApprList;
         private System.Windows.Forms.ComboBox combo_Appr;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
