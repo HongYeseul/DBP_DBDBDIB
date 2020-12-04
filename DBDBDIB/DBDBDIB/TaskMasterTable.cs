@@ -26,7 +26,7 @@ namespace DBDBDIB
         }
         void fillcombo() // 콤보박스에 부서를 넣을 것임
         {
-            string Combolist = "SELECT * FROM 부서 WHERE valid = 1";
+            string Combolist = "SELECT * FROM 부서 WHERE valid = 1 AND ID > 1";
             MySqlDataReader rdr = DBManager.GetInstance().select(Combolist);
             while (rdr.Read())
             {
