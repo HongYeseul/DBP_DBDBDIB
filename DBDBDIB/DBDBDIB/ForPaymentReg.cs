@@ -40,7 +40,7 @@ namespace DBDBDIB
         }
         public MySqlDataReader SetName(int apartid,string rank)
         {
-            MySqlDataReader rdr = DBManager.GetInstance().select("SELECT name FROM erp_school.Employee WHERE department="+apartid+" AND position='"+rank+"';");
+            MySqlDataReader rdr = DBManager.GetInstance().select("SELECT name FROM erp_school.Employee WHERE department="+apartid+" AND position='"+rank+"' AND valid=1;");
             return rdr;
         }
         public MySqlDataReader SearchId(int apartid,string rank, string name)
