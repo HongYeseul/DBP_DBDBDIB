@@ -31,7 +31,11 @@ namespace DBDBDIB
             if (UserInfo.Getinstance().loginON == false)
                 this.Close();
             else
+            {
                 MessageBox.Show(UserInfo.Getinstance().Name + "님 로그인 되셨습니다.");
+                labelpersonname.Text = UserInfo.Getinstance().Name;
+                labelpersonnum.Text = UserInfo.Getinstance().Id;
+            }
 
             loadMsgNotification();
 
