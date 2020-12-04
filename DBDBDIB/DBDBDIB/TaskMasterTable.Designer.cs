@@ -194,6 +194,7 @@
             this.Name = "taskmasterform";
             this.Text = "업무마스터";
             this.Load += new System.EventHandler(this.Form2_Load);
+            this.Shown += new System.EventHandler(this.taskmasterform_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.TaskmasterView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

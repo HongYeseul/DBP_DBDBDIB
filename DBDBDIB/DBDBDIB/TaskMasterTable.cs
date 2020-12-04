@@ -36,7 +36,10 @@ namespace DBDBDIB
         }
         private void syndataview() // 동기화 함수
         {
-            TaskmasterView.Rows.Clear();
+            comboBoxAFcompany.SelectedIndex = -1; // 입력방지 콤보박스 값 초기화
+            comboBoxTaskKind.SelectedIndex = -1; // 입력방지 콤보박스 값 초기화
+            try {TaskmasterView.Rows.Clear();}
+            catch{}
             string Tasklist = "SELECT 업무번호,부서,업무종류,업무내용 FROM 업무마스터 WHERE 업무유효성 = 1";
             MySqlDataReader rdr = DBManager.GetInstance().select(Tasklist);
             DataTable dt = new DataTable();
@@ -51,55 +54,69 @@ namespace DBDBDIB
         }
         private void button_Task_Rectify_Click(object sender, EventArgs e) // 수정 버튼
         {
-            button_Task_Apply.Visible = true;
-            string selected = TaskmasterView.SelectedRows[0].Cells[0].Value.ToString();
-            int id = Convert.ToInt32(selected);
-            if (comboBoxAFcompany.Text == "") // 소속에 아무것도 없으면
+            if (TaskmasterView.CurrentCell == null)
             {
-                MessageBox.Show("소속명을 기입하십시오", "업무수정오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if(comboBoxTaskKind.Text == "") // 업무종류를 선택하지 않으면
-            {
-                MessageBox.Show("업무종류를 선택해주세요", "업무수정오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if(textBoxTaskContents.Text == "") // 업무내용에 아무것도 없으면
-            {
-                MessageBox.Show("업무내용을 기입하십시오", "업무수정오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("수정할 업무를 선택해주세요", "업무수정확인", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                if (MessageBox.Show("업무를 수정하시겠습니까?", "업무수정확인", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                button_Task_Apply.Visible = true;
+                string selected = TaskmasterView.SelectedRows[0].Cells[0].Value.ToString();
+                int id = Convert.ToInt32(selected);
+                if (comboBoxAFcompany.Text == "") // 소속에 아무것도 없으면
                 {
-                    string updatetask = "UPDATE 업무마스터 SET  부서 = '" + comboBoxAFcompany.Text + "'" + "," +
-                    "업무종류 = '" + comboBoxTaskKind.Text + "'" + "," + "업무내용 = '" + textBoxTaskContents.Text + "'" +
-                     "WHERE 업무번호 = " + id + "";
-                    DBManager.GetInstance().DBquery(updatetask);
-                    MessageBox.Show("업무가수정되었습니다.", "업무수정확인", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    syndataview();
+                    MessageBox.Show("소속명을 기입하십시오", "업무수정오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (comboBoxTaskKind.Text == "") // 업무종류를 선택하지 않으면
+                {
+                    MessageBox.Show("업무종류를 선택해주세요", "업무수정오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (textBoxTaskContents.Text == "") // 업무내용에 아무것도 없으면
+                {
+                    MessageBox.Show("업무내용을 기입하십시오", "업무수정오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    MessageBox.Show("업무수정이 취소되었습니다.", "업무수정취소", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    if (MessageBox.Show("업무를 수정하시겠습니까?", "업무수정확인", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        string updatetask = "UPDATE 업무마스터 SET  부서 = '" + comboBoxAFcompany.Text + "'" + "," +
+                        "업무종류 = '" + comboBoxTaskKind.Text + "'" + "," + "업무내용 = '" + textBoxTaskContents.Text + "'" +
+                         "WHERE 업무번호 = " + id + "";
+                        DBManager.GetInstance().DBquery(updatetask);
+                        MessageBox.Show("업무가수정되었습니다.", "업무수정확인", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        syndataview();
+                    }
+                    else
+                    {
+                        MessageBox.Show("업무수정이 취소되었습니다.", "업무수정취소", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
                 }
             }
         }
         private void button_Task_Delete_Click(object sender, EventArgs e) // 삭제 버튼
         {
-            button_Task_Apply.Visible = true;
-            string selected = TaskmasterView.SelectedRows[0].Cells[0].Value.ToString();
-            int id = Convert.ToInt32(selected);
-            
-            if (MessageBox.Show("이 업무는 정말 삭제하시겠습니까? 삭제하시면 더이상 결재가 불가능한 업무입니다.", "업무삭제확인", 
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (TaskmasterView.CurrentCell == null)
             {
-                string deleteflagtask = "UPDATE 업무마스터 SET 업무유효성 = 0 Where 업무번호 = " + id + "";
-                DBManager.GetInstance().DBquery(deleteflagtask);
-                MessageBox.Show("이 업무는 더이상 결재 할 수 없습니다.", "업무삭제확인", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                syndataview();
+                MessageBox.Show("삭제할 업무를 선택해주세요", "업무삭제확인", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            else 
+            else
             {
-                MessageBox.Show("업무삭제가 취소되었습니다.", "업무삭제취소", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                button_Task_Apply.Visible = true;
+                string selected = TaskmasterView.SelectedRows[0].Cells[0].Value.ToString();
+                int id = Convert.ToInt32(selected);
+
+                if (MessageBox.Show("이 업무는 정말 삭제하시겠습니까? 삭제하시면 더이상 결재가 불가능한 업무입니다.", "업무삭제확인",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    string deleteflagtask = "UPDATE 업무마스터 SET 업무유효성 = 0 Where 업무번호 = " + id + "";
+                    DBManager.GetInstance().DBquery(deleteflagtask);
+                    MessageBox.Show("이 업무는 더이상 결재 할 수 없습니다.", "업무삭제확인", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    syndataview();
+                }
+                else
+                {
+                    MessageBox.Show("업무삭제가 취소되었습니다.", "업무삭제취소", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
         }
         private void button_Task_Apply_Click(object sender, EventArgs e) // 등록 버튼
@@ -171,6 +188,11 @@ namespace DBDBDIB
             comboBoxAFcompany.SelectedIndex = -1; // 입력방지 콤보박스 값 초기화
             comboBoxTaskKind.SelectedIndex = -1; // 입력방지 콤보박스 값 초기화
             textBoxTaskContents.Text = "";
+        }
+
+        private void taskmasterform_Shown(object sender, EventArgs e) // 데이터그리뷰 로드 시 첫 번째 row 선택 안되게 함
+        {
+            TaskmasterView.CurrentCell = null; 
         }
     }
 }

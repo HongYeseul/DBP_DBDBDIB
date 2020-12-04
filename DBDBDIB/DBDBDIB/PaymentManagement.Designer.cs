@@ -110,7 +110,6 @@
             this.PaymentListView.Size = new System.Drawing.Size(858, 184);
             this.PaymentListView.TabIndex = 6;
             this.PaymentListView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PaymentListView_CellClick);
-        
             // 
             // labelpaymentdeny
             // 
@@ -156,6 +155,7 @@
             this.Name = "paymentform";
             this.Text = "결재기능";
             this.Load += new System.EventHandler(this.paymentform_Load);
+            this.Shown += new System.EventHandler(this.paymentform_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.PaymentListView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
