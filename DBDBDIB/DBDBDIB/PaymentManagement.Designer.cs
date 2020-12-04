@@ -66,6 +66,7 @@
             this.textBoxComent.Location = new System.Drawing.Point(20, 283);
             this.textBoxComent.Multiline = true;
             this.textBoxComent.Name = "textBoxComent";
+            this.textBoxComent.ReadOnly = true;
             this.textBoxComent.Size = new System.Drawing.Size(859, 50);
             this.textBoxComent.TabIndex = 1;
             // 
