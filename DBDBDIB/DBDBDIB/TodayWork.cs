@@ -80,13 +80,13 @@ namespace DBDBDIB
                 //선택된 값 삭제
                 //id(pk)값 가지고 삭제
                 int id = Int32.Parse(dataGridViewSelect.Rows[dataGridViewSelect.CurrentCellAddress.Y].Cells[0].Value.ToString());
-                MessageBox.Show("" + id);
+                //MessageBox.Show("" + id);
 
                 //삭제 쿼리 보내기
                 string query = "DELETE FROM 일일업무등록 WHERE id = " + id;
                 DBManager.GetInstance().DBquery(query);
 
-
+                MessageBox.Show("삭제되었습니다.");
                 //화면 닦이는지 확인
                 gridView.SettingGridView();
             }

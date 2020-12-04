@@ -81,6 +81,7 @@
             // 
             // comboBox소속
             // 
+            this.comboBox소속.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox소속.FormattingEnabled = true;
             this.comboBox소속.Location = new System.Drawing.Point(102, 74);
             this.comboBox소속.Name = "comboBox소속";
@@ -90,6 +91,7 @@
             // 
             // comboBox업무내용
             // 
+            this.comboBox업무내용.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox업무내용.FormattingEnabled = true;
             this.comboBox업무내용.Location = new System.Drawing.Point(102, 121);
             this.comboBox업무내용.Name = "comboBox업무내용";
@@ -99,6 +101,7 @@
             // 
             // comboBox업무종류
             // 
+            this.comboBox업무종류.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox업무종류.FormattingEnabled = true;
             this.comboBox업무종류.Location = new System.Drawing.Point(302, 74);
             this.comboBox업무종류.Name = "comboBox업무종류";
