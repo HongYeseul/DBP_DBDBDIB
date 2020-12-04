@@ -24,45 +24,27 @@ namespace DBDBDIB
             TaskmasterView.AllowUserToAddRows = false;
             fillcombo();
         }
-        string strconn = "Server=49.50.174.201;Database=erp_school;Uid=dbdbdib;Pwd=123123;Charset=utf8";
-
         void fillcombo() // 콤보박스에 부서를 넣을 것임
         {
-            using (MySqlConnection conn = new MySqlConnection(strconn))
+            string Combolist = "SELECT * FROM 부서 WHERE valid = 1";
+            MySqlDataReader rdr = DBManager.GetInstance().select(Combolist);
+            while (rdr.Read())
             {
-                conn.Open();
-                string Combolist = "SELECT * FROM 부서 WHERE valid = 1";
-                MySqlCommand cmd = new MySqlCommand(Combolist, conn);
-                MySqlDataReader rdr = cmd.ExecuteReader();
-                while (rdr.Read())
-                {
-                    string listname = rdr.GetString("부서명");
-                    comboBoxAFcompany.Items.Add(listname);
-                }
-                rdr.Close();
-                conn.Close();
+                string listname = rdr.GetString("부서명");
+                comboBoxAFcompany.Items.Add(listname);
             }
         }
         private void syndataview() // 동기화 함수
         {
             TaskmasterView.Rows.Clear();
-            using (MySqlConnection conn = new MySqlConnection(strconn))
-            {
-                conn.Open();
-                string Tasklist = "SELECT 업무번호,부서,업무종류,업무내용 FROM 업무마스터 WHERE 업무유효성 = 1";
-                MySqlCommand cmd = new MySqlCommand(Tasklist, conn);
-                MySqlDataReader rdr = cmd.ExecuteReader();
-                int ii = 0;
-                while (rdr.Read())
-                {
-                    TaskmasterView.Rows.Add();
-                    for (int i = 0; i < 4; i++) // index 0 ~ 3까지 존재
-                        TaskmasterView.Rows[ii].Cells[i].Value = rdr[i].ToString();
-                    ii++;
-                }
-                rdr.Close();
-                conn.Close();
-            }
+            string Tasklist = "SELECT 업무번호,부서,업무종류,업무내용 FROM 업무마스터 WHERE 업무유효성 = 1";
+            MySqlDataReader rdr = DBManager.GetInstance().select(Tasklist);
+            DataTable dt = new DataTable();
+            dt.Load(rdr);
+            dt.DefaultView.Sort = "업무번호"; // 업무번호 정렬하기
+            TaskmasterView.DataSource = dt;
+            if (TaskmasterView.Rows.Count == 0) // 업무마스터에 아무것도 없으면
+                TaskmasterView.DataSource = null;
             comboBoxAFcompany.Text = "";
             comboBoxTaskKind.Text = "";
             textBoxTaskContents.Text = "";
@@ -125,9 +107,9 @@ namespace DBDBDIB
             string AFcompany = comboBoxAFcompany.Text;
             string Taskkind = comboBoxTaskKind.Text;
             string TaskContents = textBoxTaskContents.Text;
-            MySqlDataReader count = DBManager.GetInstance().select("SELECT COUNT(*) as cnt FROM 업무마스터 WHERE 부서 = '" + AFcompany + "'" +
-                "AND 업무종류 = '" + Taskkind + "'" + "AND 업무내용 = '" + TaskContents + "'"); // 중복여부 확인
-            int overlapflag = 0;
+            string overlap = "SELECT COUNT(*) as cnt FROM 업무마스터 WHERE 부서 = '" + AFcompany + "'" +"AND 업무종류 = '" + Taskkind + "'" + "AND 업무내용 = '" + TaskContents + "'";
+            MySqlDataReader count = DBManager.GetInstance().select(overlap); // 중복여부 확인
+            int overlapflag = 0; // 중복횟수
             while (count.Read())
             {
                 overlapflag = Convert.ToInt32(count["cnt"]); // 중복여부 확인을 정수로 선언
@@ -169,8 +151,8 @@ namespace DBDBDIB
         }
         private void TaskmasterView_CellClick(object sender, DataGridViewCellEventArgs e) // datagridview의 셀을 누르면 발생하는 이벤트
         {
-            button_Task_Apply.Visible = false;
-            buttonCellClickCancel.Visible = true; // 혹시나 등록하고 싶은데 셀을 잘 못 입력하면
+            button_Task_Apply.Visible = false; // 등록버튼은 사라지고
+            buttonCellClickCancel.Visible = true; // 선택취소 버튼이 등장
             comboBoxAFcompany.Text = TaskmasterView.SelectedRows[0].Cells[1].Value.ToString();
             comboBoxTaskKind.Text = TaskmasterView.SelectedRows[0].Cells[2].Value.ToString();
             textBoxTaskContents.Text = TaskmasterView.SelectedRows[0].Cells[3].Value.ToString();
@@ -181,10 +163,10 @@ namespace DBDBDIB
             syndataview();
         }
 
-        private void buttonCellClickCancel_Click(object sender, EventArgs e) // 수정/삭제 취소 시
+        private void buttonCellClickCancel_Click(object sender, EventArgs e) // 선택취소 버튼을 누를 시
         {
-            buttonCellClickCancel.Visible = false;
-            button_Task_Apply.Visible = true;
+            buttonCellClickCancel.Visible = false; // 선택취소버튼은 사라지고
+            button_Task_Apply.Visible = true; // 다시 등록 버튼이 등장
             TaskmasterView.ClearSelection();
             comboBoxAFcompany.SelectedIndex = -1; // 입력방지 콤보박스 값 초기화
             comboBoxTaskKind.SelectedIndex = -1; // 입력방지 콤보박스 값 초기화

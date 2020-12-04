@@ -23,9 +23,6 @@ namespace DBDBDIB
             PaymentListView.MultiSelect = false;
             PaymentListView.AllowUserToAddRows = false;
         }
-
-        string strconn = "Server=49.50.174.201;Database=erp_school;Uid=dbdbdib;Pwd=123123;Charset=utf8";
-
         private void paymentviewer() // 첫 화면 함수
         {
             labelpaymentdeny.Visible = false;
