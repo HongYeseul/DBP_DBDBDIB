@@ -97,6 +97,7 @@
             // 
             // dataGridViewWork
             // 
+            this.dataGridViewWork.AllowUserToAddRows = false;
             this.dataGridViewWork.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridViewWork.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewWork.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;

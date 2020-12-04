@@ -33,72 +33,67 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnReply = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtContent
             // 
-            this.txtContent.Location = new System.Drawing.Point(14, 68);
+            this.txtContent.Location = new System.Drawing.Point(22, 119);
+            this.txtContent.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtContent.Name = "txtContent";
             this.txtContent.ReadOnly = true;
-            this.txtContent.Size = new System.Drawing.Size(408, 270);
+            this.txtContent.Size = new System.Drawing.Size(639, 470);
             this.txtContent.TabIndex = 2;
             this.txtContent.Text = "";
             // 
             // txtWhoSent
             // 
-            this.txtWhoSent.Location = new System.Drawing.Point(75, 9);
+            this.txtWhoSent.Location = new System.Drawing.Point(118, 16);
+            this.txtWhoSent.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtWhoSent.Name = "txtWhoSent";
             this.txtWhoSent.ReadOnly = true;
-            this.txtWhoSent.Size = new System.Drawing.Size(71, 21);
+            this.txtWhoSent.Size = new System.Drawing.Size(109, 32);
             this.txtWhoSent.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 12);
+            this.label1.Location = new System.Drawing.Point(19, 21);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.Size = new System.Drawing.Size(94, 21);
             this.label1.TabIndex = 3;
             this.label1.Text = "보낸사람";
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point(75, 36);
+            this.txtTitle.Location = new System.Drawing.Point(118, 63);
+            this.txtTitle.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.ReadOnly = true;
-            this.txtTitle.Size = new System.Drawing.Size(146, 21);
+            this.txtTitle.Size = new System.Drawing.Size(227, 32);
             this.txtTitle.TabIndex = 6;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 39);
+            this.label2.Location = new System.Drawing.Point(19, 68);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 12);
+            this.label2.Size = new System.Drawing.Size(52, 21);
             this.label2.TabIndex = 5;
             this.label2.Text = "제목";
             // 
-            // btnReply
-            // 
-            this.btnReply.Location = new System.Drawing.Point(347, 12);
-            this.btnReply.Name = "btnReply";
-            this.btnReply.Size = new System.Drawing.Size(75, 45);
-            this.btnReply.TabIndex = 7;
-            this.btnReply.Text = "답장하기";
-            this.btnReply.UseVisualStyleBackColor = true;
-            // 
             // MessageDetail
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(434, 350);
-            this.Controls.Add(this.btnReply);
+            this.ClientSize = new System.Drawing.Size(682, 612);
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtWhoSent);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtContent);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "MessageDetail";
             this.Text = "MessageDetail";
             this.ResumeLayout(false);
@@ -113,6 +108,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnReply;
     }
 }

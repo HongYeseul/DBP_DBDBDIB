@@ -47,11 +47,12 @@
             this.buttonEmp = new System.Windows.Forms.Button();
             this.buttonHR = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.labelpersonnum = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.labelpersonname = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.labelpersonnum = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnChatting = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -63,6 +64,7 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.btnChatting);
             this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.btnMessage);
             this.panel1.Controls.Add(this.panel6);
@@ -279,6 +281,42 @@
             this.panel2.Size = new System.Drawing.Size(175, 100);
             this.panel2.TabIndex = 2;
             // 
+            // labelpersonname
+            // 
+            this.labelpersonname.AutoSize = true;
+            this.labelpersonname.Location = new System.Drawing.Point(92, 55);
+            this.labelpersonname.Name = "labelpersonname";
+            this.labelpersonname.Size = new System.Drawing.Size(43, 21);
+            this.labelpersonname.TabIndex = 3;
+            this.labelpersonname.Text = "ooo";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(22, 55);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(108, 21);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "사원이름 :";
+            // 
+            // labelpersonnum
+            // 
+            this.labelpersonnum.AutoSize = true;
+            this.labelpersonnum.Location = new System.Drawing.Point(92, 30);
+            this.labelpersonnum.Name = "labelpersonnum";
+            this.labelpersonnum.Size = new System.Drawing.Size(54, 21);
+            this.labelpersonnum.TabIndex = 1;
+            this.labelpersonnum.Text = "0000";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(22, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 21);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "사원번호 :";
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -288,41 +326,16 @@
             this.panel5.Size = new System.Drawing.Size(907, 553);
             this.panel5.TabIndex = 1;
             // 
-            // label1
+            // btnChatting
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 12);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "사원번호 :";
-            // 
-            // labelpersonnum
-            // 
-            this.labelpersonnum.AutoSize = true;
-            this.labelpersonnum.Location = new System.Drawing.Point(92, 30);
-            this.labelpersonnum.Name = "labelpersonnum";
-            this.labelpersonnum.Size = new System.Drawing.Size(29, 12);
-            this.labelpersonnum.TabIndex = 1;
-            this.labelpersonnum.Text = "0000";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 55);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 12);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "사원이름 :";
-            // 
-            // labelpersonname
-            // 
-            this.labelpersonname.AutoSize = true;
-            this.labelpersonname.Location = new System.Drawing.Point(92, 55);
-            this.labelpersonname.Name = "labelpersonname";
-            this.labelpersonname.Size = new System.Drawing.Size(26, 12);
-            this.labelpersonname.TabIndex = 3;
-            this.labelpersonname.Text = "ooo";
+            this.btnChatting.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnChatting.Location = new System.Drawing.Point(0, 514);
+            this.btnChatting.Name = "btnChatting";
+            this.btnChatting.Size = new System.Drawing.Size(175, 23);
+            this.btnChatting.TabIndex = 9;
+            this.btnChatting.Text = "채팅하기";
+            this.btnChatting.UseVisualStyleBackColor = true;
+            this.btnChatting.Click += new System.EventHandler(this.btnChatting_Click);
             // 
             // Mainform
             // 
@@ -373,6 +386,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labelpersonnum;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnChatting;
     }
 }
 
