@@ -48,7 +48,6 @@
             this.buttonHR = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.btnChatting = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.labelpersonnum = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -64,7 +63,6 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.btnChatting);
             this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.btnMessage);
             this.panel1.Controls.Add(this.panel6);
@@ -326,17 +324,6 @@
             this.labelpersonname.TabIndex = 3;
             this.labelpersonname.Text = "ooo";
             // 
-            // btnChatting
-            // 
-            this.btnChatting.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnChatting.Location = new System.Drawing.Point(0, 514);
-            this.btnChatting.Name = "btnChatting";
-            this.btnChatting.Size = new System.Drawing.Size(175, 23);
-            this.btnChatting.TabIndex = 9;
-            this.btnChatting.Text = "채팅하기";
-            this.btnChatting.UseVisualStyleBackColor = true;
-            this.btnChatting.Click += new System.EventHandler(this.btnChatting_Click);
-            // 
             // Mainform
             // 
             this.ClientSize = new System.Drawing.Size(1082, 553);
@@ -382,7 +369,6 @@
         private System.Windows.Forms.Button buttonSalary;
         private System.Windows.Forms.Button btnMessage;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Button btnChatting;
         private System.Windows.Forms.Label labelpersonname;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labelpersonnum;
