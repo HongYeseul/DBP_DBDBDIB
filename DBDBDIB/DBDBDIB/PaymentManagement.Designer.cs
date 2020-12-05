@@ -38,12 +38,19 @@
             this.labelpaymentdeny = new System.Windows.Forms.Label();
             this.textBoxPaymentdenymemo = new System.Windows.Forms.TextBox();
             this.buttonDenycheck = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PaymentListView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonPayment_Accept
             // 
-            this.buttonPayment_Accept.Location = new System.Drawing.Point(651, 341);
+            this.buttonPayment_Accept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPayment_Accept.Font = new System.Drawing.Font("HY견고딕", 11F);
+            this.buttonPayment_Accept.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.buttonPayment_Accept.Location = new System.Drawing.Point(651, 343);
             this.buttonPayment_Accept.Name = "buttonPayment_Accept";
             this.buttonPayment_Accept.Size = new System.Drawing.Size(104, 33);
             this.buttonPayment_Accept.TabIndex = 2;
@@ -53,7 +60,10 @@
             // 
             // buttonPayment_Deny
             // 
-            this.buttonPayment_Deny.Location = new System.Drawing.Point(783, 341);
+            this.buttonPayment_Deny.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPayment_Deny.Font = new System.Drawing.Font("HY견고딕", 11F);
+            this.buttonPayment_Deny.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.buttonPayment_Deny.Location = new System.Drawing.Point(767, 343);
             this.buttonPayment_Deny.Name = "buttonPayment_Deny";
             this.buttonPayment_Deny.Size = new System.Drawing.Size(95, 33);
             this.buttonPayment_Deny.TabIndex = 3;
@@ -63,6 +73,9 @@
             // 
             // textBoxComent
             // 
+            this.textBoxComent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(69)))));
+            this.textBoxComent.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxComent.Font = new System.Drawing.Font("HY견고딕", 10F);
             this.textBoxComent.Location = new System.Drawing.Point(20, 283);
             this.textBoxComent.Multiline = true;
             this.textBoxComent.Name = "textBoxComent";
@@ -73,19 +86,22 @@
             // Paymentlabel
             // 
             this.Paymentlabel.AutoSize = true;
-            this.Paymentlabel.Font = new System.Drawing.Font("돋움", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Paymentlabel.Location = new System.Drawing.Point(379, 19);
+            this.Paymentlabel.Font = new System.Drawing.Font("HY견고딕", 15F);
+            this.Paymentlabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.Paymentlabel.Location = new System.Drawing.Point(404, 19);
             this.Paymentlabel.Name = "Paymentlabel";
-            this.Paymentlabel.Size = new System.Drawing.Size(120, 27);
+            this.Paymentlabel.Size = new System.Drawing.Size(89, 20);
             this.Paymentlabel.TabIndex = 4;
             this.Paymentlabel.Text = "결재내역";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 264);
+            this.label2.Font = new System.Drawing.Font("HY견고딕", 11F);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.label2.Location = new System.Drawing.Point(19, 262);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 12);
+            this.label2.Size = new System.Drawing.Size(52, 15);
             this.label2.TabIndex = 5;
             this.label2.Text = "코멘트";
             // 
@@ -115,15 +131,21 @@
             // labelpaymentdeny
             // 
             this.labelpaymentdeny.AutoSize = true;
-            this.labelpaymentdeny.Location = new System.Drawing.Point(19, 378);
+            this.labelpaymentdeny.Font = new System.Drawing.Font("HY견고딕", 11F);
+            this.labelpaymentdeny.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.labelpaymentdeny.Location = new System.Drawing.Point(19, 367);
             this.labelpaymentdeny.Name = "labelpaymentdeny";
-            this.labelpaymentdeny.Size = new System.Drawing.Size(89, 12);
+            this.labelpaymentdeny.Size = new System.Drawing.Size(112, 15);
             this.labelpaymentdeny.TabIndex = 8;
             this.labelpaymentdeny.Text = "결재반려메모장";
             // 
             // textBoxPaymentdenymemo
             // 
-            this.textBoxPaymentdenymemo.Location = new System.Drawing.Point(20, 404);
+            this.textBoxPaymentdenymemo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(231)))), ((int)(((byte)(202)))));
+            this.textBoxPaymentdenymemo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPaymentdenymemo.Font = new System.Drawing.Font("HY견고딕", 10F);
+            this.textBoxPaymentdenymemo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(77)))), ((int)(((byte)(63)))));
+            this.textBoxPaymentdenymemo.Location = new System.Drawing.Point(20, 393);
             this.textBoxPaymentdenymemo.Multiline = true;
             this.textBoxPaymentdenymemo.Name = "textBoxPaymentdenymemo";
             this.textBoxPaymentdenymemo.Size = new System.Drawing.Size(859, 67);
@@ -131,19 +153,44 @@
             // 
             // buttonDenycheck
             // 
-            this.buttonDenycheck.Location = new System.Drawing.Point(780, 477);
+            this.buttonDenycheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.buttonDenycheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDenycheck.Font = new System.Drawing.Font("HY견고딕", 11F);
+            this.buttonDenycheck.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(28)))), ((int)(((byte)(61)))));
+            this.buttonDenycheck.Location = new System.Drawing.Point(769, 470);
             this.buttonDenycheck.Name = "buttonDenycheck";
-            this.buttonDenycheck.Size = new System.Drawing.Size(99, 29);
+            this.buttonDenycheck.Size = new System.Drawing.Size(99, 34);
             this.buttonDenycheck.TabIndex = 10;
             this.buttonDenycheck.Text = "확인";
-            this.buttonDenycheck.UseVisualStyleBackColor = true;
+            this.buttonDenycheck.UseVisualStyleBackColor = false;
             this.buttonDenycheck.Click += new System.EventHandler(this.buttonDenycheck_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.pictureBox2.Location = new System.Drawing.Point(22, 279);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(857, 2);
+            this.pictureBox2.TabIndex = 20;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.pictureBox1.Location = new System.Drawing.Point(20, 335);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(857, 2);
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
             // 
             // paymentform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(28)))), ((int)(((byte)(61)))));
             this.ClientSize = new System.Drawing.Size(891, 514);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.buttonDenycheck);
             this.Controls.Add(this.textBoxPaymentdenymemo);
             this.Controls.Add(this.labelpaymentdeny);
@@ -158,6 +205,8 @@
             this.Load += new System.EventHandler(this.paymentform_Load);
             this.Shown += new System.EventHandler(this.paymentform_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.PaymentListView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,6 +222,8 @@
         private System.Windows.Forms.Label labelpaymentdeny;
         private System.Windows.Forms.TextBox textBoxPaymentdenymemo;
         private System.Windows.Forms.Button buttonDenycheck;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

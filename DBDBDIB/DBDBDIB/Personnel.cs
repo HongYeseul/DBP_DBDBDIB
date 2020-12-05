@@ -92,7 +92,7 @@ namespace DBDBDIB
                 parameter += 4;
 
             insertsearchDB();
-            getDGV(dgvEmpView, "identification AS 사원ID, name AS 사원명, gender AS 성별, birthDay AS 생년월일, phoneNum AS 전화번호, address AS 주소, 부서명 AS 소속부서, position AS 직급, email", "Employee,부서", " WHERE Employee.valid=1 AND department=ID"+hr.searchQuery(parameter));
+            getDGV(dgvEmpView, "identification AS 사원ID, name AS 사원명, gender AS 성별, birthDay AS 생년월일, phoneNum AS 전화번호, address AS 주소, 부서명 AS 소속부서, position AS 직급, email", "Employee,부서", " WHERE identification > 5500000 AND Employee.valid=1 AND department=ID" + hr.searchQuery(parameter));
         }
         private void bEnroll_Click(object sender, EventArgs e)
         {
@@ -204,5 +204,6 @@ namespace DBDBDIB
             Post ps = new Post(this);
             ps.Show();
         }
+
     }
 }

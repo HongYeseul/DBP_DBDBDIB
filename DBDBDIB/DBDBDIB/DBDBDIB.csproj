@@ -258,6 +258,9 @@
     <EmbeddedResource Include="PaymentManagement.resx">
       <DependentUpon>PaymentManagement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SalaryInputDialog.resx">
+      <DependentUpon>SalaryInputDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TaskMasterTable.resx">
       <DependentUpon>TaskMasterTable.cs</DependentUpon>
     </EmbeddedResource>
@@ -337,6 +340,7 @@
     <Content Include="Resources\rounded-rectangle.png" />
     <Content Include="Resources\search.png" />
     <Content Include="Resources\stop.png" />
+    <None Include="Resources\user-icon-human-person-sign-vector-102066931.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

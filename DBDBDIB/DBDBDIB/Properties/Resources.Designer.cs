@@ -89,5 +89,15 @@ namespace DBDBDIB.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_icon_human_person_sign_vector_10206693 {
+            get {
+                object obj = ResourceManager.GetObject("user-icon-human-person-sign-vector-10206693", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

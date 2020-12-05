@@ -41,45 +41,59 @@
             this.label3 = new System.Windows.Forms.Label();
             this.comboBoxAFcompany = new System.Windows.Forms.ComboBox();
             this.buttonCellClickCancel = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.TaskmasterView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // button_Task_Apply
             // 
+            this.button_Task_Apply.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.button_Task_Apply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Task_Apply.Font = new System.Drawing.Font("HY견고딕", 11F);
+            this.button_Task_Apply.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(28)))), ((int)(((byte)(61)))));
             this.button_Task_Apply.Location = new System.Drawing.Point(746, 59);
             this.button_Task_Apply.Name = "button_Task_Apply";
             this.button_Task_Apply.Size = new System.Drawing.Size(130, 110);
             this.button_Task_Apply.TabIndex = 1;
             this.button_Task_Apply.Text = "등록";
-            this.button_Task_Apply.UseVisualStyleBackColor = true;
+            this.button_Task_Apply.UseVisualStyleBackColor = false;
             this.button_Task_Apply.Click += new System.EventHandler(this.button_Task_Apply_Click);
             // 
             // button_Task_Rectify
             // 
+            this.button_Task_Rectify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.button_Task_Rectify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Task_Rectify.Font = new System.Drawing.Font("HY견고딕", 11F);
+            this.button_Task_Rectify.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(28)))), ((int)(((byte)(61)))));
             this.button_Task_Rectify.Location = new System.Drawing.Point(746, 216);
             this.button_Task_Rectify.Name = "button_Task_Rectify";
-            this.button_Task_Rectify.Size = new System.Drawing.Size(130, 110);
+            this.button_Task_Rectify.Size = new System.Drawing.Size(130, 111);
             this.button_Task_Rectify.TabIndex = 2;
             this.button_Task_Rectify.Text = "수정";
-            this.button_Task_Rectify.UseVisualStyleBackColor = true;
+            this.button_Task_Rectify.UseVisualStyleBackColor = false;
             this.button_Task_Rectify.Click += new System.EventHandler(this.button_Task_Rectify_Click);
             // 
             // button_Task_Delete
             // 
+            this.button_Task_Delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.button_Task_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Task_Delete.Font = new System.Drawing.Font("HY견고딕", 11F);
+            this.button_Task_Delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(28)))), ((int)(((byte)(61)))));
             this.button_Task_Delete.Location = new System.Drawing.Point(746, 371);
             this.button_Task_Delete.Name = "button_Task_Delete";
-            this.button_Task_Delete.Size = new System.Drawing.Size(130, 110);
+            this.button_Task_Delete.Size = new System.Drawing.Size(130, 111);
             this.button_Task_Delete.TabIndex = 3;
             this.button_Task_Delete.Text = "삭제";
-            this.button_Task_Delete.UseVisualStyleBackColor = true;
+            this.button_Task_Delete.UseVisualStyleBackColor = false;
             this.button_Task_Delete.Click += new System.EventHandler(this.button_Task_Delete_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("돋움", 15F);
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(354, 22);
+            this.label1.Font = new System.Drawing.Font("HY견고딕", 15F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.label1.Location = new System.Drawing.Point(389, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 20);
             this.label1.TabIndex = 4;
@@ -110,75 +124,108 @@
             // 
             // comboBoxTaskKind
             // 
+            this.comboBoxTaskKind.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(28)))), ((int)(((byte)(61)))));
             this.comboBoxTaskKind.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxTaskKind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxTaskKind.Font = new System.Drawing.Font("HY견고딕", 10F);
+            this.comboBoxTaskKind.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
             this.comboBoxTaskKind.FormattingEnabled = true;
             this.comboBoxTaskKind.Items.AddRange(new object[] {
             "정기업무",
             "단기업무"});
-            this.comboBoxTaskKind.Location = new System.Drawing.Point(70, 434);
+            this.comboBoxTaskKind.Location = new System.Drawing.Point(94, 434);
             this.comboBoxTaskKind.Name = "comboBoxTaskKind";
-            this.comboBoxTaskKind.Size = new System.Drawing.Size(121, 20);
+            this.comboBoxTaskKind.Size = new System.Drawing.Size(99, 21);
             this.comboBoxTaskKind.TabIndex = 20;
             // 
             // textBoxTaskContents
             // 
-            this.textBoxTaskContents.Location = new System.Drawing.Point(70, 468);
+            this.textBoxTaskContents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(28)))), ((int)(((byte)(61)))));
+            this.textBoxTaskContents.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxTaskContents.Font = new System.Drawing.Font("HY견고딕", 10F);
+            this.textBoxTaskContents.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.textBoxTaskContents.Location = new System.Drawing.Point(97, 472);
             this.textBoxTaskContents.Name = "textBoxTaskContents";
-            this.textBoxTaskContents.Size = new System.Drawing.Size(656, 21);
+            this.textBoxTaskContents.Size = new System.Drawing.Size(614, 16);
             this.textBoxTaskContents.TabIndex = 15;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 473);
+            this.label5.Font = new System.Drawing.Font("HY견고딕", 11F);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.label5.Location = new System.Drawing.Point(23, 473);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 12);
+            this.label5.Size = new System.Drawing.Size(67, 15);
             this.label5.TabIndex = 19;
             this.label5.Text = "업무내용";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 437);
+            this.label4.Font = new System.Drawing.Font("HY견고딕", 11F);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.label4.Location = new System.Drawing.Point(23, 437);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 12);
+            this.label4.Size = new System.Drawing.Size(67, 15);
             this.label4.TabIndex = 18;
             this.label4.Text = "업무종류";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 400);
+            this.label3.Font = new System.Drawing.Font("HY견고딕", 11F);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.label3.Location = new System.Drawing.Point(53, 400);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 12);
+            this.label3.Size = new System.Drawing.Size(37, 15);
             this.label3.TabIndex = 17;
             this.label3.Text = "소속";
             // 
             // comboBoxAFcompany
             // 
+            this.comboBoxAFcompany.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(28)))), ((int)(((byte)(61)))));
             this.comboBoxAFcompany.CausesValidation = false;
             this.comboBoxAFcompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxAFcompany.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxAFcompany.Font = new System.Drawing.Font("HY견고딕", 10F);
+            this.comboBoxAFcompany.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
             this.comboBoxAFcompany.FormattingEnabled = true;
-            this.comboBoxAFcompany.Location = new System.Drawing.Point(70, 397);
+            this.comboBoxAFcompany.Location = new System.Drawing.Point(94, 397);
             this.comboBoxAFcompany.Name = "comboBoxAFcompany";
-            this.comboBoxAFcompany.Size = new System.Drawing.Size(121, 20);
+            this.comboBoxAFcompany.Size = new System.Drawing.Size(99, 21);
             this.comboBoxAFcompany.TabIndex = 21;
             // 
             // buttonCellClickCancel
             // 
-            this.buttonCellClickCancel.Location = new System.Drawing.Point(746, 60);
+            this.buttonCellClickCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.buttonCellClickCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCellClickCancel.Font = new System.Drawing.Font("HY견고딕", 11F);
+            this.buttonCellClickCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(28)))), ((int)(((byte)(61)))));
+            this.buttonCellClickCancel.Location = new System.Drawing.Point(746, 59);
             this.buttonCellClickCancel.Name = "buttonCellClickCancel";
-            this.buttonCellClickCancel.Size = new System.Drawing.Size(130, 110);
+            this.buttonCellClickCancel.Size = new System.Drawing.Size(130, 111);
             this.buttonCellClickCancel.TabIndex = 22;
             this.buttonCellClickCancel.Text = "선택취소";
-            this.buttonCellClickCancel.UseVisualStyleBackColor = true;
+            this.buttonCellClickCancel.UseVisualStyleBackColor = false;
             this.buttonCellClickCancel.Click += new System.EventHandler(this.buttonCellClickCancel_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.pictureBox2.Location = new System.Drawing.Point(94, 489);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(614, 2);
+            this.pictureBox2.TabIndex = 23;
+            this.pictureBox2.TabStop = false;
             // 
             // taskmasterform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(28)))), ((int)(((byte)(61)))));
             this.ClientSize = new System.Drawing.Size(891, 514);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.buttonCellClickCancel);
             this.Controls.Add(this.comboBoxAFcompany);
             this.Controls.Add(this.comboBoxTaskKind);
@@ -196,6 +243,7 @@
             this.Load += new System.EventHandler(this.Form2_Load);
             this.Shown += new System.EventHandler(this.taskmasterform_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.TaskmasterView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,5 +262,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBoxAFcompany;
         private System.Windows.Forms.Button buttonCellClickCancel;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

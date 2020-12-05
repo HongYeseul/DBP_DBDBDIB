@@ -83,15 +83,18 @@ namespace DBDBDIB
             {
                 Label label = new Label();
                 label = new System.Windows.Forms.Label();
-                label.Location = new System.Drawing.Point(100+10*(i-1), 440);
+                label.Location = new System.Drawing.Point(100+20*(i-1), 440);
                 label.Name = i.ToString()+"Page";
                 label.Size = new System.Drawing.Size(50, 23);
-                label.TabIndex = 5;
+                label.TabIndex = 1;
                 label.Text = i.ToString();
                 label.Tag = i;
+                label.ForeColor = Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+                //label.Visible = true;
                 label.Click += new System.EventHandler(this.label_Click);
 
                 this.Controls.Add(label);
+                label.BringToFront();
 
             }
         }
@@ -99,6 +102,7 @@ namespace DBDBDIB
         {
             Label lb = sender as Label;
             currentPage = lb.Tag.ToString();
+            Console.WriteLine(lb.Name);
             getAddress();
         }
 
