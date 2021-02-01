@@ -4,7 +4,7 @@
 학교 및 기타 기업에서 직원들의 관리를 돕습니다.
 
 ## 시연 영상
-[영상은 이곳에서 확인이 가능합니다.](https://youtu.be/ZKDVAGsW3LM)
+[영상 (14분 51초)](https://youtu.be/ZKDVAGsW3LM)
 
 ## 만든 사람 (7)
 - 김은주 ( [Kimeunju99](https://github.com/Kimeunju99) )
