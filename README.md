@@ -12,5 +12,5 @@
 - 최현지 ( [Hyunji99Choi](https://github.com/Hyunji99Choi) )
 - 홍예슬 ( [HongYeseul](https://github.com/HongYeseul) )
 
-#### 참고사항
-##### 현재 코드들은 ERP에 관련된 C# 코드만 올라와 있습니다. 서버가 필요한 '채팅' 기능은 사용이 불가능 합니다.
+##### 참고사항
+###### 현재 코드들은 ERP에 관련된 C# 코드만 올라와 있습니다. 서버가 필요한 '채팅' 기능은 사용이 불가능 합니다.
